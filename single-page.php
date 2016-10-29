@@ -82,6 +82,27 @@
                                         <a href="#" class="btn btn-1">Read More</a>          
                                     </li> 
 
+                                    <li>  
+                                        <h3>Hendrerit in vulputate velit esse molestie</h3>     
+                                        <time datetime="2012-11-08" class="date-1">8.11.2012</time>
+                                        <div class="name-author">by <a href="#">Admin</a></div>
+                                        <a href="#" class="comments">9 comments</a> 
+                                        <div class="clear"></div>            
+                                        <img alt="" src="StyleSinglePage/img/page4-img2.jpg">                               
+                                        <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum delenit augue duis dolore te feugait nulla facilisi.</p>
+                                        <a href="#" class="btn btn-1">Read More</a>          
+                                    </li> 
+                                    
+                                    <li>  
+                                        <h3>Hendrerit in vulputate velit esse molestie</h3>     
+                                        <time datetime="2012-11-08" class="date-1">8.11.2012</time>
+                                        <div class="name-author">by <a href="#">Admin</a></div>
+                                        <a href="#" class="comments">9 comments</a> 
+                                        <div class="clear"></div>            
+                                        <img alt="" src="StyleSinglePage/img/page4-img2.jpg">                               
+                                        <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum delenit augue duis dolore te feugait nulla facilisi.</p>
+                                        <a href="#" class="btn btn-1">Read More</a>          
+                                    </li> 
                                 </ul>
                             </div>  
                         </article>

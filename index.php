@@ -14,17 +14,17 @@
     <meta name="author" content="">
 
     <!-- Bootstrap Css -->
-    <link href="bootstrap-assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="StyleIndexPage/bootstrap-assets/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Style -->
-    <link href="plugins/owl-carousel/owl.carousel.css" rel="stylesheet">
-    <link href="plugins/owl-carousel/owl.theme.css" rel="stylesheet">
-    <link href="plugins/owl-carousel/owl.transitions.css" rel="stylesheet">
-    <link href="plugins/Lightbox/dist/css/lightbox.css" rel="stylesheet">
-    <link href="plugins/Icons/et-line-font/style.css" rel="stylesheet">
-    <link href="plugins/animate.css/animate.css" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet">
-    <link href='img/logo/logo.png' rel='icon'/>
+    <link href="StyleIndexPage/plugins/owl-carousel/owl.carousel.css" rel="stylesheet">
+    <link href="StyleIndexPage/plugins/owl-carousel/owl.theme.css" rel="stylesheet">
+    <link href="StyleIndexPage/plugins/owl-carousel/owl.transitions.css" rel="stylesheet">
+    <link href="StyleIndexPage/plugins/Lightbox/dist/css/lightbox.css" rel="stylesheet">
+    <link href="StyleIndexPage/plugins/Icons/et-line-font/style.css" rel="stylesheet">
+    <link href="StyleIndexPage/plugins/animate.css/animate.css" rel="stylesheet">
+    <link href="StyleIndexPage/css/main.css" rel="stylesheet">
+    <link href='StyleIndexPage/img/logo/logo.png' rel='icon'/>
     <!-- Icons Font -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -52,7 +52,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#"><img src="img/logo/logo.png" class="img-responsive" alt="logo" style="width:65px; height: 70px;"></a>
+                    <a class="navbar-brand" href="#"><img src="StyleIndexPage/img/logo/logo.png" class="img-responsive" alt="logo" style="width:65px; height: 70px;"></a>
                 </div>
                 <div class="collapse navbar-collapse text-center" id="bs-example-navbar-collapse-1">
                     <div class="col-md-8 col-xs-12 nav-wrap">
@@ -75,37 +75,37 @@
             </div>
         </nav>
         <div id="owl-hero" class="owl-carousel owl-theme">
-            <div class="item" style="background-image: url(img/sliders/a1.jpg)">
+            <div class="item" style="background-image: url(StyleIndexPage/img/sliders/a1.jpg)">
                 <div class="caption">       
                     <h1>Turri<span>Plantas</span></h1> 
 		    <h6>¡La calidad no nace, se hace!</h6>                   
                 </div>
             </div>
-	    <div class="item" style="background-image: url(img/sliders/a2.jpg)">
+	    <div class="item" style="background-image: url(StyleIndexPage/img/sliders/a2.jpg)">
                 <div class="caption">                    
                     <h1>Turri<span>Plantas</span></h1> 
 		    <h6>¡La calidad no nace, se hace!</h6>                   
                 </div>
             </div>
-	    <div class="item" style="background-image: url(img/sliders/a3.jpg)">
+	    <div class="item" style="background-image: url(StyleIndexPage/img/sliders/a3.jpg)">
                 <div class="caption">                    
                     <h1>Turri<span>Plantas</span></h1> 
 		    <h6>¡La calidad no nace, se hace!</h6>                    
                 </div>
             </div>
-	    <div class="item" style="background-image: url(img/sliders/a4.jpg)">
+	    <div class="item" style="background-image: url(StyleIndexPage/img/sliders/a4.jpg)">
                 <div class="caption">                    
                     <h1>Turri<span>Plantas</span></h1> 
 		    <h6>¡La calidad no nace, se hace!</h6>                    
                 </div>
             </div>
-	    <div class="item" style="background-image: url(img/sliders/a5.jpg)">
+	    <div class="item" style="background-image: url(StyleIndexPage/img/sliders/a5.jpg)">
                 <div class="caption">                    
                     <h1>Turri<span>Plantas</span></h1> 
 		    <h6>¡La calidad no nace, se hace!</h6>                    
                 </div>
             </div>
-	     <div class="item" style="background-image: url(img/sliders/a6.jpg)">
+	     <div class="item" style="background-image: url(StyleIndexPage/img/sliders/a6.jpg)">
                 <div class="caption">                    
                     <h1>Turri<span>Plantas</span></h1> 
 		    <h6>¡La calidad no nace, se hace!</h6>                    
@@ -122,7 +122,7 @@
             <h2>Welcome To <span>Turri Plantas</span></h2>
             <hr class="sep">
             <p>BEST GROWN QUALITY!</p>
-            <img class="img-responsive center-block wow fadeInUp" data-wow-delay=".3s" src="img/logo/logo.png" alt="logo" style="width:100px; height: 100px;">
+            <img class="img-responsive center-block wow fadeInUp" data-wow-delay=".3s" src="StyleIndexPage/img/logo/logo.png" alt="logo" style="width:100px; height: 100px;">
         </div>
     </section>
 
@@ -197,8 +197,8 @@
             
             <div class="row">
                 <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
-                    <a class="portfolio-box" href="img/portfolio/agro.jpg" data-lightbox="image-1" data-title="Your caption">
-                        <img src="img/portfolio/agro.jpg" class="img-responsive" alt="1" >
+                    <a class="portfolio-box" href="StyleIndexPage/img/portfolio/agro.jpg" data-lightbox="image-1" data-title="Your caption">
+                        <img src="StyleIndexPage/img/portfolio/agro.jpg" class="img-responsive" alt="1" >
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
@@ -210,8 +210,8 @@
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
-                    <a href="img/portfolio/croton.jpg" class="portfolio-box" data-lightbox="image-2" data-title="Your caption">
-                        <img src="img/portfolio/croton.jpg" class="img-responsive" alt="2" >
+                    <a href="StyleIndexPage/img/portfolio/croton.jpg" class="portfolio-box" data-lightbox="image-2" data-title="Your caption">
+                        <img src="StyleIndexPage/img/portfolio/croton.jpg" class="img-responsive" alt="2" >
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
@@ -223,8 +223,8 @@
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
-                    <a href="img/portfolio/draca.JPG" class="portfolio-box" data-lightbox="image-3" data-title="Your caption" >
-                        <img src="img/portfolio/draca.jpg" class="img-responsive" alt="3">
+                    <a href="StyleIndexPage/img/portfolio/draca.JPG" class="portfolio-box" data-lightbox="image-3" data-title="Your caption" >
+                        <img src="StyleIndexPage/img/portfolio/draca.jpg" class="img-responsive" alt="3">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
@@ -236,8 +236,8 @@
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
-                    <a href="img/portfolio/sans.jpg" class="portfolio-box" data-lightbox="image-4" data-title="Your caption" >
-                        <img src="img/portfolio/sans.jpg" class="img-responsive" alt="4" >
+                    <a href="StyleIndexPage/img/portfolio/sans.jpg" class="portfolio-box" data-lightbox="image-4" data-title="Your caption" >
+                        <img src="StyleIndexPage/img/portfolio/sans.jpg" class="img-responsive" alt="4" >
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
@@ -249,8 +249,8 @@
                     </a>
                 </div>
 		 <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
-                     <a href="img/portfolio/sans.JPG" class="portfolio-box" data-lightbox="image-4" data-title="Your caption" >
-                         <img src="img/portfolio/sans.jpg" class="img-responsive" alt="4" >
+                     <a href="StyleIndexPage/img/portfolio/sans.JPG" class="portfolio-box" data-lightbox="image-4" data-title="Your caption" >
+                         <img src="StyleIndexPage/img/portfolio/sans.jpg" class="img-responsive" alt="4" >
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
@@ -262,8 +262,8 @@
                     </a>
                 </div>
 		 <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
-                     <a href="img/portfolio/sans.jpg" class="portfolio-box" data-lightbox="image-4" data-title="Your caption" >
-                         <img src="img/portfolio/sans.jpg" class="img-responsive" alt="4" >
+                     <a href="StyleIndexPage/img/portfolio/sans.jpg" class="portfolio-box" data-lightbox="image-4" data-title="Your caption" >
+                         <img src="StyleIndexPage/img/portfolio/sans.jpg" class="img-responsive" alt="4" >
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
@@ -467,16 +467,16 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="bootstrap-assets/js/bootstrap.min.js"></script>
-    <script src="js/custom.js"></script>
+    <script src="StyleIndexPage/bootstrap-assets/js/bootstrap.min.js"></script>
+    <script src="StyleIndexPage/js/custom.js"></script>
     <!-- JS PLUGINS -->
-    <script src="plugins/owl-carousel/owl.carousel.min.js"></script>
-    <script src="js/jquery.easing.min.js"></script>
-    <script src="plugins/waypoints/jquery.waypoints.min.js"></script>
-    <script src="plugins/countTo/jquery.countTo.js"></script>
-    <script src="plugins/inview/jquery.inview.min.js"></script>
-    <script src="plugins/Lightbox/dist/js/lightbox.min.js"></script>
-    <script src="plugins/WOW/dist/wow.min.js"></script>
+    <script src="StyleIndexPage/plugins/owl-carousel/owl.carousel.min.js"></script>
+    <script src="StyleIndexPage/js/jquery.easing.min.js"></script>
+    <script src="StyleIndexPage/plugins/waypoints/jquery.waypoints.min.js"></script>
+    <script src="StyleIndexPage/plugins/countTo/jquery.countTo.js"></script>
+    <script src="StyleIndexPage/plugins/inview/jquery.inview.min.js"></script>
+    <script src="StyleIndexPage/plugins/Lightbox/dist/js/lightbox.min.js"></script>
+    <script src="StyleIndexPage/plugins/WOW/dist/wow.min.js"></script>
     <!-- GOOGLE MAP -->
     <script src="https://maps.googleapis.com/maps/api/js"></script>
 </body>
