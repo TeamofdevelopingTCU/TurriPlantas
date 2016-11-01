@@ -32,28 +32,10 @@
         </script>
     </head>
     <body>       
-        <!--============================== header =================================-->
-        <header style="width: 100%; height: 45px;">
-            <div class="container clearfix">
-                <div class="row">
-                    <div class="span12">
-                        <div class="navbar navbar_">
-                            <div class="container">
-                                <h1 class="brand brand_"><a href="index.php"><img alt="" src="StyleIndexPage/img/logo/logo.png" style="width:65px; height: 60px;"> </a></h1>
-                                <div class="nav-collapse nav-collapse_  collapse">
-                                    <ul class="nav navbar-nav ">
-                                        <li><a href="index.php">Home</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
+     
         <div class="bg-content">  
             <br><br>
-            <!--<div id="home"><a href="index.php">Home</a></div>-->
+            <div id="home"><a href="index.php">Home</a></div>
             <!--============================== content =================================-->      
             <div id="content"><div class="ic">More Website Templates @ TemplateMonster.com. November19, 2012!</div>
                 <div class="container">
