@@ -781,4 +781,9 @@ Media Queries Style
   #testimonials h5 {
     font-size: 18px;
   }
+  
+  .imgWork{
+      width: 500px;
+      height: 400px;
+  }
 }
