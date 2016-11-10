@@ -1,7 +1,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <link rel="icon" href="img/logo/logo.png" type="image/x-icon">   
+        <link rel="icon" href="imagenes/logo.png" type="image/x-icon">   
         <link rel="stylesheet" href="StyleSinglePage/css/bootstrap.css" type="text/css" media="screen">
         <link rel="stylesheet" href="StyleSinglePage/css/responsive.css" type="text/css" media="screen">
         <link rel="stylesheet" href="StyleSinglePage/css/style.css" type="text/css" media="screen">
@@ -39,7 +39,7 @@
                     <div class="span12">
                         <div class="navbar navbar_">
                             <div class="container">
-                                <h1 class="brand brand_"><a href="index.php"><img alt="" src="StyleIndexPage/img/logo/logo.png" style="width:65px; height: 60px;"> </a></h1>
+                                <h1 class="brand brand_"><a href="index.php"><img alt="" src="imagenes/logo.png" style="width:65px; height: 60px;"> </a></h1>
                                 <div class="nav-collapse nav-collapse_  collapse">
                                     <ul class="nav navbar-nav ">
                                         <li><a href="index.php">Home</a></li>
@@ -65,7 +65,7 @@
                                         <h3>Duis autem vel eum iriure dolor</h3>     
 
                                         <div class="clear"></div>            
-                                        <img alt="" src="StyleIndexPage/img/portfolio/sans.JPG" class="sizeImage">                               
+                                        <img alt="" src="imagenes/sans.JPG" class="sizeImage">                               
                                         <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum delenit augue duis dolore te feugait nulla facilisi.</p>
                                         <!--<a href="#" class="btn btn-1">Read More</a>-->          
                                     </li>  
@@ -74,7 +74,7 @@
                                         <h3>Hendrerit in vulputate velit esse molestie</h3>     
 
                                         <div class="clear"></div>            
-                                        <img alt="" src="StyleIndexPage/img/portfolio/draca.JPG" class="sizeImage">                               
+                                        <img alt="" src="imagenes/draca.JPG" class="sizeImage">                               
                                         <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum delenit augue duis dolore te feugait nulla facilisi.</p>
                                     </li> 
 
@@ -82,7 +82,7 @@
                                         <h3>Hendrerit in vulputate velit esse molestie</h3>     
 
                                         <div class="clear"></div>            
-                                        <img alt="" src="StyleIndexPage/img/portfolio/croton.JPG" class="sizeImage">                               
+                                        <img alt="" src="imagenes/croton.JPG" class="sizeImage">                               
                                         <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum delenit augue duis dolore te feugait nulla facilisi.</p>
                                     </li> 
 
@@ -90,7 +90,7 @@
                                         <h3>Hendrerit in vulputate velit esse molestie</h3>  
 
                                         <div class="clear"></div>            
-                                        <img alt="" src="StyleIndexPage/img/portfolio/agro.JPG" class="sizeImage">                               
+                                        <img alt="" src="imagenes/agro.JPG" class="sizeImage">                               
                                         <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum delenit augue duis dolore te feugait nulla facilisi.</p>
                                     </li> 
                                 </ul>

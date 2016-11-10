@@ -23,7 +23,7 @@
         <link href="plugins/Lightbox/dist/css/lightbox.css" rel="stylesheet">
         <link href="plugins/Icons/et-line-font/style.css" rel="stylesheet">
         <link href="plugins/animate.css/animate.css" rel="stylesheet">
-        <link rel="icon" href="img/logo/logo.png" type="image/x-icon"> 
+        <link rel="icon" href="imagenes/logo.png" type="image/x-icon"> 
         <link href="css/main.css" rel="stylesheet">
         <!-- Icons Font -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -79,37 +79,37 @@
                 <div class="item" style="background-image: url(imagenes/a1.jpg)">
                     <div class="caption">       
                         <h1>Turri<span>Plantas</span></h1> 
-                        <h6>¡La calidad no nace, se hace!</h6>                   
+                        <h6>BEST GROWN QUALITY!</h6>                   
                     </div>
                 </div>
                 <div class="item" style="background-image: url(imagenes/a2.jpg)">
                     <div class="caption">                    
                         <h1>Turri<span>Plantas</span></h1> 
-                        <h6>¡La calidad no nace, se hace!</h6>                   
+                        <h6>BEST GROWN QUALITY!</h6>                   
                     </div>
                 </div>
                 <div class="item" style="background-image: url(imagenes/a3.jpg)">
                     <div class="caption">                    
                         <h1>Turri<span>Plantas</span></h1> 
-                        <h6>¡La calidad no nace, se hace!</h6>                    
+                        <h6>BEST GROWN QUALITY!</h6>                    
                     </div>
                 </div>
                 <div class="item" style="background-image: url(imagenes/a4.jpg)">
                     <div class="caption">                    
                         <h1>Turri<span>Plantas</span></h1> 
-                        <h6>¡La calidad no nace, se hace!</h6>                    
+                        <h6>BEST GROWN QUALITY!</h6>                    
                     </div>
                 </div>
                 <div class="item" style="background-image: url(imagenes/a5.jpg)">
                     <div class="caption">                    
                         <h1>Turri<span>Plantas</span></h1> 
-                        <h6>¡La calidad no nace, se hace!</h6>                    
+                        <h6>BEST GROWN QUALITY!</h6>                    
                     </div>
                 </div>
                 <div class="item" style="background-image: url(imagenes/a6.jpg)">
                     <div class="caption">                    
                         <h1>Turri<span>Plantas</span></h1> 
-                        <h6>¡La calidad no nace, se hace!</h6>                    
+                        <h6>BEST GROWN QUALITY!</h6>                    
                     </div>
                 </div>
 
@@ -120,7 +120,7 @@
             ============================================= -->
         <section id="welcome">
             <div class="container">
-                <h2>Welcome To <span>Turri Plantas</span></h2>
+                <h2>Welcome To <span>TurriPlantas</span></h2>
                 <hr class="sep">
                 <p>BEST GROWN QUALITY!</p>
                 <img class="img-responsive center-block wow fadeInUp" data-wow-delay=".3s" src="imagenes/logo.png" alt="logo" style="width:100px; height: 100px;">
@@ -222,12 +222,12 @@
 
                 <div class="row">
                     <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
-                        <a class="portfolio-box" href="imagenes/agro.jpg" data-lightbox="image-1" data-title="Your caption">
+                        <a class="portfolio-box" href="single-page.php">
                             <img src="imagenes/agro.jpg" class="img-responsive imgWork" alt="1">
                             <div class="portfolio-box-caption">
                                 <div class="portfolio-box-caption-content">
                                     <div class="project-category text-faded">
-                                        Agroforestacion
+                                        Agroforestacion +
                                     </div>
 
                                 </div>
@@ -235,12 +235,12 @@
                         </a>
                     </div>
                     <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
-                        <a href="imagenes/croton.jpg" class="portfolio-box" data-lightbox="image-2" data-title="Your caption">
+                        <a href="single-page.php" class="portfolio-box" >
                             <img src="imagenes/croton.jpg" class="img-responsive imgWork" alt="2">
                             <div class="portfolio-box-caption">
                                 <div class="portfolio-box-caption-content">
                                     <div class="project-category text-faded">
-                                        Croton
+                                        Croton +
                                     </div>
 
                                 </div>
@@ -248,12 +248,12 @@
                         </a>
                     </div>
                     <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
-                        <a href="imagenes/draca.jpg" class="portfolio-box" data-lightbox="image-3" data-title="Your caption" >
+                        <a href="single-page.php" class="portfolio-box" >
                             <img src="imagenes/draca.jpg" class="img-responsive imgWork" alt="3" >
                             <div class="portfolio-box-caption">
                                 <div class="portfolio-box-caption-content">
                                     <div class="project-category text-faded">
-                                        Dracaenas
+                                        Dracaenas +
                                     </div>
 
                                 </div>
@@ -261,12 +261,12 @@
                         </a>
                     </div>
                     <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
-                        <a href="imagenes/sans.jpg" class="portfolio-box" data-lightbox="image-4" data-title="Your caption" >
+                        <a href="single-page.php" class="portfolio-box" >
                             <img src="imagenes/sans.jpg" class="img-responsive imgWork" alt="4" >
                             <div class="portfolio-box-caption">
                                 <div class="portfolio-box-caption-content">
                                     <div class="project-category text-faded">
-                                        Sans Patentadas
+                                        Sans Patentadas +
                                     </div>
 
                                 </div>
@@ -274,12 +274,12 @@
                         </a>
                     </div>
                     <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
-                        <a href="imagenes/sans.jpg" class="portfolio-box" data-lightbox="image-4" data-title="Your caption" >
+                        <a href="single-page.php" class="portfolio-box" >
                             <img src="imagenes/sans.jpg" class="img-responsive imgWork" alt="4" >
                             <div class="portfolio-box-caption">
                                 <div class="portfolio-box-caption-content">
                                     <div class="project-category text-faded">
-                                        Sans Patentadas
+                                        Sans Patentadas +
                                     </div>
 
                                 </div>
@@ -287,12 +287,12 @@
                         </a>
                     </div>
                     <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
-                        <a href="imagenes/sans.jpg" class="portfolio-box" data-lightbox="image-4" data-title="Your caption" >
+                        <a href="single-page.php" class="portfolio-box" >
                             <img src="imagenes/sans.jpg" class="img-responsive" alt="4" >
                             <div class="portfolio-box-caption">
                                 <div class="portfolio-box-caption-content">
                                     <div class="project-category text-faded">
-                                        Sans Patentadas
+                                        Sans Patentadas +
                                     </div>
 
                                 </div>
