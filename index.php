@@ -226,19 +226,19 @@
                 <div class="row wow fadeInUp" data-wow-delay=".3s">
                     <div class="col-lg-3">
 
-                        <h4>Plantas sin raíz</h4>
+                        <a href="single-page.php" ><h4 style="color: #398439">Plantas sin raíz</h4></a>
                     </div>
                     <div class="col-lg-3">
 
-                        <h4>Plantas con raíz</h4>
+                         <a href="single-page.php"><h4 style="color: #398439">Plantas con raíz</h4></a>
                     </div>
                     <div class="col-lg-3">
 
-                        <h4>Plantas enraizadas en cubo de oasis</h4>
+                         <a href="single-page.php"><h4 style="color: #398439">Plantas enraizadas en cubo de oasis</h4></a>
                     </div>
                     <div class="col-lg-3">
 
-                        <h4>Plantas en callosidad</h4>
+                         <a href="single-page.php"><h4 style="color: #398439">Plantas en callosidad</h4></a>
                     </div>
                 </div>
                 <br><br>
@@ -261,7 +261,7 @@
                             <div class="portfolio-box-caption">
                                 <div class="portfolio-box-caption-content">
                                     <div class="project-category text-faded">
-                                        Agroforestacion +
+                                        Codeaum Variegatum Spp (Croton)
                                     </div>
 
                                 </div>
@@ -274,7 +274,7 @@
                             <div class="portfolio-box-caption">
                                 <div class="portfolio-box-caption-content">
                                     <div class="project-category text-faded">
-                                        Croton +
+                                        Dracaenas Spp
                                     </div>
 
                                 </div>
@@ -287,14 +287,14 @@
                             <div class="portfolio-box-caption">
                                 <div class="portfolio-box-caption-content">
                                     <div class="project-category text-faded">
-                                        Dracaenas +
+                                        Dracaenas Deremensis Spp
                                     </div>
 
                                 </div>
                             </div>
                         </a>
                     </div>
-                    <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
+<!--                    <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
                         <a href="single-page.php" class="portfolio-box" >
                             <img src="imagenes/sans.jpg" class="img-responsive imgWork" alt="4" >
                             <div class="portfolio-box-caption">
@@ -332,7 +332,7 @@
                                 </div>
                             </div>
                         </a>
-                    </div>
+                    </div>-->
 
                 </div>
             </div>
