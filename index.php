@@ -60,8 +60,8 @@
                             <ul class="nav navbar-nav">
                                 <li><a href="#owl-hero" class="page-scroll">Home</a></li>
                                 <li><a href="#services" class="page-scroll">About</a></li>
-                                <li><a href="#portfolio" class="page-scroll">Products</a></li>
-                                <li><a href="#team" class="page-scroll">What´s new</a></li>
+                                <li><a href="#work-process" class="page-scroll">Products</a></li>
+                                <li><a href="#fun-facts" class="page-scroll">Location</a></li>
                                 <li><a href="#contact" class="page-scroll">Contact</a></li>
                             </ul>
                         </div>
@@ -211,13 +211,47 @@
                 </div>
             </div>
         </section>
+        <section id="work-process">
+            <br><br>
+            <div class="container">
+                <h2>Productos</h2>
+                <hr class="sep">
+                <p class="text-justify">Nuestros productos son plantas vivas para ser conservadas en maceteros o para reproducción.</p>
 
+                <p class="text-justify"> Se maneja una amplia gama de plantas ornamentales que son exportadas según la necesidad de
+
+                    nuestros clientes en las siguientes formas:</p>                   
+
+
+                <div class="row wow fadeInUp" data-wow-delay=".3s">
+                    <div class="col-lg-3">
+
+                        <h4>Plantas sin raíz</h4>
+                    </div>
+                    <div class="col-lg-3">
+
+                        <h4>Plantas con raíz</h4>
+                    </div>
+                    <div class="col-lg-3">
+
+                        <h4>Plantas enraizadas en cubo de oasis</h4>
+                    </div>
+                    <div class="col-lg-3">
+
+                        <h4>Plantas en callosidad</h4>
+                    </div>
+                </div>
+                <br><br>
+                <p class="text-justify">Se trabaja en la demanda con los tamaños. Siendo nuestra especialidad tamaños pequeños que
+                    van desde 6/8” hasta 15/18” en altura.</p>
+            </div>
+        </section>
         <!-- Portfolio
             ============================================= -->
         <section id="portfolio">
             <br><br>
             <div class="container-fluid">
-                <h2>Our Work</h2>
+                <h2>Variedades</h2>
                 <hr class="sep">
 
                 <div class="row">
@@ -305,67 +339,8 @@
         </section>
         <!-- Work Process
             ============================================= -->
-        <section id="work-process">
-            <br><br>
-            <div class="container">
-                <h2>Work Process</h2>
-                <hr class="sep">
-                <p>What Happen In The Background</p>
-                <div class="row wow fadeInUp" data-wow-delay=".3s">
-                    <div class="col-lg-3">
-                        <span class="icon-chat"></span>
-                        <h4>1.Discuss</h4>
-                    </div>
-                    <div class="col-lg-3">
-                        <span class="icon-circle-compass"></span>
-                        <h4>2.Sketch</h4>
-                    </div>
-                    <div class="col-lg-3">
-                        <span class="icon-browser"></span>
-                        <h4>3.Make</h4>
-                    </div>
-                    <div class="col-lg-3">
-                        <span class="icon-global"></span>
-                        <h4>4.Publish</h4>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Some Fune Facts
-            ============================================= -->
-        <section id="fun-facts">
-            <br><br>
-            <div class="container">
-                <h2>Some Fun Facts </h2>
-                <hr class="light-sep">
-                <p>Fun Facts</p>
-                <div class="row wow fadeInUp" data-wow-delay=".3s">
-                    <div class="col-lg-3">
-                        <span class="icon-happy"></span>
-                        <h2 class="number timer">367</h2>
-                        <h4>Happy Clients</h4>
-                    </div>
-                    <div class="col-lg-3">
-                        <span class="icon-trophy"></span>
-                        <h2 class="number timer">150</h2>
-                        <h4>Project Done</h4>
-                    </div>
-                    <div class="col-lg-3">
-                        <span class="icon-wine"></span>
-                        <h2 class="number timer">121</h2>
-                        <h4>Glass Of Wine</h4>
-                    </div>
-                    <div class="col-lg-3">
-                        <span class="icon-documents"></span>
-                        <h2 class="number timer">10000</h2>
-                        <h4>Lines Of Code</h4>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Some Fune Facts
-            ============================================= -->
-        <section id="team">
+
+<!--        <section id="team">
             <br><br>
             <div class="container">
                 <h2>Our Team</h2>
@@ -410,7 +385,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section>-->
         <!-- Testimonials
             ============================================= -->
         <section id="testimonials">
@@ -457,6 +432,21 @@
                 </div>
             </div>
         </section>
+
+          <section id="fun-facts">
+            <br><br>
+            <div class="container">
+                <h2>LOCALIZACION</h2>
+                <hr class="light-sep">
+                <p class="text-justify">Turriplantas está localizado en Pavones – Turrialba, Costa Rica, en el sector de Valle Verde, a 850
+
+                    metros sobre el nivel de mar, en una zona montañosa con un clima muy agradable e ideal para el
+
+                    cultivo de ciertas variedades de plantas ornamentales.</p>
+                
+            </div>
+        </section>
+
         <!-- Contact Us
             ============================================= -->
         <section id="contact">
