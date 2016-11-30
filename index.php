@@ -61,8 +61,8 @@
                                 <li><a href="#owl-hero" class="page-scroll">Home</a></li>
                                 <li><a href="#services" class="page-scroll">About</a></li>
                                 <li><a href="#work-process" class="page-scroll">Products</a></li>
-                                <li><a href="#fun-facts" class="page-scroll">Location</a></li>
                                 <li><a href="#contact" class="page-scroll">Contact</a></li>
+                                <li><a href="#fun-facts" class="page-scroll">Location</a></li>                                
                             </ul>
                         </div>
                         <div class="social-media hidden-sm hidden-xs">
@@ -119,11 +119,11 @@
         <!-- Welcome
             ============================================= -->
         <section id="welcome">
-            <div class="container">
+            <div class="container zomm">
                 <h2>Welcome To <span>TurriPlantas</span></h2>
                 <hr class="sep">
                 <p>BEST GROWN QUALITY!</p>
-                <img class="img-responsive center-block wow fadeInUp" data-wow-delay=".3s" src="imagenes/logo.png" alt="logo" style="width:100px; height: 100px;">
+                <img class="img-responsive center-block wow fadeInUp" data-wow-delay=".3s" src="imagenes/logo.png" alt="logo" style="width:160px; height: 160px;">
             </div>
         </section>
 
@@ -132,7 +132,7 @@
         <section id="services">
             <br><br>
             <div class="container">
-                <h2>Turri Plantas</h2>
+                <h2 class="zoom">Turri Plantas</h2>
                 <hr class="light-sep">
                 <p class="text-justify">Turriplantas es una empresa familiar que inicia operaciones en el año 2003, produciendo y
 
@@ -230,15 +230,15 @@
                     </div>
                     <div class="col-lg-3">
 
-                         <a href="single-page.php"><h4 style="color: #398439">Plantas con raíz</h4></a>
+                        <a href="single-page.php"><h4 style="color: #398439">Plantas con raíz</h4></a>
                     </div>
                     <div class="col-lg-3">
 
-                         <a href="single-page.php"><h4 style="color: #398439">Plantas enraizadas en cubo de oasis</h4></a>
+                        <a href="single-page.php"><h4 style="color: #398439">Plantas enraizadas en cubo de oasis</h4></a>
                     </div>
                     <div class="col-lg-3">
 
-                         <a href="single-page.php"><h4 style="color: #398439">Plantas en callosidad</h4></a>
+                        <a href="single-page.php"><h4 style="color: #398439">Plantas en callosidad</h4></a>
                     </div>
                 </div>
                 <br><br>
@@ -251,7 +251,7 @@
         <section id="portfolio">
             <br><br>
             <div class="container-fluid">
-                <h2>Variedades</h2>
+                <h2 class="zoom">Variedades</h2>
                 <hr class="sep">
 
                 <div class="row">
@@ -294,45 +294,45 @@
                             </div>
                         </a>
                     </div>
-<!--                    <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
-                        <a href="single-page.php" class="portfolio-box" >
-                            <img src="imagenes/sans.jpg" class="img-responsive imgWork" alt="4" >
-                            <div class="portfolio-box-caption">
-                                <div class="portfolio-box-caption-content">
-                                    <div class="project-category text-faded">
-                                        Sans Patentadas +
-                                    </div>
-
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
-                        <a href="single-page.php" class="portfolio-box" >
-                            <img src="imagenes/sans.jpg" class="img-responsive imgWork" alt="4" >
-                            <div class="portfolio-box-caption">
-                                <div class="portfolio-box-caption-content">
-                                    <div class="project-category text-faded">
-                                        Sans Patentadas +
-                                    </div>
-
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
-                        <a href="single-page.php" class="portfolio-box" >
-                            <img src="imagenes/sans.jpg" class="img-responsive" alt="4" >
-                            <div class="portfolio-box-caption">
-                                <div class="portfolio-box-caption-content">
-                                    <div class="project-category text-faded">
-                                        Sans Patentadas +
-                                    </div>
-
-                                </div>
-                            </div>
-                        </a>
-                    </div>-->
+                    <!--                    <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
+                                            <a href="single-page.php" class="portfolio-box" >
+                                                <img src="imagenes/sans.jpg" class="img-responsive imgWork" alt="4" >
+                                                <div class="portfolio-box-caption">
+                                                    <div class="portfolio-box-caption-content">
+                                                        <div class="project-category text-faded">
+                                                            Sans Patentadas +
+                                                        </div>
+                    
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
+                                            <a href="single-page.php" class="portfolio-box" >
+                                                <img src="imagenes/sans.jpg" class="img-responsive imgWork" alt="4" >
+                                                <div class="portfolio-box-caption">
+                                                    <div class="portfolio-box-caption-content">
+                                                        <div class="project-category text-faded">
+                                                            Sans Patentadas +
+                                                        </div>
+                    
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
+                                            <a href="single-page.php" class="portfolio-box" >
+                                                <img src="imagenes/sans.jpg" class="img-responsive" alt="4" >
+                                                <div class="portfolio-box-caption">
+                                                    <div class="portfolio-box-caption-content">
+                                                        <div class="project-category text-faded">
+                                                            Sans Patentadas +
+                                                        </div>
+                    
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>-->
 
                 </div>
             </div>
@@ -433,19 +433,7 @@
             </div>
         </section>
 
-          <section id="fun-facts">
-            <br><br>
-            <div class="container">
-                <h2>LOCALIZACION</h2>
-                <hr class="light-sep">
-                <p class="text-justify">Turriplantas está localizado en Pavones – Turrialba, Costa Rica, en el sector de Valle Verde, a 850
 
-                    metros sobre el nivel de mar, en una zona montañosa con un clima muy agradable e ideal para el
-
-                    cultivo de ciertas variedades de plantas ornamentales.</p>
-                
-            </div>
-        </section>
 
         <!-- Contact Us
             ============================================= -->
@@ -473,6 +461,19 @@
         </section>
         <!-- Google Map
             ============================================= -->
+        <section id="fun-facts">
+            <br><br>
+            <div class="container">
+                <h2 class="zoom">LOCALIZACION</h2>
+                <hr class="light-sep">
+                <p class="text-justify">Turriplantas está localizado en Pavones – Turrialba, Costa Rica, en el sector de Valle Verde, a 850
+
+                    metros sobre el nivel de mar, en una zona montañosa con un clima muy agradable e ideal para el
+
+                    cultivo de ciertas variedades de plantas ornamentales.</p>
+
+            </div>
+        </section>
         <div>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.3559305394588!2d-83.62921468578264!3d9.90428449291681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0d4f3ca877861%3A0x3052cc28f4e6435c!2sTurriplantas+S.A.!5e0!3m2!1sen!2scr!4v1478031724439" width="100%" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
         </div>
