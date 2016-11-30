@@ -159,7 +159,7 @@
                     <div class="row wow fadeInUp" data-wow-delay=".3s">
                         <div class="col-md-4">
                             <div class="media-left"><span class="icon-lightbulb"></span></div>
-                            <div class="media-body">
+                            <div class="media-body zoom">
                                 <h3>Misión</h3>
                                 <p class="text-justify">Mantenernos como uno de los principales productores de plantas ornamentales de Costa Rica,
 
@@ -176,7 +176,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="media-left"><span class="icon-mobile"></span></div>
-                            <div class="media-body">
+                            <div class="media-body zoom">
                                 <h3>Visión</h3>
                                 <p class="text-justify">Producir y exportar ornamentales de superior calidad a la existente en el Mercado. Llevar color y
 
@@ -192,7 +192,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="media-left"><span class="icon-compass"></span></div>
-                            <div class="media-body">
+                            <div class="media-body zoom">
                                 <h3>Valores</h3>
                                 <ul class="text-justify" style="color: white;">
                                     <li>Respeto</li>
