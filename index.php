@@ -90,8 +90,7 @@
                 $image = $imageBusiness->getImagesHome();
             ?>
 
-            <div id="owl-hero" class="owl-carousel owl-theme">
-                
+            <div id="owl-hero" class="owl-carousel owl-theme">                
                 <?php echo '<div class="item" style="background-image: url(imagenes/imagesHome/'.$image[0]->imagePath.')"> 
                     <div class="caption">                    
                         <h1>Turri<span>Plantas</span></h1> 
@@ -110,7 +109,7 @@
             ============================================= -->
         <section id="welcome">
             <div class="container zomm">
-                <h2>Bienvenido a<span>TurriPlantas</span></h2>
+                <h2>Bienvenidos a <span>TurriPlantas</span></h2>
                 <hr class="sep">
                 <p>¡La calidad no nace, se hace!</p>
                 <img class="img-responsive center-block wow fadeInUp" data-wow-delay=".3s" src="imagenes/logo.png" alt="logo" style="width:160px; height: 160px;">
@@ -177,12 +176,11 @@
 
                 <p class="text-justify"> Se maneja una amplia gama de plantas ornamentales que son exportadas según la necesidad de
 
-                    nuestros clientes en las siguientes formas:</p>                   
+                    nuestros clientes en las siguientes formas:</p>                  
 
 
                 <div class="row wow fadeInUp" data-wow-delay=".3s">
-                    <div class="col-lg-3">
-
+                    <div class="col-lg-3">                                                
                         <a href="single-page.php" ><h4 style="color: #398439">Plantas sin raíz</h4></a>
                     </div>
                     <div class="col-lg-3">
@@ -308,7 +306,7 @@
         <section id="contact">
             <br><br>
             <div class="container">
-                <h2>Contact Us</h2>
+                <h2>Contacto Us</h2>
                 <hr class="sep">
                 <p>Get In Touch</p>
                 <div class="col-md-6 col-md-offset-3 wow fadeInUp" data-wow-delay=".3s">
