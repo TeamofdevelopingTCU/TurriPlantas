@@ -3,24 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/TurriPlantas/imagenes/a5.JPG</file>
-            <file>file:/C:/xampp/htdocs/TurriPlantas/single-page.php</file>
-            <file>file:/C:/xampp/htdocs/TurriPlantas/Data/PlantData.php</file>
-            <file>file:/C:/xampp/htdocs/TurriPlantas/bootstrap-assets/css/bootstrap.css</file>
-            <file>file:/C:/xampp/htdocs/TurriPlantas/imagenes/a2.JPG</file>
-            <file>file:/C:/xampp/htdocs/TurriPlantas/css/main.css</file>
-            <file>file:/C:/xampp/htdocs/TurriPlantas/bootstrap-assets/js/bootstrap.js</file>
-            <file>file:/C:/xampp/htdocs/TurriPlantas/img/portfolio/1.jpg</file>
-            <file>file:/C:/xampp/htdocs/TurriPlantas/Data/AdministratorData.php</file>
             <file>file:/C:/xampp/htdocs/TurriPlantas/Data/Data.php</file>
-            <file>file:/C:/xampp/htdocs/TurriPlantas/Data/OrganizationData.php</file>
-            <file>file:/C:/xampp/htdocs/TurriPlantas/imagenes/a4.JPG</file>
+            <file>file:/C:/xampp/htdocs/TurriPlantas/Data/PlantData.php</file>
             <file>file:/C:/xampp/htdocs/TurriPlantas/Data/VarietyData.php</file>
-            <file>file:/C:/xampp/htdocs/TurriPlantas/StyleSinglePage/js/jquery.js</file>
-            <file>file:/C:/xampp/htdocs/TurriPlantas/imagenes/a1.JPG</file>
-            <file>file:/C:/xampp/htdocs/TurriPlantas/imagenes/a3.JPG</file>
+            <file>file:/C:/xampp/htdocs/TurriPlantas/Domain/Organization.php</file>
+            <file>file:/C:/xampp/htdocs/TurriPlantas/Domain/Administrator.php</file>
             <file>file:/C:/xampp/htdocs/TurriPlantas/Data/ImageData.php</file>
-            <file>file:/C:/xampp/htdocs/TurriPlantas/index.php</file>
+            <file>file:/C:/xampp/htdocs/TurriPlantas/Data/AdministratorData.php</file>
+            <file>file:/C:/xampp/htdocs/TurriPlantas/Data/OrganizationData.php</file>
         </group>
     </open-files>
 </project-private>

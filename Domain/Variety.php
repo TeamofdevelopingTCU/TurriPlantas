@@ -4,14 +4,23 @@ class Variety {
 
     private $idVariety;
     private $nameVariety;
+    private $imagePath;
     
-    public function Variety($idVariety, $nameVariety) {
+    public function Variety($idVariety, $nameVariety, $imagePath) {
         $this->idVariety = $idVariety;
         $this->nameVariety = $nameVariety;
+        $this->imagePath = $imagePath;
     }
     
     function getIdVariety() {
         return $this->idVariety;
+    }
+    function getImagePath() {
+        return $this->imagePath;
+    }
+
+    function setImagePath($imagePath) {
+        $this->imagePath = $imagePath;
     }
 
     function getNameVariety() {

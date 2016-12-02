@@ -9,6 +9,6 @@ class VarietyBusiness {
     }
     
     public function getAllVarieties(){        
-        $this->varietyData->getAllVarieties();
+        return $this->varietyData->getAllVarieties();
     }
 }
