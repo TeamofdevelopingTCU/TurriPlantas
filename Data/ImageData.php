@@ -1,7 +1,7 @@
 <?php
 
 include_once 'Data.php';
-include 'Image.php';
+include './Domain/Image.php';
 
 class ImageData extends Data {
     
@@ -15,5 +15,26 @@ class ImageData extends Data {
         }
         return $array;
     }
+    
+    public function getImagesHome(){
+        
+        $conn = new mysqli($this->server, $this->user, $this->password, $this->db);
+        $conn->set_charset('utf8');
+        $query = "call  prc_getImagesHome";
+        $result = mysqli_query($conn, $query);
+        mysqli_close($conn);
+        $array = [];
+        while ($row = mysqli_fetch_array($result)) {
+            $currentImage = new Image("","",$row['imagen_ruta']);
+            array_push($array, $currentImage);
+            
+        }
+        return $array;
+        
+        
+       
+    }
+    
+    
     
 }

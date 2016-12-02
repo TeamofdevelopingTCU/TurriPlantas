@@ -1,7 +1,7 @@
 <?php
 
 include_once 'Data.php';
-include 'Variety.php';
+include './Domain/Variety.php';
 
 class VarietyData extends Data {
     

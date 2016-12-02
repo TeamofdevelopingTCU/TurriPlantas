@@ -2,40 +2,14 @@
 
 class Image {
 
-    private $idImage;
-    private $imagePath;
-    private $description;
+    public $idImage;
+    public $imagePath;
+    public $description;
     
-    public function Image($idImage, $imagePath, $description) {
+    public function Image($idImage, $description,$imagePath) {
         $this->idImage = $idImage;
         $this->imagePath = $imagePath;
         $this->description = $description;
     }
-    
-    function getIdImage() {
-        return $this->idImage;
-    }
-
-    function getImagePath() {
-        return $this->imagePath;
-    }
-
-    function getDescription() {
-        return $this->description;
-    }
-
-    function setIdImage($idImage) {
-        $this->idImage = $idImage;
-    }
-
-    function setImagePath($imagePath) {
-        $this->imagePath = $imagePath;
-    }
-
-    function setDescription($description) {
-        $this->description = $description;
-    }
-
-
     
 }

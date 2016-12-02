@@ -34,6 +34,15 @@
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
 
+        <?php
+        include './Business/AdministratorBusiness.php';
+        include './Business/ImageBusiness.php';
+        include './Business/OrganizationBusiness.php';
+        include './Business/PlantBusiness.php';
+        include './Business/VarietyBusiness.php';
+        ?>
+
+
     </head>
 
     <body>
@@ -58,11 +67,11 @@
                     <div class="collapse navbar-collapse text-center" id="bs-example-navbar-collapse-1">
                         <div class="col-md-8 col-xs-12 nav-wrap">
                             <ul class="nav navbar-nav">
-                                <li><a href="#owl-hero" class="page-scroll">Home</a></li>
-                                <li><a href="#services" class="page-scroll">About</a></li>
-                                <li><a href="#work-process" class="page-scroll">Products</a></li>
-                                <li><a href="#contact" class="page-scroll">Contact</a></li>
-                                <li><a href="#fun-facts" class="page-scroll">Location</a></li>                                
+                                <li><a href="#owl-hero" class="page-scroll">Inicio</a></li>
+                                <li><a href="#services" class="page-scroll">Acerca de</a></li>
+                                <li><a href="#work-process" class="page-scroll">Productos</a></li>
+                                <li><a href="#contact" class="page-scroll">Contacto</a></li>
+                                <li><a href="#fun-facts" class="page-scroll">Localizacion</a></li>                                
                             </ul>
                         </div>
                         <div class="social-media hidden-sm hidden-xs">
@@ -75,44 +84,25 @@
                     </div>
                 </div>
             </nav>
-            <div id="owl-hero" class="owl-carousel owl-theme">
-                <div class="item" style="background-image: url(imagenes/a1.jpg)">
-                    <div class="caption">       
-                        <h1>Turri<span>Plantas</span></h1> 
-                        <h6>BEST GROWN QUALITY!</h6>                   
-                    </div>
-                </div>
-                <div class="item" style="background-image: url(imagenes/a2.jpg)">
-                    <div class="caption">                    
-                        <h1>Turri<span>Plantas</span></h1> 
-                        <h6>BEST GROWN QUALITY!</h6>                   
-                    </div>
-                </div>
-                <div class="item" style="background-image: url(imagenes/a3.jpg)">
-                    <div class="caption">                    
-                        <h1>Turri<span>Plantas</span></h1> 
-                        <h6>BEST GROWN QUALITY!</h6>                    
-                    </div>
-                </div>
-                <div class="item" style="background-image: url(imagenes/a4.jpg)">
-                    <div class="caption">                    
-                        <h1>Turri<span>Plantas</span></h1> 
-                        <h6>BEST GROWN QUALITY!</h6>                    
-                    </div>
-                </div>
-                <div class="item" style="background-image: url(imagenes/a5.jpg)">
-                    <div class="caption">                    
-                        <h1>Turri<span>Plantas</span></h1> 
-                        <h6>BEST GROWN QUALITY!</h6>                    
-                    </div>
-                </div>
-                <div class="item" style="background-image: url(imagenes/a6.jpg)">
-                    <div class="caption">                    
-                        <h1>Turri<span>Plantas</span></h1> 
-                        <h6>BEST GROWN QUALITY!</h6>                    
-                    </div>
-                </div>
 
+            <?php
+                $imageBusiness = new ImageBusiness();
+                $image = $imageBusiness->getImagesHome();
+            ?>
+
+            <div id="owl-hero" class="owl-carousel owl-theme">
+                
+                <?php echo '<div class="item" style="background-image: url(imagenes/imagesHome/'.$image[0]->imagePath.')"> 
+                    <div class="caption">                    
+                        <h1>Turri<span>Plantas</span></h1> 
+                        <h6>¡La calidad no nace, se hace!</h6>                    
+                    </div>
+                </div>';  ?>                         
+                <?php                  
+                 for($i = 1; $i < sizeof($image)-1; $i++){
+                   echo ' <div class="item" style="background-image: url(imagenes/imagesHome/'.$image[$i]->imagePath.')"></div>';
+                 }
+                 ?>                      
             </div>
         </section>
 
@@ -120,73 +110,40 @@
             ============================================= -->
         <section id="welcome">
             <div class="container zomm">
-                <h2>Welcome To <span>TurriPlantas</span></h2>
+                <h2>Bienvenido a<span>TurriPlantas</span></h2>
                 <hr class="sep">
-                <p>BEST GROWN QUALITY!</p>
+                <p>¡La calidad no nace, se hace!</p>
                 <img class="img-responsive center-block wow fadeInUp" data-wow-delay=".3s" src="imagenes/logo.png" alt="logo" style="width:160px; height: 160px;">
             </div>
         </section>
 
         <!-- Services
             ============================================= -->
+
+        <?php
+        $organizationBusiness = new OrganizationBusiness();
+        $organization = $organizationBusiness->getOrganization();
+        ?>
         <section id="services">
             <br><br>
             <div class="container">
                 <h2 class="zoom">Turri Plantas</h2>
                 <hr class="light-sep">
-                <p class="text-justify">Turriplantas es una empresa familiar que inicia operaciones en el año 2003, produciendo y
-
-                    exportando plantas ornamentales de alta calidad.
-
-                    Enfocados en producir sosteniblemente, contamos con 6 Ha de terreno para propagación y
-
-                    producción, manteniendo 2 Ha para protección y reforestación, del total de 8 Ha con que cuenta la
-
-                    empresa.
-
-                    Con el fin de producir plantas de alta calidad, se cumple con todos los requisitos del programa de
-
-                    material limpio (Clean Stock), requerimiento indispensable para exportar Dracaenas a USA, país
-
-                    con el que se mantiene un mercado permanente, además de exportar a Europa y Asia.
-
-                    Nuestra vocación siempre ha sido mantener una relación muy estrecha y directa con cada uno de
-
-                    nuestros clientes, los cuales con sus comentarios y exigencias nos han obligado hacer cada día lo
-
-                    mejor; de allí nuestro eslogan “LA CALIDAD NO NACE….SE HACE” </p>
+                <p class="text-justify"><?php echo $organization->history; ?></p>
                 <div class="services-box">
                     <div class="row wow fadeInUp" data-wow-delay=".3s">
                         <div class="col-md-4">
                             <div class="media-left"><span class="icon-lightbulb"></span></div>
                             <div class="media-body zoom">
                                 <h3>Misión</h3>
-                                <p class="text-justify">Mantenernos como uno de los principales productores de plantas ornamentales de Costa Rica,
-
-                                    guiada por los más altos niveles éticos. Utilizando prácticas agrícolas, agroeconómicas modernas,
-
-                                    sostenibles y amigables con nuestro medio ambiente.
-
-                                    Satisfacer a nuestros clientes en calidad y a su vez mantener su interés puesto en nuestro
-
-                                    producto.
-
-                                    Con este concepto y la ayuda de Dios, cumpliremos nuestras metas.</p>
+                                <p class="text-justify"><?php echo $organization->mission; ?></p>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="media-left"><span class="icon-mobile"></span></div>
                             <div class="media-body zoom">
                                 <h3>Visión</h3>
-                                <p class="text-justify">Producir y exportar ornamentales de superior calidad a la existente en el Mercado. Llevar color y
-
-                                    alegría a los puntos de destino. Mantener el interés de nuestros clientes, manteniendo
-
-                                    consistencia, calidad y servicio. Seguir con todas las regulaciones ambientales, de salud y
-
-                                    seguridad laboral. Manteniendo un ambiente de trabajo justo y agradable para nuestros
-
-                                    colaboradores y sus familias.</p>
+                                <p class="text-justify"><?php echo $organization->view; ?></p>
                             </div>
 
                         </div>
@@ -195,13 +152,13 @@
                             <div class="media-body zoom">
                                 <h3>Valores</h3>
                                 <ul class="text-justify" style="color: white;">
-                                    <li>Respeto</li>
-                                    <li>Humildad</li>
-                                    <li>Comunicación</li>
-                                    <li>Honestidad</li>
-                                    <li>Responsabilidad</li>
-                                    <li>Entusiasmo</li>
-                                    <li>Disciplina</li>
+                                    <?php
+                                    $value = explode(";", $organization->values);
+                                    $max = sizeof($value);                                   
+                                    for ($i = 0; $i < $max; $i++) {
+                                        echo '<li>'.$value[$i].'</li>';
+                                    }
+                                    ?>                                    
                                 </ul>
                             </div>
 
@@ -293,99 +250,10 @@
                                 </div>
                             </div>
                         </a>
-                    </div>
-                    <!--                    <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
-                                            <a href="single-page.php" class="portfolio-box" >
-                                                <img src="imagenes/sans.jpg" class="img-responsive imgWork" alt="4" >
-                                                <div class="portfolio-box-caption">
-                                                    <div class="portfolio-box-caption-content">
-                                                        <div class="project-category text-faded">
-                                                            Sans Patentadas +
-                                                        </div>
-                    
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
-                                            <a href="single-page.php" class="portfolio-box" >
-                                                <img src="imagenes/sans.jpg" class="img-responsive imgWork" alt="4" >
-                                                <div class="portfolio-box-caption">
-                                                    <div class="portfolio-box-caption-content">
-                                                        <div class="project-category text-faded">
-                                                            Sans Patentadas +
-                                                        </div>
-                    
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
-                                            <a href="single-page.php" class="portfolio-box" >
-                                                <img src="imagenes/sans.jpg" class="img-responsive" alt="4" >
-                                                <div class="portfolio-box-caption">
-                                                    <div class="portfolio-box-caption-content">
-                                                        <div class="project-category text-faded">
-                                                            Sans Patentadas +
-                                                        </div>
-                    
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>-->
-
+                    </div>                    
                 </div>
             </div>
-        </section>
-        <!-- Work Process
-            ============================================= -->
-
-<!--        <section id="team">
-            <br><br>
-            <div class="container">
-                <h2>Our Team</h2>
-                <hr class="sep">
-                <p>Designers Behind This Work</p>
-                <div class="row wow fadeInUp" data-wow-delay=".3s">
-                    <div class="col-md-4">
-                        <div class="team">
-                            <img class="img-responsive center-block" src="img/team/MariaDoe.jpg" alt="1">
-                            <h4>Maria Doe</h4>
-                            <p>Designer</p>
-                            <div class="team-social-icons">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-dribbble"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="team">
-                            <img class="img-responsive center-block" src="img/team/JasonDoe.jpg" alt="2">
-                            <h4>Jason Doe</h4>
-                            <p>Developer</p>
-                            <div class="team-social-icons">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-dribbble"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="team">
-                            <img class="img-responsive center-block" src="img/team/MikeDoe.jpg" alt="3">
-                            <h4>Mike Doe</h4>
-                            <p>Photographer</p>
-                            <div class="team-social-icons">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-dribbble"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>-->
+        </section>     
         <!-- Testimonials
             ============================================= -->
         <section id="testimonials">
@@ -466,11 +334,7 @@
             <div class="container">
                 <h2 class="zoom">LOCALIZACION</h2>
                 <hr class="light-sep">
-                <p class="text-justify">Turriplantas está localizado en Pavones – Turrialba, Costa Rica, en el sector de Valle Verde, a 850
-
-                    metros sobre el nivel de mar, en una zona montañosa con un clima muy agradable e ideal para el
-
-                    cultivo de ciertas variedades de plantas ornamentales.</p>
+                <p class="text-justify"><?php echo $organization->location; ?></p>
 
             </div>
         </section>

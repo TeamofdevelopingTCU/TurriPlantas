@@ -1,7 +1,7 @@
 <?php
 
 include_once 'Data.php';
-include 'Administrator.php';
+include './Domain/Administrator.php';
 
 class AdministratorData extends Data {
    
