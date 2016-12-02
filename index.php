@@ -26,7 +26,8 @@
         <link rel="icon" href="imagenes/logo.png" type="image/x-icon"> 
         <link href="css/main.css" rel="stylesheet">
         <!-- Icons Font -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -41,9 +42,7 @@
         include './Business/PlantBusiness.php';
         include './Business/VarietyBusiness.php';
         ?>
-    
     </head>
-
     <body>
         <!-- Preloader
             ============================================= -->
@@ -75,9 +74,7 @@
                         </div>
                         <div class="social-media hidden-sm hidden-xs">
                             <ul class="nav navbar-nav">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>                              
                             </ul>
                         </div>
                     </div>
@@ -300,9 +297,21 @@
 
         <?php
         if (isset($_GET['success'])) {
-            echo '<script>alert("El mensaje se envió con éxito");</script>';
+            echo '
+            <script>                
+                $(document).ready(function(){
+                    modalSelect("¡El mensaje fue enviado correctamente!","Envío exitoso");
+                    $("#myModal").modal("show");
+                });
+            </script>';
         } else if (isset($_GET['error'])) {
-            echo '<script>alert("El mensaje no fue enviado");</script>';
+            echo '
+            <script>                
+                $(document).ready(function(){
+                    modalSelect("¡El mensaje no se pudo enviar correctamente!","Envío fallido");
+                    $("#myModal").modal("show");
+                });
+            </script>';
         }
         ?>
         <!-- Contact Us
@@ -332,6 +341,23 @@
                 </div>
             </div>
         </section>
+
+        <!-- Modal
+            ============================================= -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">    
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title"></h4>
+                    </div>
+                    <div class="modal-body">
+                        
+                    </div>
+                </div>
+
+            </div>
+        </div>
         <!-- Google Map
             ============================================= -->
         <section id="fun-facts">
@@ -353,7 +379,7 @@
                 <div class="social">
                     <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
                 </div>
-                <h6>&copy; 2015 Rise.Development By BootstrapDev</h6>
+                <h6>&copy; 2016 Turriplantas.com</h6>
             </div>
         </footer>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -371,6 +397,15 @@
         <script src="plugins/WOW/dist/wow.min.js"></script>
         <!-- GOOGLE MAP -->
         <script src="https://maps.googleapis.com/maps/api/js"></script>
+        
+        <script>
+             function modalSelect(modalMessage, modalTitle) {
+                 document.getElementsByClassName("modal-title")[0].textContent = modalTitle;
+                 document.getElementsByClassName("modal-body")[0].textContent = modalMessage;
+            }        
+        </script>
+
+
     </body>
 
 </html>
