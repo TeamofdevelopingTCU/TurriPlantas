@@ -41,8 +41,7 @@
         include './Business/PlantBusiness.php';
         include './Business/VarietyBusiness.php';
         ?>
-
-
+    
     </head>
 
     <body>
@@ -86,22 +85,22 @@
             </nav>
 
             <?php
-                $imageBusiness = new ImageBusiness();
-                $image = $imageBusiness->getImagesHome();
+            $imageBusiness = new ImageBusiness();
+            $image = $imageBusiness->getImagesHome();
             ?>
 
             <div id="owl-hero" class="owl-carousel owl-theme">                
-                <?php echo '<div class="item" style="background-image: url(imagenes/imagesHome/'.$image[0]->imagePath.')"> 
+                <?php echo '<div class="item" style="background-image: url(imagenes/imagesHome/' . $image[0]->imagePath . ')"> 
                     <div class="caption">                    
                         <h1>Turri<span>Plantas</span></h1> 
                         <h6>¡La calidad no nace, se hace!</h6>                    
                     </div>
-                </div>';  ?>                         
-                <?php                  
-                 for($i = 1; $i < sizeof($image)-1; $i++){
-                   echo ' <div class="item" style="background-image: url(imagenes/imagesHome/'.$image[$i]->imagePath.')"></div>';
-                 }
-                 ?>                      
+                </div>'; ?>                         
+                <?php
+                for ($i = 1; $i < sizeof($image) - 1; $i++) {
+                    echo ' <div class="item" style="background-image: url(imagenes/imagesHome/' . $image[$i]->imagePath . ')"></div>';
+                }
+                ?>                      
             </div>
         </section>
 
@@ -153,9 +152,9 @@
                                 <ul class="text-justify" style="color: white;">
                                     <?php
                                     $value = explode(";", $organization->values);
-                                    $max = sizeof($value);                                   
+                                    $max = sizeof($value);
                                     for ($i = 0; $i < $max; $i++) {
-                                        echo '<li>'.$value[$i].'</li>';
+                                        echo '<li>' . $value[$i] . '</li>';
                                     }
                                     ?>                                    
                                 </ul>
@@ -299,28 +298,36 @@
             </div>
         </section>
 
-
-
+        <?php
+        if (isset($_GET['success'])) {
+            echo '<script>alert("El mensaje se envió con éxito");</script>';
+        } else if (isset($_GET['error'])) {
+            echo '<script>alert("El mensaje no fue enviado");</script>';
+        }
+        ?>
         <!-- Contact Us
             ============================================= -->
         <section id="contact">
             <br><br>
             <div class="container">
-                <h2>Contacto Us</h2>
+                <h2>Contacto </h2>
                 <hr class="sep">
-                <p>Get In Touch</p>
+                <p>Para cualquier consulta escríbanos, nos gustaría saber de tí y de tus opiniones sobre Turriplantas</p>
                 <div class="col-md-6 col-md-offset-3 wow fadeInUp" data-wow-delay=".3s">
-                    <form>
+                    <form name="frmContacto" method="post" action="./Business/SmtpAction.php">
                         <div class="form-group">
-                            <input type="text" class="form-control" id="Name" placeholder="Name">
+                            <input type="text" class="form-control" id="Name" name="Name" placeholder="Nombre">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" id="Email" placeholder="Email">
+                            <input type="number" class="form-control" id="Telephone" name="Telephone" placeholder="Teléfono">
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" rows="3" placeholder="Message"></textarea>
+                            <input type="email" class="form-control" id="Email" name="Email" placeholder="Correo">
                         </div>
-                        <a href="#" class="btn-block">Send</a>
+                        <div class="form-group">
+                            <textarea class="form-control" rows="3" id="Comments" name="Comments" placeholder="Mensaje"></textarea>
+                        </div>
+                        <input type="submit" value="Enviar" class="btn-block">                        
                     </form>
                 </div>
             </div>
