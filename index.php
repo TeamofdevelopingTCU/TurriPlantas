@@ -28,12 +28,13 @@
         <!-- Icons Font -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">        
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="js/validateFields.js" type="text/javascript"></script>
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
           <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
+        <![endif]-->        
 
         <?php
         include './Business/AdministratorBusiness.php';
@@ -312,6 +313,14 @@
                     $("#myModal").modal("show");
                 });
             </script>';
+        }else if(isset ($_GET['errorCampos'])){
+            echo '
+            <script>                
+                $(document).ready(function(){
+                    modalSelect("¡El mensaje no se pudo enviar, campos vacíos en el formulario!","Envío fallido");
+                    $("#myModal").modal("show");
+                });
+            </script>';
         }
         ?>
         <!-- Contact Us
@@ -323,20 +332,31 @@
                 <hr class="sep">
                 <p>Para cualquier consulta escríbanos, nos gustaría saber de tí y de tus opiniones sobre Turriplantas</p>
                 <div class="col-md-6 col-md-offset-3 wow fadeInUp" data-wow-delay=".3s">
-                    <form name="frmContacto" method="post" action="./Business/SmtpAction.php">
+                    <form name="frmContacto" method="post" enctype="multipart/form-data" action="./Business/SmtpAction.php">
                         <div class="form-group">
                             <input type="text" class="form-control" id="Name" name="Name" placeholder="Nombre">
+                            <label id="error1" style="color: red;"></label>
                         </div>
                         <div class="form-group">
                             <input type="number" class="form-control" id="Telephone" name="Telephone" placeholder="Teléfono">
+                            <label id="error2" style="color: red;"></label>
                         </div>
                         <div class="form-group">
                             <input type="email" class="form-control" id="Email" name="Email" placeholder="Correo">
+                            <label id="error3" style="color: red;"></label>
                         </div>
                         <div class="form-group">
                             <textarea class="form-control" rows="3" id="Comments" name="Comments" placeholder="Mensaje"></textarea>
+                            <label id="error4" style="color: red;"></label>
                         </div>
-                        <input type="submit" value="Enviar" class="btn-block">                        
+
+                        <img id="bar" src="imagenes/progress_bar.gif" alt="" style="width: 60px; height: 60px; "/>
+                        <script type="text/javascript">
+                            document.getElementById('bar').style.visibility = 'hidden';
+                        </script>
+                        <input type="submit" value="Enviar" id="btnAccept" name="btnAccept" 
+                               class="btn-block" onclick="return validateFields()" />     
+                        
                     </form>
                 </div>
             </div>
@@ -352,7 +372,7 @@
                         <h4 class="modal-title"></h4>
                     </div>
                     <div class="modal-body">
-                        
+
                     </div>
                 </div>
 
@@ -395,17 +415,16 @@
         <script src="plugins/inview/jquery.inview.min.js"></script>
         <script src="plugins/Lightbox/dist/js/lightbox.min.js"></script>
         <script src="plugins/WOW/dist/wow.min.js"></script>
+        
         <!-- GOOGLE MAP -->
         <script src="https://maps.googleapis.com/maps/api/js"></script>
-        
+
         <script>
-             function modalSelect(modalMessage, modalTitle) {
-                 document.getElementsByClassName("modal-title")[0].textContent = modalTitle;
-                 document.getElementsByClassName("modal-body")[0].textContent = modalMessage;
-            }        
-        </script>
-
-
+            function modalSelect(modalMessage, modalTitle) {
+                document.getElementsByClassName("modal-title")[0].textContent = modalTitle;
+                document.getElementsByClassName("modal-body")[0].textContent = modalMessage;
+            }
+        </script>      
     </body>
 
 </html>

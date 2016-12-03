@@ -33,5 +33,7 @@ if (strlen($name) > 0 && strlen($email) > 0 &&
         header("location: ../index.php?success=send");
     }
 
+}else{
+    header("location: ../index.php?errorCampos=error");    
 }
 ?>
