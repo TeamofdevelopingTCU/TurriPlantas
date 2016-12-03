@@ -254,73 +254,55 @@
         <section id="testimonials">
             <br><br>
             <div class="container">
-                <h2>¿Que caracteriza nuestra finca?</h2>
+                <h2>¿Qué caracteriza nuestra finca?</h2>
                 <hr class="light-sep">            
                 <div id="owl-testi" class="owl-carousel owl-theme">
-                    <div class="item">
-                        <div class="quote">
-                            <i class="fa fa-quote-left left fa-2x"></i>
-                            <h5>Turriplantas se caracteriza por producir plantas de alta calidad, dando prioridad a la satisfacción de
+                    <?php
+                    $paragraph = explode(".", $organization->characteristics);
+                    foreach ($paragraph as $currentParagraph) {
+                        if(strlen($currentParagraph) > 2){
+                        ?>
+                        <div class="item">
+                            <div class="quote">
+                                <i class="fa fa-quote-left left fa-2x"></i>
+                                <h5><?php echo $currentParagraph; ?> <span></span>.<i class="fa fa-quote-right right fa-2x"></i></h5>
 
-                                nuestros clientes sin miedo al futuro, e innovamos de acuerdo a sus necesidades. Produciendo en
+                            </div>
+                        </div> 
+                        <?php
+                        }
+                    }
+                    ?>
 
-                                armonía con la naturaleza, para lo cual se cuenta con un sistema agroforestal funcional, donde se
-
-                                mezclan las plantas ornamentales con árboles maderables.<span></span>.<i class="fa fa-quote-right right fa-2x"></i></h5>
-
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="quote">
-                            <i class="fa fa-quote-left left fa-2x"></i>
-                            <h5>Además de la producción de plantas ornamentales, se cuenta con 34 variedades de árboles
-
-                                maderables nativos, manteniendo un aproximado de 1300 árboles en activo crecimiento junto a
-
-                                las plantas ornamentales, logrando un ambiente propicio para la producción y a la vez se garantiza
-
-                                el abastecimiento de madera para la infraestructura necesaria dentro de la propia finca. <span></span>.<i class="fa fa-quote-right right fa-2x"></i></h5>
-
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="quote">
-                            <i class="fa fa-quote-left left fa-2x"></i>
-                            <h5>Se cuenta con una fuente de agua propia haciendo a Turriplantas un gran aliado y protector del
-
-                                medio y se aporta a la zona con un paisaje hermoso.<span></span>.<i class="fa fa-quote-right right fa-2x"></i></h5>
-
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
 
         <?php
-        if (isset($_GET['success'])) {
-            echo '
-            <script>                
-                $(document).ready(function(){
-                    modalSelect("¡El mensaje fue enviado correctamente!","Envío exitoso");
-                    $("#myModal").modal("show");
-                });
-            </script>';
-        } else if (isset($_GET['error'])) {
-            echo '
-            <script>                
-                $(document).ready(function(){
-                    modalSelect("¡El mensaje no se pudo enviar correctamente!","Envío fallido");
-                    $("#myModal").modal("show");
-                });
-            </script>';
-        }else if(isset ($_GET['errorCampos'])){
-            echo '
-            <script>                
-                $(document).ready(function(){
-                    modalSelect("¡El mensaje no se pudo enviar, campos vacíos en el formulario!","Envío fallido");
-                    $("#myModal").modal("show");
-                });
-            </script>';
+            if (isset($_GET['success'])) {
+                echo '
+                    <script>                
+                        $(document).ready(function(){
+                            modalSelect("¡El mensaje fue enviado correctamente!","Envío exitoso");
+                            $("#myModal").modal("show");
+                        });
+                    </script>';
+            } else if (isset($_GET['error'])) {
+                echo '
+                    <script>                
+                        $(document).ready(function(){
+                            modalSelect("¡El mensaje no se pudo enviar correctamente!","Envío fallido");
+                            $("#myModal").modal("show");
+                        });
+                    </script>';
+            } else if (isset($_GET['errorCampos'])) {
+                echo '
+                    <script>                
+                        $(document).ready(function(){
+                            modalSelect("¡El mensaje no se pudo enviar, campos vacíos en el formulario!","Envío fallido");
+                            $("#myModal").modal("show");
+                        });
+                    </script>';
         }
         ?>
         <!-- Contact Us
@@ -348,15 +330,10 @@
                         <div class="form-group">
                             <textarea class="form-control" rows="3" id="Comments" name="Comments" placeholder="Mensaje"></textarea>
                             <label id="error4" style="color: red;"></label>
-                        </div>
-
-                        <img id="bar" src="imagenes/progress_bar.gif" alt="" style="width: 60px; height: 60px; "/>
-                        <script type="text/javascript">
-                            document.getElementById('bar').style.visibility = 'hidden';
-                        </script>
+                        </div>                             
                         <input type="submit" value="Enviar" id="btnAccept" name="btnAccept" 
                                class="btn-block" onclick="return validateFields()" />     
-                        
+
                     </form>
                 </div>
             </div>
@@ -415,15 +392,15 @@
         <script src="plugins/inview/jquery.inview.min.js"></script>
         <script src="plugins/Lightbox/dist/js/lightbox.min.js"></script>
         <script src="plugins/WOW/dist/wow.min.js"></script>
-        
+
         <!-- GOOGLE MAP -->
         <script src="https://maps.googleapis.com/maps/api/js"></script>
 
         <script>
-            function modalSelect(modalMessage, modalTitle) {
-                document.getElementsByClassName("modal-title")[0].textContent = modalTitle;
-                document.getElementsByClassName("modal-body")[0].textContent = modalMessage;
-            }
+           function modalSelect(modalMessage, modalTitle) {
+               document.getElementsByClassName("modal-title")[0].textContent = modalTitle;
+               document.getElementsByClassName("modal-body")[0].textContent = modalMessage;
+           }
         </script>      
     </body>
 

@@ -42,12 +42,6 @@ function validateFields() {
     
     if (flag === 1) {
         return false;
-    }else{
-        visibilityBar();
-    }   
-}
-
-function visibilityBar(){
-    document.getElementById("bar").style.visibility = "visible";  
+    }
     return true;
 }
