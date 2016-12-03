@@ -87,16 +87,21 @@
             $image = $imageBusiness->getImagesHome();
             ?>
 
-            <div id="owl-hero" class="owl-carousel owl-theme">                
-                <?php echo '<div class="item" style="background-image: url(imagenes/imagesHome/' . $image[0]->imagePath . ')"> 
-                    <div class="caption">                    
-                        <h1>Turri<span>Plantas</span></h1> 
-                        <h6>¡La calidad no nace, se hace!</h6>                    
-                    </div>
-                </div>'; ?>                         
+            <div id="owl-hero" class="owl-carousel owl-theme">              
+                    
                 <?php
-                for ($i = 1; $i < sizeof($image) - 1; $i++) {
-                    echo ' <div class="item" style="background-image: url(imagenes/imagesHome/' . $image[$i]->imagePath . ')"></div>';
+                for ($i = 0; $i < sizeof($image); $i++) {                    
+                    if($i == 1){
+                        echo 
+                        '<div class="item" style="background-image: url(imagenes/imagesHome/' . $image[$i]->imagePath . ')"> 
+                            <div class="caption">                    
+                                <h1>Turri<span>Plantas</span></h1> 
+                                <h6>¡La calidad no nace, se hace!</h6>                    
+                            </div>
+                        </div>';
+                    }else{
+                        echo ' <div class="item" style="background-image: url(imagenes/imagesHome/' . $image[$i]->imagePath . ')"></div>';
+                    }
                 }
                 ?>                      
             </div>
