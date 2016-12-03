@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/xampp/htdocs/TurriPlantas/imagenes/a5.JPG</file>
             <file>file:/C:/xampp/htdocs/TurriPlantas/imagenes/imagesHome/DSC02486.JPG</file>
             <file>file:/C:/xampp/htdocs/TurriPlantas/Data/PlantData.php</file>
@@ -48,6 +49,16 @@
             <file>file:/C:/xampp/htdocs/TurriPlantas/imagenes/imagesHome/DSC03164.JPG</file>
             <file>file:/C:/xampp/htdocs/TurriPlantas/Data/ImageData.php</file>
             <file>file:/C:/xampp/htdocs/TurriPlantas/imagenes/imagesHome/DSC03257.JPG</file>
+=======
+            <file>file:/C:/xampp/htdocs/TurriPlantas/Data/Data.php</file>
+            <file>file:/C:/xampp/htdocs/TurriPlantas/Data/PlantData.php</file>
+            <file>file:/C:/xampp/htdocs/TurriPlantas/Data/VarietyData.php</file>
+            <file>file:/C:/xampp/htdocs/TurriPlantas/Domain/Organization.php</file>
+            <file>file:/C:/xampp/htdocs/TurriPlantas/Domain/Administrator.php</file>
+            <file>file:/C:/xampp/htdocs/TurriPlantas/Data/ImageData.php</file>
+            <file>file:/C:/xampp/htdocs/TurriPlantas/Data/AdministratorData.php</file>
+            <file>file:/C:/xampp/htdocs/TurriPlantas/Data/OrganizationData.php</file>
+>>>>>>> 527505461e8355a6d1499c0b2f6bbed0450db32a
         </group>
     </open-files>
 </project-private>

@@ -42,6 +42,7 @@
         include './Business/OrganizationBusiness.php';
         include './Business/PlantBusiness.php';
         include './Business/VarietyBusiness.php';
+        include './Business/ProductBusiness.php';
         ?>
     </head>
     <body>
@@ -87,6 +88,7 @@
             $image = $imageBusiness->getImagesHome();
             ?>
 
+<<<<<<< HEAD
             <div id="owl-hero" class="owl-carousel owl-theme">              
                     
                 <?php
@@ -102,6 +104,18 @@
                     }else{
                         echo ' <div class="item" style="background-image: url(imagenes/imagesHome/' . $image[$i]->imagePath . ')"></div>';
                     }
+=======
+            <div id="owl-hero" class="owl-carousel owl-theme">                
+                <?php echo '<div class="item" style="background-image: url(imagenes/imagesHome/' . $image[0]->imagePath . ')"> 
+                    <div class="caption">                    
+                        <h1>Turri<span>Plantas</span></h1> 
+                        <h6>¡La calidad no nace, se hace!</h6>                    
+                    </div>
+                </div>'; ?>                         
+                <?php
+                for ($i = 1; $i < sizeof($image) - 1; $i++) {
+                    echo ' <div class="item" style="background-image: url(imagenes/imagesHome/' . $image[$i]->imagePath . ')"></div>';
+>>>>>>> 527505461e8355a6d1499c0b2f6bbed0450db32a
                 }
                 ?>                      
             </div>
@@ -172,35 +186,31 @@
         <section id="work-process">
             <br><br>
             <div class="container">
-                <h2>Productos</h2>
+                <h2>¿Qué productos vendemos?</h2>
                 <hr class="sep">
-                <p class="text-justify">Nuestros productos son plantas vivas para ser conservadas en maceteros o para reproducción.</p>
-
-                <p class="text-justify"> Se maneja una amplia gama de plantas ornamentales que son exportadas según la necesidad de
-
-                    nuestros clientes en las siguientes formas:</p>                  
-
+                <p class="text-justify">Nuestros productos son plantas vivas para ser conservadas en maceteros o para reproducción. Se maneja una
+                    amplia gama de plantas ornamentales que son exportadas según la necesidad de nuestros clientes. Las plantas se pueden vernder
+                    de las siguientes formas:
+                </p>                  
 
                 <div class="row wow fadeInUp" data-wow-delay=".3s">
-                    <div class="col-lg-3">                                                
-                        <a href="single-page.php" ><h4 style="color: #398439">Plantas sin raíz</h4></a>
-                    </div>
-                    <div class="col-lg-3">
-
-                        <a href="single-page.php"><h4 style="color: #398439">Plantas con raíz</h4></a>
-                    </div>
-                    <div class="col-lg-3">
-
-                        <a href="single-page.php"><h4 style="color: #398439">Plantas enraizadas en cubo de oasis</h4></a>
-                    </div>
-                    <div class="col-lg-3">
-
-                        <a href="single-page.php"><h4 style="color: #398439">Plantas en callosidad</h4></a>
-                    </div>
+                    <?php
+                    $productBusiness = new ProductBusiness();
+                    $products = $productBusiness->getAllProducts();
+                    foreach ($products as $currentProduct) {
+                        ?>
+                        <div class="col-lg-3">                                                
+                            <a><h4 style="color: #398439"><?php echo $currentProduct->getNameProduct(); ?> </h4></a>
+                        </div> 
+                        <?php
+                    }
+                    ?>
                 </div>
                 <br><br>
-                <p class="text-justify">Se trabaja en la demanda con los tamaños. Siendo nuestra especialidad tamaños pequeños que
-                    van desde 6/8” hasta 15/18” en altura.</p>
+                <p class="text-justify">
+                    Se trabaja, con respecto a la demanda, con tamaños según la necesidad del cliente, siendo nuestra especialidad
+                    tamaños pequeños que van desde 6/8” hasta 15/18” en altura.
+                </p>
             </div>
         </section>
         <!-- Portfolio
@@ -212,45 +222,29 @@
                 <hr class="sep">
 
                 <div class="row">
-                    <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
-                        <a class="portfolio-box" href="single-page.php">
-                            <img src="imagenes/agro.jpg" class="img-responsive imgWork" alt="1">
-                            <div class="portfolio-box-caption">
-                                <div class="portfolio-box-caption-content">
-                                    <div class="project-category text-faded">
-                                        Codeaum Variegatum Spp (Croton)
-                                    </div>
+                    <?php
+                    $varietyBusiness = new VarietyBusiness();
+                    $varieties = $varietyBusiness->getAllVarieties();
+                    foreach ($varieties as $currentVariety) {
+                        ?>
+                        <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
+                            <a class="portfolio-box" href="single-page.php">
+                                <?php echo '<img src="./imagenes/' . $currentVariety->getImagePath() . '" class="img-responsive imgWork" alt="1">' ?>
+                                <div class="portfolio-box-caption">
+                                    <div class="portfolio-box-caption-content">
+                                        <div class="project-category text-faded">
+                                            <?php
+                                                echo $currentVariety->getNameVariety();
+                                            ?>
+                                        </div>
 
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
-                        <a href="single-page.php" class="portfolio-box" >
-                            <img src="imagenes/croton.jpg" class="img-responsive imgWork" alt="2">
-                            <div class="portfolio-box-caption">
-                                <div class="portfolio-box-caption-content">
-                                    <div class="project-category text-faded">
-                                        Dracaenas Spp
                                     </div>
-
                                 </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
-                        <a href="single-page.php" class="portfolio-box" >
-                            <img src="imagenes/draca.jpg" class="img-responsive imgWork" alt="3" >
-                            <div class="portfolio-box-caption">
-                                <div class="portfolio-box-caption-content">
-                                    <div class="project-category text-faded">
-                                        Dracaenas Deremensis Spp
-                                    </div>
-
-                                </div>
-                            </div>
-                        </a>
-                    </div>                    
+                            </a>
+                        </div>
+                        <?php
+                    }
+                    ?>
                 </div>
             </div>
         </section>     
