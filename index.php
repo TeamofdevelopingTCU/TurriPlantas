@@ -88,7 +88,6 @@
             $image = $imageBusiness->getImagesHome();
             ?>
 
-<<<<<<< HEAD
             <div id="owl-hero" class="owl-carousel owl-theme">              
                     
                 <?php
@@ -104,18 +103,6 @@
                     }else{
                         echo ' <div class="item" style="background-image: url(imagenes/imagesHome/' . $image[$i]->imagePath . ')"></div>';
                     }
-=======
-            <div id="owl-hero" class="owl-carousel owl-theme">                
-                <?php echo '<div class="item" style="background-image: url(imagenes/imagesHome/' . $image[0]->imagePath . ')"> 
-                    <div class="caption">                    
-                        <h1>Turri<span>Plantas</span></h1> 
-                        <h6>¡La calidad no nace, se hace!</h6>                    
-                    </div>
-                </div>'; ?>                         
-                <?php
-                for ($i = 1; $i < sizeof($image) - 1; $i++) {
-                    echo ' <div class="item" style="background-image: url(imagenes/imagesHome/' . $image[$i]->imagePath . ')"></div>';
->>>>>>> 527505461e8355a6d1499c0b2f6bbed0450db32a
                 }
                 ?>                      
             </div>
