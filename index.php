@@ -26,13 +26,15 @@
         <link rel="icon" href="imagenes/logo.png" type="image/x-icon"> 
         <link href="css/main.css" rel="stylesheet">
         <!-- Icons Font -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="js/validateFields.js" type="text/javascript"></script>
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
           <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
+        <![endif]-->        
 
         <?php
         include './Business/AdministratorBusiness.php';
@@ -42,10 +44,7 @@
         include './Business/VarietyBusiness.php';
         include './Business/ProductBusiness.php';
         ?>
-
-
     </head>
-
     <body>
         <!-- Preloader
             ============================================= -->
@@ -77,9 +76,7 @@
                         </div>
                         <div class="social-media hidden-sm hidden-xs">
                             <ul class="nav navbar-nav">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>                              
                             </ul>
                         </div>
                     </div>
@@ -91,6 +88,23 @@
             $image = $imageBusiness->getImagesHome();
             ?>
 
+<<<<<<< HEAD
+            <div id="owl-hero" class="owl-carousel owl-theme">              
+                    
+                <?php
+                for ($i = 0; $i < sizeof($image); $i++) {                    
+                    if($i == 1){
+                        echo 
+                        '<div class="item" style="background-image: url(imagenes/imagesHome/' . $image[$i]->imagePath . ')"> 
+                            <div class="caption">                    
+                                <h1>Turri<span>Plantas</span></h1> 
+                                <h6>¡La calidad no nace, se hace!</h6>                    
+                            </div>
+                        </div>';
+                    }else{
+                        echo ' <div class="item" style="background-image: url(imagenes/imagesHome/' . $image[$i]->imagePath . ')"></div>';
+                    }
+=======
             <div id="owl-hero" class="owl-carousel owl-theme">                
                 <?php echo '<div class="item" style="background-image: url(imagenes/imagesHome/' . $image[0]->imagePath . ')"> 
                     <div class="caption">                    
@@ -101,6 +115,7 @@
                 <?php
                 for ($i = 1; $i < sizeof($image) - 1; $i++) {
                     echo ' <div class="item" style="background-image: url(imagenes/imagesHome/' . $image[$i]->imagePath . ')"></div>';
+>>>>>>> 527505461e8355a6d1499c0b2f6bbed0450db32a
                 }
                 ?>                      
             </div>
@@ -238,74 +253,107 @@
         <section id="testimonials">
             <br><br>
             <div class="container">
-                <h2>¿Que caracteriza nuestra finca?</h2>
+                <h2>¿Qué caracteriza nuestra finca?</h2>
                 <hr class="light-sep">            
                 <div id="owl-testi" class="owl-carousel owl-theme">
-                    <div class="item">
-                        <div class="quote">
-                            <i class="fa fa-quote-left left fa-2x"></i>
-                            <h5>Turriplantas se caracteriza por producir plantas de alta calidad, dando prioridad a la satisfacción de
+                    <?php
+                    $paragraph = explode(".", $organization->characteristics);
+                    foreach ($paragraph as $currentParagraph) {
+                        if(strlen($currentParagraph) > 2){
+                        ?>
+                        <div class="item">
+                            <div class="quote">
+                                <i class="fa fa-quote-left left fa-2x"></i>
+                                <h5><?php echo $currentParagraph; ?> <span></span>.<i class="fa fa-quote-right right fa-2x"></i></h5>
 
-                                nuestros clientes sin miedo al futuro, e innovamos de acuerdo a sus necesidades. Produciendo en
+                            </div>
+                        </div> 
+                        <?php
+                        }
+                    }
+                    ?>
 
-                                armonía con la naturaleza, para lo cual se cuenta con un sistema agroforestal funcional, donde se
-
-                                mezclan las plantas ornamentales con árboles maderables.<span></span>.<i class="fa fa-quote-right right fa-2x"></i></h5>
-
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="quote">
-                            <i class="fa fa-quote-left left fa-2x"></i>
-                            <h5>Además de la producción de plantas ornamentales, se cuenta con 34 variedades de árboles
-
-                                maderables nativos, manteniendo un aproximado de 1300 árboles en activo crecimiento junto a
-
-                                las plantas ornamentales, logrando un ambiente propicio para la producción y a la vez se garantiza
-
-                                el abastecimiento de madera para la infraestructura necesaria dentro de la propia finca. <span></span>.<i class="fa fa-quote-right right fa-2x"></i></h5>
-
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="quote">
-                            <i class="fa fa-quote-left left fa-2x"></i>
-                            <h5>Se cuenta con una fuente de agua propia haciendo a Turriplantas un gran aliado y protector del
-
-                                medio y se aporta a la zona con un paisaje hermoso.<span></span>.<i class="fa fa-quote-right right fa-2x"></i></h5>
-
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
 
-
-
+        <?php
+            if (isset($_GET['success'])) {
+                echo '
+                    <script>                
+                        $(document).ready(function(){
+                            modalSelect("¡El mensaje fue enviado correctamente!","Envío exitoso");
+                            $("#myModal").modal("show");
+                        });
+                    </script>';
+            } else if (isset($_GET['error'])) {
+                echo '
+                    <script>                
+                        $(document).ready(function(){
+                            modalSelect("¡El mensaje no se pudo enviar correctamente!","Envío fallido");
+                            $("#myModal").modal("show");
+                        });
+                    </script>';
+            } else if (isset($_GET['errorCampos'])) {
+                echo '
+                    <script>                
+                        $(document).ready(function(){
+                            modalSelect("¡El mensaje no se pudo enviar, campos vacíos en el formulario!","Envío fallido");
+                            $("#myModal").modal("show");
+                        });
+                    </script>';
+        }
+        ?>
         <!-- Contact Us
             ============================================= -->
         <section id="contact">
             <br><br>
             <div class="container">
-                <h2>Contacto Us</h2>
+                <h2>Contacto </h2>
                 <hr class="sep">
-                <p>Get In Touch</p>
+                <p>Para cualquier consulta escríbanos, nos gustaría saber de tí y de tus opiniones sobre Turriplantas</p>
                 <div class="col-md-6 col-md-offset-3 wow fadeInUp" data-wow-delay=".3s">
-                    <form>
+                    <form name="frmContacto" method="post" enctype="multipart/form-data" action="./Business/SmtpAction.php">
                         <div class="form-group">
-                            <input type="text" class="form-control" id="Name" placeholder="Name">
+                            <input type="text" class="form-control" id="Name" name="Name" placeholder="Nombre">
+                            <label id="error1" style="color: red;"></label>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" id="Email" placeholder="Email">
+                            <input type="number" class="form-control" id="Telephone" name="Telephone" placeholder="Teléfono">
+                            <label id="error2" style="color: red;"></label>
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" rows="3" placeholder="Message"></textarea>
+                            <input type="email" class="form-control" id="Email" name="Email" placeholder="Correo">
+                            <label id="error3" style="color: red;"></label>
                         </div>
-                        <a href="#" class="btn-block">Send</a>
+                        <div class="form-group">
+                            <textarea class="form-control" rows="3" id="Comments" name="Comments" placeholder="Mensaje"></textarea>
+                            <label id="error4" style="color: red;"></label>
+                        </div>                             
+                        <input type="submit" value="Enviar" id="btnAccept" name="btnAccept" 
+                               class="btn-block" onclick="return validateFields()" />     
+
                     </form>
                 </div>
             </div>
         </section>
+
+        <!-- Modal
+            ============================================= -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">    
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title"></h4>
+                    </div>
+                    <div class="modal-body">
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
         <!-- Google Map
             ============================================= -->
         <section id="fun-facts">
@@ -327,7 +375,7 @@
                 <div class="social">
                     <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
                 </div>
-                <h6>&copy; 2015 Rise.Development By BootstrapDev</h6>
+                <h6>&copy; 2016 Turriplantas.com</h6>
             </div>
         </footer>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -343,8 +391,16 @@
         <script src="plugins/inview/jquery.inview.min.js"></script>
         <script src="plugins/Lightbox/dist/js/lightbox.min.js"></script>
         <script src="plugins/WOW/dist/wow.min.js"></script>
+
         <!-- GOOGLE MAP -->
         <script src="https://maps.googleapis.com/maps/api/js"></script>
+
+        <script>
+           function modalSelect(modalMessage, modalTitle) {
+               document.getElementsByClassName("modal-title")[0].textContent = modalTitle;
+               document.getElementsByClassName("modal-body")[0].textContent = modalMessage;
+           }
+        </script>      
     </body>
 
 </html>
