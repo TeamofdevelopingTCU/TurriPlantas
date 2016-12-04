@@ -213,7 +213,7 @@
                     foreach ($varieties as $currentVariety) {
                         ?>
                         <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
-                            <a class="portfolio-box" href="single-page.php">
+                            <a class="portfolio-box" href="single-page.php?id=<?php echo $currentVariety->getIdVariety(); ?>">
                                 <?php echo '<img src="./imagenes/' . $currentVariety->getImagePath() . '" class="img-responsive imgWork" alt="1">' ?>
                                 <div class="portfolio-box-caption">
                                     <div class="portfolio-box-caption-content">

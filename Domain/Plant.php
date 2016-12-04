@@ -4,17 +4,17 @@ class Plant {
     private $idPlant;
     private $scientificName;
     private $commonName;
-    private $imagePath;
+    private $idOrganization;
     private $variety;
     
-    public function Plant($idPlant, $scientificName, $commonName, $imagePath, $variety) {
+    public function Plant($idPlant, $scientificName, $commonName, $idOrganization, $variety) {
         $this->idPlant = $idPlant;
         $this->scientificName = $scientificName;
         $this->commonName = $commonName;
-        $this->imagePath = $imagePath;
+        $this->idOrganization = $idOrganization;
         $this->variety = $variety;
     }
-    
+
     function getIdPlant() {
         return $this->idPlant;
     }
@@ -27,8 +27,8 @@ class Plant {
         return $this->commonName;
     }
 
-    function getImagePath() {
-        return $this->imagePath;
+    function getIdOrganization() {
+        return $this->idOrganization;
     }
 
     function getVariety() {
@@ -47,8 +47,8 @@ class Plant {
         $this->commonName = $commonName;
     }
 
-    function setImagePath($imagePath) {
-        $this->imagePath = $imagePath;
+    function setIdOrganization($idOrganization) {
+        $this->idOrganization = $idOrganization;
     }
 
     function setVariety($variety) {
