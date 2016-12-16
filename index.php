@@ -136,22 +136,22 @@
                     <div class="row wow fadeInUp" data-wow-delay=".3s">
                         <div class="col-md-4">
                             <div class="media-left"><span class="icon-lightbulb"></span></div>
-                            <div class="media-body zoom">
+                            <div class="zoom"><div class="media-body">
                                 <h3>Misión</h3>
                                 <p class="text-justify"><?php echo $organization->mission; ?></p>
-                            </div>
+                            </div></div>
                         </div>
                         <div class="col-md-4">
                             <div class="media-left"><span class="icon-mobile"></span></div>
-                            <div class="media-body zoom">
+                            <div class="zoom"><div class="media-body">
                                 <h3>Visión</h3>
                                 <p class="text-justify"><?php echo $organization->view; ?></p>
-                            </div>
+                            </div></div>
 
                         </div>
                         <div class="col-md-4">
                             <div class="media-left"><span class="icon-compass"></span></div>
-                            <div class="media-body zoom">
+                            <div class="zoom"><div class="media-body">
                                 <h3>Valores</h3>
                                 <ul class="text-justify" style="color: white;">
                                     <?php
@@ -164,7 +164,7 @@
                                 </ul>
                             </div>
 
-                        </div>
+                        </div></div>
 
                     </div>
                 </div>
@@ -173,7 +173,7 @@
         <section id="work-process">
             <br><br>
             <div class="container">
-                <h2>¿Qué productos vendemos?</h2>
+                <h2 class="zoom">¿Qué productos vendemos?</h2>
                 <hr class="sep">
                 <p class="text-justify">Nuestros productos son plantas vivas para ser conservadas en maceteros o para reproducción. Se maneja una
                     amplia gama de plantas ornamentales que son exportadas según la necesidad de nuestros clientes. Las plantas se pueden vernder
@@ -186,8 +186,9 @@
                     $products = $productBusiness->getAllProducts();
                     foreach ($products as $currentProduct) {
                         ?>
-                        <div class="col-lg-3">                                                
-                            <a><h4 style="color: #398439"><?php echo $currentProduct->getNameProduct(); ?> </h4></a>
+                        <div class="col-lg-3">  
+                            <img class="img-responsive" style="width: 150px; height: 150px; position: relative; left: 65px;" src="imagenes/CrBanana.JPG" alt=""/>
+                            <h4 class="zoom" style="color: #398439;"><?php echo $currentProduct->getNameProduct(); ?> </h4>
                         </div> 
                         <?php
                     }
@@ -341,6 +342,27 @@
 
             </div>
         </div>
+        
+        <div class="modal fade" id="myModal2" role="dialog">
+            <div class="modal-dialog">    
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Desarrolladores:</h4>
+                    </div>
+                    <div class="modal-body">
+                        <ul>
+                        <li><a class="Desa1" href="https://www.facebook.com/michael.melendezm?fref=grp_mmbr_list"></a></li>
+                        <li><a class="Desa2" href="https://www.facebook.com/joseph.cordero.94?fref=grp_mmbr_list"></a></li>
+                        <li><a class="Desa3" href="https://www.facebook.com/daylan.chavarriaperez"></a></li>
+                        <li><a class="Desa4" href="https://www.facebook.com/enb11"></a></li>
+                        <li><a class="Desa5" href="https://www.facebook.com/gustavo.najeranajera?fref=ts"></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
         <!-- Google Map
             ============================================= -->
         <section id="fun-facts">
@@ -363,6 +385,11 @@
                     <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
                 </div>
                 <h6>&copy; 2016 Turriplantas.com</h6>
+                <button onclick="return modalSelectDevelo('Michael Meléndez Mesén',
+                            'Joseph Cordero Marín','Daylan Chavarría Pérez',
+                            'Edwin Navarro Barahona','Gustavo Najera Najera'); "type="button" class="btn btn-main"
+                            data-toggle="modal" data-target="#myModal2">
+                    TCU 563 Universidad de Costa Rica sede del Atlántico</button>
             </div>
         </footer>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -386,6 +413,13 @@
            function modalSelect(modalMessage, modalTitle) {
                document.getElementsByClassName("modal-title")[0].textContent = modalTitle;
                document.getElementsByClassName("modal-body")[0].textContent = modalMessage;
+           }
+            function modalSelectDevelo(name1,name2,name3,name4,name5) {              
+               document.getElementsByClassName("Desa1")[0].textContent = name1;
+               document.getElementsByClassName("Desa2")[0].textContent = name2;
+               document.getElementsByClassName("Desa3")[0].textContent = name3;
+               document.getElementsByClassName("Desa4")[0].textContent = name4;
+               document.getElementsByClassName("Desa5")[0].textContent = name5;               
            }
         </script>      
     </body>

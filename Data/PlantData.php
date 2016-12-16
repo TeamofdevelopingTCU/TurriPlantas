@@ -7,6 +7,7 @@ class PlantData extends Data{
     
     public function getAllPlants() {
         $conn = mysqli_connect($this->server, $this->user, $this->password, $this->db);
+        $conn->set_charset('utf8');
         $result = mysqli_query($conn, "call pcr_getPlants");
         $array = [];
         while ($row = mysqli_fetch_array($result)) {
@@ -19,6 +20,7 @@ class PlantData extends Data{
     
     public function getPlantasByVariety($idVariety) {
         $conn = mysqli_connect($this->server, $this->user, $this->password, $this->db);
+        $conn->set_charset('utf8');
         $result = mysqli_query($conn, "call pcr_getPlantsByVariety(" . $idVariety . ")");
         $array = [];
         while ($row = mysqli_fetch_array($result)) {

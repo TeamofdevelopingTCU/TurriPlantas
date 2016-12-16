@@ -1,21 +1,18 @@
 <html>
     <head>
-
-
-
         <title>Turriplantas</title>
         <meta charset="UTF-8">
         <link rel="icon" href="imagenes/logo.png" type="image/x-icon">   
-        <link rel="stylesheet" href="StyleSinglePage/css/bootstrap.css" type="text/css" media="screen">
+        <!--<link rel="stylesheet" href="StyleSinglePage/css/bootstrap.css" type="text/css" media="screen">-->
         <link rel="stylesheet" href="StyleSinglePage/css/responsive.css" type="text/css" media="screen">
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type='text/css'>
         <link rel="stylesheet" href="css/carrousel.css">
         <link rel="stylesheet" href="StyleSinglePage/css/style.css" type="text/css" media="screen">
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
-        <script type="text/javascript" src="StyleSinglePage/js/superfish.js"></script>
-        <script type="text/javascript" src="StyleSinglePage/js/jquery.cookie.js"></script>   
+<!--        <script type="text/javascript" src="StyleSinglePage/js/superfish.js"></script>
+        <script type="text/javascript" src="StyleSinglePage/js/jquery.cookie.js"></script>   -->
 
-        <script type="text/javascript">
+<!--        <script type="text/javascript">
             if ($(window).width() > 1024) {
             }
         </script>
@@ -33,7 +30,7 @@
                     jQuery(this).css('display', 'none')
                 });
             });
-        </script>
+        </script>-->
 
         <?php
         include './Business/PlantBusiness.php';
@@ -43,16 +40,16 @@
     </head>
     <body>       
         <!--============================== header =================================-->
-        <header style="width: 100%; height: 45px;">
+        <header style="width: 100%; height: 120px;">
             <div class="container clearfix">
                 <div class="row">
                     <div class="span12">
                         <div class="navbar navbar_">
                             <div class="container">
-                                <h1 class="brand brand_"><a href="index.php"><img alt="" src="imagenes/logo.png" style="width:65px; height: 60px;"> </a></h1>
-                                <div class="nav-collapse nav-collapse_  collapse">
-                                    <ul class="nav navbar-nav ">
-                                        <li><a href="index.php">Home</a></li>
+                                <h1 class="brand brand_"><a href="index.php"><img alt="" src="imagenes/logo.png" style="width:70px; height: 70px; position: relative; bottom: 20px;"> </a></h1>
+                                <div>
+                                    <ul class="nav navbar-nav">
+                                        <li><a style="color: whitesmoke; position: relative; left: 20px; font-size: 20px;" href="index.php">Inicio</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -62,21 +59,21 @@
             </div>
         </header>
         <div class="bg-content">  
-            <br><br>
-            <!--<div id="home"><a href="index.php">Home</a></div>-->
+            <br><br>           
             <!--============================== content =================================-->      
-            <div id="content"><div class="ic">More Website Templates @ TemplateMonster.com. November19, 2012!</div>
+            <div id="content"><div class="ic"></div>
                 <div class="container">
                     <div class="row">
                         <article class="span8">
                             <div class="inner-1"> 
                                 <div class="wrapper">
-                                    <ol>
+                                    <div><h3 style="color: #398439;">Variedades</h3></div>
+                                    <ol class="list extra extra1">
                                         <?php
                                         $plantBusiness = new PlantBusiness();
                                         $plants = $plantBusiness->getPlantasByVariety($_GET['id']);
                                         foreach ($plants as $currentPlant) {
-                                            echo '<li><a>' . $currentPlant->getScientificName() . '</a></li>';
+                                            echo '<li>' . $currentPlant->getScientificName() . '</li>';
                                         }
                                         ?>
                                     </ol>
@@ -140,16 +137,14 @@
                 <ul class="list-social pull-right">
 
                 </ul>
-                <div class="privacy pull-left">Website Template designed by <a href="http://www.templatemonster.com/" target="_blank" rel="nofollow">TemplateMonster.com</a> </div>
+                <div class="privacy pull-left"><h6 style="font-size: 20px; ">&copy; 2016 Turriplantas.com</h6></div>
             </div>
         </footer>
-
+     
         <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
         <script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
-
         <script src="js/carrousel.js"></script>
-
-        <script type="text/javascript" src="StyleSinglePage/js/bootstrap.js"></script>
+        <!--<script type="text/javascript" src="StyleSinglePage/js/bootstrap.js"></script>-->
 
     </body>
 </html>

@@ -8,6 +8,7 @@ class VarietyData extends Data {
     
     public function getAllVarieties() {
         $conn = mysqli_connect($this->server, $this->user, $this->password, $this->db);
+        $conn->set_charset('utf8');
         $result = mysqli_query($conn, "call pcr_getVarieties ");
         $array = [];
         while ($row = mysqli_fetch_array($result)) {
