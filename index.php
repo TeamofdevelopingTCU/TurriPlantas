@@ -57,7 +57,7 @@
                 <div class="container">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                            <span class="sr-only">Toggle navigation</span>
+                            <span class="sr-only">Turriplantas</span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
@@ -71,9 +71,17 @@
                                 <li><a href="#services" class="page-scroll">Acerca de</a></li>
                                 <li><a href="#work-process" class="page-scroll">Productos</a></li>
                                 <li><a href="#contact" class="page-scroll">Contacto</a></li>
-                                <li><a href="#fun-facts" class="page-scroll">Localizacion</a></li>                                
+                                <li><a href="#fun-facts" class="page-scroll">Localizacion</a></li> 
+                                
                             </ul>
+                            <div style="position: relative; top: 28px;"id="google_translate_element"></div>
+                            <script type="text/javascript">
+                            function googleTranslateElementInit() {
+                                new google.translate.TranslateElement({pageLanguage: 'es', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+                            }
+                            </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
                         </div>
+     
                         <div class="social-media hidden-sm hidden-xs">
                             <ul class="nav navbar-nav">
                                 <li><a href="#"><i class="fa fa-facebook"></i></a></li>                              
@@ -303,18 +311,22 @@
                 <div class="col-md-6 col-md-offset-3 wow fadeInUp" data-wow-delay=".3s">
                     <form name="frmContacto" method="post" enctype="multipart/form-data" action="./Business/SmtpAction.php">
                         <div class="form-group">
+                            <label>Nombre</label>
                             <input type="text" class="form-control" id="Name" name="Name" placeholder="Nombre">
                             <label id="error1" style="color: red;"></label>
                         </div>
                         <div class="form-group">
+                            <label>Teléfono</label>
                             <input type="number" class="form-control" id="Telephone" name="Telephone" placeholder="Teléfono">
                             <label id="error2" style="color: red;"></label>
                         </div>
                         <div class="form-group">
+                            <label>Correo electrónico</label>
                             <input type="email" class="form-control" id="Email" name="Email" placeholder="Correo">
                             <label id="error3" style="color: red;"></label>
                         </div>
                         <div class="form-group">
+                            <label>Mensaje</label>
                             <textarea class="form-control" rows="3" id="Comments" name="Comments" placeholder="Mensaje"></textarea>
                             <label id="error4" style="color: red;"></label>
                         </div>                             

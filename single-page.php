@@ -9,29 +9,6 @@
         <link rel="stylesheet" href="css/carrousel.css">
         <link rel="stylesheet" href="StyleSinglePage/css/style.css" type="text/css" media="screen">
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
-<!--        <script type="text/javascript" src="StyleSinglePage/js/superfish.js"></script>
-        <script type="text/javascript" src="StyleSinglePage/js/jquery.cookie.js"></script>   -->
-
-<!--        <script type="text/javascript">
-            if ($(window).width() > 1024) {
-            }
-        </script>
-
-        <script>
-            jQuery(window).load(function () {
-                $x = $(window).width();
-                if ($x > 1024)
-                {
-                    jQuery("#content .row").preloader();
-                }
-                jQuery(".list-blog li:last-child").addClass("last");
-                jQuery(".list li:last-child").addClass("last");
-                jQuery('.spinner').animate({'opacity': 0}, 1000, 'easeOutCubic', function () {
-                    jQuery(this).css('display', 'none')
-                });
-            });
-        </script>-->
-
         <?php
         include './Business/PlantBusiness.php';
         include './Business/VarietyBusiness.php';
@@ -50,7 +27,14 @@
                                 <div>
                                     <ul class="nav navbar-nav">
                                         <li><a style="color: whitesmoke; position: relative; left: 20px; font-size: 20px;" href="index.php">Inicio</a></li>
+                                       
                                     </ul>
+                                    <div style="position: relative; left: 45px; top: 15px;"id="google_translate_element"></div>
+                                    <script type="text/javascript">
+                                        function googleTranslateElementInit() {
+                                            new google.translate.TranslateElement({pageLanguage: 'es', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+                                        }
+                                    </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
                                 </div>
                             </div>
                         </div>
@@ -143,8 +127,7 @@
      
         <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
         <script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
-        <script src="js/carrousel.js"></script>
-        <!--<script type="text/javascript" src="StyleSinglePage/js/bootstrap.js"></script>-->
+        <script src="js/carrousel.js"></script> 
 
     </body>
 </html>
