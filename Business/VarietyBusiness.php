@@ -11,4 +11,8 @@ class VarietyBusiness {
     public function getAllVarieties(){        
         return $this->varietyData->getAllVarieties();
     }
+    
+    public function getImagesVariety($idVariety) {
+        return $this->varietyData->getImagesVariety($idVariety);
+    }
 }

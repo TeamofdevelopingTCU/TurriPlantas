@@ -69,52 +69,48 @@
                 <div class="container">
                     <div class="row">
                         <article class="span8">
-                            <div class="inner-1">         
-                                <ul class="list-blog">
-
-                                    <?php
-                                    $plantBusiness = new PlantBusiness();
-                                    $plants = $plantBusiness->getPlantasByVariety($_GET['id']);
-                                    foreach ($plants as $currentPlant) {
-                                        ?>
-                                        <li>  
-                                            <h3><?php echo $currentPlant->getScientificName(); ?></h3>     
-                                            <br>
-                                            <div class="clear"></div>            
-                                            <div class="carousel slide multi-item-carousel" id="theCarousel<?php echo $currentPlant->getIdPlant(); ?>">
-                                                <div class="carousel-inner">
-                                                    <div class="item active">
-                                                        <div class="col-xs-4"><a><img src="http://placehold.it/300/f44336/000000" class="img-responsive"></a></div>
-                                                    </div>
-                                                    <div class="item">
-                                                        <div class="col-xs-4"><a href="#1"><img src="http://placehold.it/300/e91e63/000000" class="img-responsive"></a></div>
-                                                    </div>
-                                                    <div class="item">
-                                                        <div class="col-xs-4"><a href="#1"><img src="http://placehold.it/300/9c27b0/000000" class="img-responsive"></a></div>
-                                                    </div>
-                                                    <div class="item">
-                                                        <div class="col-xs-4"><a href="#1"><img src="http://placehold.it/300/673ab7/000000" class="img-responsive"></a></div>
-                                                    </div>
-                                                    <div class="item">
-                                                        <div class="col-xs-4"><a href="#1"><img src="http://placehold.it/300/4caf50/000000" class="img-responsive"></a></div>
-                                                    </div>
-                                                    <div class="item">
-                                                        <div class="col-xs-4"><a href="#1"><img src="http://placehold.it/300/8bc34a/000000" class="img-responsive"></a></div>
-                                                    </div>
-                                                    <div class="item">
-                                                        <div class="col-xs-4"><a href="#1"><img src="http://placehold.it/300/8bc34a/000000" class="img-responsive"></a></div>
-                                                    </div>
-
-                                                    <!--  Example item end -->
-                                                </div>
-                                                <a class="left carousel-control" href="#theCarousel<?php echo $currentPlant->getIdPlant(); ?>" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
-                                                <a class="right carousel-control" href="#theCarousel<?php echo $currentPlant->getIdPlant(); ?>" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
-                                            </div>  
-                                        </li>
+                            <div class="inner-1"> 
+                                <div class="wrapper">
+                                    <ol>
                                         <?php
-                                    }
+                                        $plantBusiness = new PlantBusiness();
+                                        $plants = $plantBusiness->getPlantasByVariety($_GET['id']);
+                                        foreach ($plants as $currentPlant) {
+                                            echo '<li><a>' . $currentPlant->getScientificName() . '</a></li>';
+                                        }
+                                        ?>
+                                    </ol>
+                                </div>
+                                <div class="clear"></div>
+                                <br/><br/>
+                                <?php
+                                $varBusiness = new VarietyBusiness();
+                                $images = $varBusiness->getImagesVariety($_GET['id']);
+                                if ($images != -1) {
                                     ?>
-                                </ul>
+                                    <div class="carousel slide multi-item-carousel" id="theCarousel<?php echo $currentPlant->getIdPlant(); ?>">
+                                        <div class="carousel-inner">
+                                            <?php
+                                            $flag = 0;
+                                            foreach ($images as $currentImage) {
+                                                if ($flag == 0) {
+                                                    echo '<div class="item active">';
+                                                    echo '<div class = "col-xs-4"><a><img src = "./imagenes/' . $currentImage->imagePath . '" class = "img-responsive"></a></div>';
+                                                } else {
+                                                    echo '<div class="item">';
+                                                    echo '<div class = "col-xs-4"><a href="#1"><img src = "./imagenes/' . $currentImage->imagePath . '" class = "img-responsive"></a></div>';
+                                                }
+                                                $flag = 1;
+                                                echo '</div>';
+                                            }
+                                            ?>
+                                        </div>
+                                        <a class="left carousel-control" href="#theCarousel<?php echo $currentPlant->getIdPlant(); ?>" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+                                        <a class="right carousel-control" href="#theCarousel<?php echo $currentPlant->getIdPlant(); ?>" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+                                    </div> 
+                                    <?php
+                                }
+                                ?>
                             </div>  
                         </article>
                         <article class="span4">
@@ -132,20 +128,17 @@
                                 }
                                 ?>
                             </ul>
-
                         </article>
                     </div>
                 </div>
             </div>
         </div>
 
-
-
         <!--============================== footer =================================-->
         <footer>
             <div class="container clearfix">
                 <ul class="list-social pull-right">
-                    
+
                 </ul>
                 <div class="privacy pull-left">Website Template designed by <a href="http://www.templatemonster.com/" target="_blank" rel="nofollow">TemplateMonster.com</a> </div>
             </div>

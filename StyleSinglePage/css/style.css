@@ -1286,3 +1286,37 @@ footer {
 #home{
     margin-left: 95px;
 }
+
+
+
+ol
+{
+  width: 45em;  /* room for 3 columns */
+}
+ol li
+{
+  float: left;
+  width: 15em;  /* accommodate the widest item */
+  color: #398439;
+}
+/* stop the floating after the list */
+br
+{
+  clear: left;
+}
+/* separate the list from what follows it */
+div.wrapper
+{
+  margin-bottom: 1em;
+}
+ol li a
+{
+  display: block;
+  width: 12em;
+  color: black;
+  text-decoration: black;
+}
+ol li a:hover
+{
+  display: none;
+}
