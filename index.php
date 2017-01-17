@@ -57,7 +57,7 @@
                 <div class="container">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                            <span class="sr-only">Toggle navigation</span>
+                            <span class="sr-only">Turriplantas</span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
@@ -71,9 +71,17 @@
                                 <li><a href="#services" class="page-scroll">Acerca de</a></li>
                                 <li><a href="#work-process" class="page-scroll">Productos</a></li>
                                 <li><a href="#contact" class="page-scroll">Contacto</a></li>
-                                <li><a href="#fun-facts" class="page-scroll">Localizacion</a></li>                                
+                                <li><a href="#fun-facts" class="page-scroll">Localización</a></li> 
+                                
                             </ul>
+                            <div style="position: relative; top: 28px;"id="google_translate_element"></div>
+                            <script type="text/javascript">
+                            function googleTranslateElementInit() {
+                                new google.translate.TranslateElement({pageLanguage: 'es', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+                            }
+                            </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
                         </div>
+     
                         <div class="social-media hidden-sm hidden-xs">
                             <ul class="nav navbar-nav">
                                 <li><a href="#"><i class="fa fa-facebook"></i></a></li>                              
@@ -129,29 +137,29 @@
         <section id="services">
             <br><br>
             <div class="container">
-                <h2 class="zoom">Turri Plantas</h2>
+                <h2 class="zoom">Turriplantas</h2>
                 <hr class="light-sep">
                 <p class="text-justify"><?php echo $organization->history; ?></p>
                 <div class="services-box">
                     <div class="row wow fadeInUp" data-wow-delay=".3s">
                         <div class="col-md-4">
                             <div class="media-left"><span class="icon-lightbulb"></span></div>
-                            <div class="media-body zoom">
+                            <div class="zoom"><div class="media-body">
                                 <h3>Misión</h3>
                                 <p class="text-justify"><?php echo $organization->mission; ?></p>
-                            </div>
+                            </div></div>
                         </div>
                         <div class="col-md-4">
                             <div class="media-left"><span class="icon-mobile"></span></div>
-                            <div class="media-body zoom">
+                            <div class="zoom"><div class="media-body">
                                 <h3>Visión</h3>
                                 <p class="text-justify"><?php echo $organization->view; ?></p>
-                            </div>
+                            </div></div>
 
                         </div>
                         <div class="col-md-4">
                             <div class="media-left"><span class="icon-compass"></span></div>
-                            <div class="media-body zoom">
+                            <div class="zoom"><div class="media-body">
                                 <h3>Valores</h3>
                                 <ul class="text-justify" style="color: white;">
                                     <?php
@@ -164,7 +172,7 @@
                                 </ul>
                             </div>
 
-                        </div>
+                        </div></div>
 
                     </div>
                 </div>
@@ -173,10 +181,10 @@
         <section id="work-process">
             <br><br>
             <div class="container">
-                <h2>¿Qué productos vendemos?</h2>
+                <h2 class="zoom">¿Qué productos vendemos?</h2>
                 <hr class="sep">
                 <p class="text-justify">Nuestros productos son plantas vivas para ser conservadas en maceteros o para reproducción. Se maneja una
-                    amplia gama de plantas ornamentales que son exportadas según la necesidad de nuestros clientes. Las plantas se pueden vernder
+                    amplia gama de plantas ornamentales que son exportadas según la necesidad de nuestros clientes. Las plantas se pueden vender
                     de las siguientes formas:
                 </p>                  
 
@@ -186,8 +194,9 @@
                     $products = $productBusiness->getAllProducts();
                     foreach ($products as $currentProduct) {
                         ?>
-                        <div class="col-lg-3">                                                
-                            <a><h4 style="color: #398439"><?php echo $currentProduct->getNameProduct(); ?> </h4></a>
+                        <div class="col-lg-3">  
+                            <?php echo '<img class="img-responsive zoom" style="width: 150px; height: 150px; position: relative; left: 65px;" src="./imagenes/'.$currentProduct->getImagePath().'" alt=""/>'; ?>
+                            <h4 class="zoom" style="color: #398439;"><?php echo $currentProduct->getNameProduct(); ?> </h4>
                         </div> 
                         <?php
                     }
@@ -195,7 +204,7 @@
                 </div>
                 <br><br>
                 <p class="text-justify">
-                    Se trabaja, con respecto a la demanda, con tamaños según la necesidad del cliente, siendo nuestra especialidad
+                    Se trabaja con respecto a la demanda, con tamaños según la necesidad del cliente, siendo nuestra especialidad
                     tamaños pequeños que van desde 6/8” hasta 15/18” en altura.
                 </p>
             </div>
@@ -302,20 +311,24 @@
                 <div class="col-md-6 col-md-offset-3 wow fadeInUp" data-wow-delay=".3s">
                     <form name="frmContacto" method="post" enctype="multipart/form-data" action="./Business/SmtpAction.php">
                         <div class="form-group">
+                            <label for="Nombre">Nombre</label>
                             <input type="text" class="form-control" id="Name" name="Name" placeholder="Nombre">
-                            <label id="error1" style="color: red;"></label>
+                            <label for="error1" id="error1" style="color: red;"></label>
                         </div>
                         <div class="form-group">
+                            <label for="Telefono">Teléfono</label>
                             <input type="number" class="form-control" id="Telephone" name="Telephone" placeholder="Teléfono">
-                            <label id="error2" style="color: red;"></label>
+                            <label for="error2" id="error2" style="color: red;"></label>
                         </div>
                         <div class="form-group">
+                            <label for="Correo electronico">Correo electrónico</label>
                             <input type="email" class="form-control" id="Email" name="Email" placeholder="Correo">
-                            <label id="error3" style="color: red;"></label>
+                            <label for="error3" id="error3" style="color: red;"></label>
                         </div>
                         <div class="form-group">
+                            <label for="Mensaje">Mensaje</label>
                             <textarea class="form-control" rows="3" id="Comments" name="Comments" placeholder="Mensaje"></textarea>
-                            <label id="error4" style="color: red;"></label>
+                            <label for="error4" id="error4" style="color: red;"></label>
                         </div>                             
                         <input type="submit" value="Enviar" id="btnAccept" name="btnAccept" 
                                class="btn-block" onclick="return validateFields()" />     
@@ -341,12 +354,33 @@
 
             </div>
         </div>
+        
+        <div class="modal fade" id="myModal2" role="dialog">
+            <div class="modal-dialog">    
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Desarrolladores:</h4>
+                    </div>
+                    <div class="modal-body">
+                        <ul>
+                        <li><a class="Desa1" href="https://www.facebook.com/michael.melendezm?fref=grp_mmbr_list"></a></li>
+                        <li><a class="Desa2" href="https://www.facebook.com/joseph.cordero.94?fref=grp_mmbr_list"></a></li>
+                        <li><a class="Desa3" href="https://www.facebook.com/daylan.chavarriaperez"></a></li>
+                        <li><a class="Desa4" href="https://www.facebook.com/enb11"></a></li>
+                        <li><a class="Desa5" href="https://www.facebook.com/gustavo.najeranajera?fref=ts"></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
         <!-- Google Map
             ============================================= -->
         <section id="fun-facts">
             <br><br>
             <div class="container">
-                <h2 class="zoom">LOCALIZACION</h2>
+                <h2 class="zoom">LOCALIZACIÓN</h2>
                 <hr class="light-sep">
                 <p class="text-justify"><?php echo $organization->location; ?></p>
 
@@ -363,6 +397,11 @@
                     <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
                 </div>
                 <h6>&copy; 2016 Turriplantas.com</h6>
+                <button onclick="return modalSelectDevelo('Michael Meléndez Mesén',
+                            'Joseph Cordero Marín','Daylan Chavarría Pérez',
+                            'Edwin Navarro Barahona','Gustavo Najera Najera'); "type="button" class="btn btn-main"
+                            data-toggle="modal" data-target="#myModal2">
+                    TCU 563 Universidad de Costa Rica <br> sede del Atlántico</button>
             </div>
         </footer>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -386,6 +425,13 @@
            function modalSelect(modalMessage, modalTitle) {
                document.getElementsByClassName("modal-title")[0].textContent = modalTitle;
                document.getElementsByClassName("modal-body")[0].textContent = modalMessage;
+           }
+            function modalSelectDevelo(name1,name2,name3,name4,name5) {              
+               document.getElementsByClassName("Desa1")[0].textContent = name1;
+               document.getElementsByClassName("Desa2")[0].textContent = name2;
+               document.getElementsByClassName("Desa3")[0].textContent = name3;
+               document.getElementsByClassName("Desa4")[0].textContent = name4;
+               document.getElementsByClassName("Desa5")[0].textContent = name5;               
            }
         </script>      
     </body>

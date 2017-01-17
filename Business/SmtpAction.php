@@ -25,7 +25,7 @@ if (strlen($name) > 0 && strlen($email) > 0 &&
     $mail->Subject = 'Consulta de: ' . $name = $_POST['name'];
     /* This is forwarded through a GoDaddy forwarding account */
 
-    $mail->Body = $message . " El número telefónico de " . $name . " es: " . $telephone;
+   $mail->Body = $message . " El número telefónico de " . $name . " es: " . $telephone . "El email es: " . $email;
 
     if (!$mail->send()) {
         header("location: ../index.php?error=error");
