@@ -1,3 +1,21 @@
+<?php
+if (!isset($_SESSION)) {
+    session_start();
+}
+$tags = array('Inicio', 'Variedades', 'Categorias');
+if (!isset($_GET['lang'])) {
+    $_SESSION['lang'] = 'es';
+    $lang = 'es';
+} else {
+    $lang = $_GET['lang'];
+    $_SESSION['lang'] = $lang;
+    if ($lang == 'es') {
+        $tags = array('Inicio', 'Variedades', 'Categorias');
+    } else {
+        $tags = array('Index', 'Varieties', 'Categories');
+    }
+}
+?>
 <html>
     <head>
         <title>Turriplantas</title>
@@ -49,13 +67,15 @@
                                 <h1 class="brand brand_"><a href="index.php"><img alt="" src="imagenes/logo.png" style="width:70px; height: 70px; position: relative; bottom: 20px;"> </a></h1>
                                 <div>
                                     <ul class="nav navbar-nav">
-                                        <li><a style="color: whitesmoke; position: relative; left: 20px; font-size: 20px;" href="index.php">Inicio</a></li>
+                                        <li><a style="color: whitesmoke; position: relative; left: 20px; font-size: 20px;" href="index.php"><?php echo $tags[0]; ?></a></li>
+                                        <?php
+                                        if ($lang == 'es') {
+                                            echo '<li><a href="single-page.php?id='.$_GET['id'].'&lang=en"><img src="./imagenes/en_flag.jpg"/></a></li>';
+                                        } else {
+                                            echo '<li><a href="single-page.php?id='.$_GET['id'].'&lang=es"><img src="./imagenes/es_flag.png"/></a></li>';
+                                        }
+                                        ?>
                                     </ul>
-                                    <div style="position: relative; left: 45px; top: 15px;"id="google_translate_element"></div><script type="text/javascript">
-                                       function googleTranslateElementInit() {
-                                             new google.translate.TranslateElement({pageLanguage: 'es', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-                                       }
-                                     </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
                                 </div>
                             </div>
                         </div>
@@ -72,7 +92,7 @@
                         <article class="span8">
                             <div class="inner-1"> 
                                 <div class="wrapper">
-                                    <div><h3 style="color: #398439;">Variedades</h3></div>
+                                    <div><h3 style="color: #398439;"><?php echo $tags[1]; ?></h3></div>
                                     <ol class="list extra extra1">
                                         <?php
                                         $plantBusiness = new PlantBusiness();
@@ -116,7 +136,7 @@
                             </div>  
                         </article>
                         <article class="span4">
-                            <h3 style="color: #398439;">Categories</h3>
+                            <h3 style="color: #398439;"><?php echo $tags[2]; ?></h3>
                             <ul class="list extra extra1"> 
                                 <?php
                                 $varietyBusiness = new VarietyBusiness();

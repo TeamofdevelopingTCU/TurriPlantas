@@ -1,10 +1,10 @@
 <?php
 
+/**
+ * Description of PlanData
+ */
 class Data {
     
-    /*super clase de los data*/
-    
-    /* atributos */
     public $server;
     public $user;
     public $password;
@@ -12,16 +12,40 @@ class Data {
     
     public $connection;
     public $isActive;
-    
+
     /* constructor */
-    public function Data(){
-        $this->isActive = false;
-        $this->server = "50.62.209.49";
-        $this->user = "turriplantas";
-        $this->password = "Turr1p1antas_123!";
-        $this->db = "turriplantas_db";
+
+    public function Data() {
+
+        if (!isset($_SESSION)) {
+            session_start();
+        }
+        
+        //Si la variable lang no existe se pone en español
+        if (!isset($_SESSION["lang"])) {
+            $_SESSION["lang"] = 'es';
+            $this->isActive = false;
+            $this->server = "localhost";
+            $this->user = "root";
+            $this->password = "";
+            $this->db = "turriplantas_esp";
+        } else if (isset($_SESSION["lang"])) {
+            if ($_SESSION["lang"] == 'es') {
+                $this->isActive = false;
+                $this->server = "localhost";
+                $this->user = "root";
+                $this->password = "";
+                $this->db = "turriplantas_esp";
+            } else if ($_SESSION["lang"] == 'en') {
+                $this->isActive = false;
+                $this->server = "localhost";
+                $this->user = "root";
+                $this->password = "";
+                $this->db = "turriplantas_eng";
+            }
+        }
     }
-    
+
 }
 
 ?>
