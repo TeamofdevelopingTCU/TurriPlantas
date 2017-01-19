@@ -37,7 +37,7 @@ if (!isset($_GET['lang'])) {
             'Localización');
     } else {
         $tags = array('Index', 'About', 'Products', 'Contact',
-            'Location', 'Welcome to Turriplantas', 'Best grown quality!',
+            'Location', 'Welcome to Turriplantas', 'Best grown quality',
             'Mission', 'Vission', 'Values', 'Our products', 'Our products are live '
             . 'plants to be kept in pots or for reproduction. It manages a wide '
             . 'range of ornamental plants that are exported according to the need '
@@ -45,8 +45,8 @@ if (!isset($_GET['lang'])) {
             , 'We work with respect to the demand, with sizes according to the '
             . 'customers need, being our specialty small sizes ranging from 6/8" '
             . 'to 15/18" in height.', 'Varieties',
-            'What characterizes our farm?', 'Contact', 'For any queries write us, '
-            . 'we would like to hear from you and your opinions about Turriplantas.', 
+            'What characterizes our farm?', 'Contact Us', 'We would like to hear '
+            . 'from you and your opinions about us.', 
             'Name', 'Phone', 'E-mail', 'Message', 'Send',
             'Developers', 'Location');
     }
