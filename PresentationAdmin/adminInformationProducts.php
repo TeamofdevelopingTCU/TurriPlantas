@@ -79,6 +79,7 @@
                                                             <li><input type="file" id="pathImage<?php echo $i ?>" name="pathImage<?php echo $i ?>"/></li><br> 
                                                             <input type="hidden" id="id<?php echo $i; ?>" name="id<?php echo $i; ?>" value="<?php echo $currentProductEs->getIdProduct(); ?>">
                                                             <input type="hidden" id="count" name="count" value="<?php echo $i; ?>">
+                                                            <input type="hidden" id="optionUpdate" name="optionUpdate" value="update">
                                                             <input type="hidden" id="path<?php echo $i; ?>" name="path<?php echo $i; ?>" value="<?php echo $currentProductEs->getImagePath(); ?>">
                                                             <?php
                                                         }

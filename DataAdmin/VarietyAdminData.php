@@ -58,4 +58,41 @@ class VarietyAdminData extends Data {
                 
     }
     
+     function deleteVariety($id){
+        $connEs = $this->getConnetionDB('es');
+        $connEn = $this->getConnetionDB('en');
+        $connEs->set_charset('utf8');
+        
+        $queryEs = mysqli_query($connEs, "delete from variedad where id_variedad = ".$id);
+        $queryEn = mysqli_query($connEn, "delete from variedad where id_variedad = ".$id);
+        mysqli_close($connEn);
+        mysqli_close($connEs);
+        
+        if($queryEs == true && $queryEn == true){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    
+    function createVariety($variety){
+        $connEs = $this->getConnetionDB('es');
+        $connEn = $this->getConnetionDB('en');
+        $connEs->set_charset('utf8');
+        $queryEs = mysqli_query($connEs, "insert into `variedad` (`id_variedad`, "
+                . "`nombre_variedad`, `imagen_ruta`) VALUES (NULL, '".$variety[0]."', '".$variety[2]."');");
+        $queryEn = mysqli_query($connEn, "insert into `variedad` (`id_variedad`, "
+                . "`nombre_variedad`, `imagen_ruta`) VALUES (NULL, '".$variety[1]."', '".$variety[2]."');");
+     
+        mysqli_close($connEn);
+        mysqli_close($connEs);
+        
+        if($queryEs == true && $queryEn == true){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    
+    
 }

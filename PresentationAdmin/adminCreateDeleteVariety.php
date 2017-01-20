@@ -20,9 +20,9 @@
         <link href="../StyleAdmin/build/css/custom.min.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <?php
-        include_once '../BusinessAdmin/ProductAdminBusiness.php';
-        $product = new ProductAdminBusiness();
-        $result = $product->getAllProduct();
+        include_once '../BusinessAdmin/VarietyAdminBusiness.php';
+        $variety = new VarietyAdminBusiness();
+        $result = $variety->getAllVarieties();
         ?>
     </head>
 
@@ -48,25 +48,25 @@
                             </div>
                             <div class="x_content">
                                 <div class="bs-docs-section">
-                                    <h1 id="glyphicons" class="page-header">Registrar producto</h1>
+                                    <h1 id="glyphicons" class="page-header">Registrar variedad</h1>
                                     <div class="" role="tabpanel" data-example-id="togglable-tabs">
 
                                         <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
                                             <li role="presentation" class="active">
-                                                <a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Registar producto</a>
+                                                <a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Registar variedad</a>
                                             </li> 
                                             <li role="presentation" class="">
-                                                <a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">Eliminar producto</a>
+                                                <a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">Eliminar variedad</a>
                                             </li>                                                                                              
                                         </ul>
                                         <div id="myTabContent" class="tab-content">
                                             <div role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="home-tab">
-                                                <form id="frmInformation" method="POST" action="../BusinessAdmin/ProductAdminAction.php" enctype="multipart/form-data">
+                                                <form id="frmInformation" method="POST" action="../BusinessAdmin/VarietyAdminAction.php" enctype="multipart/form-data">
                                                     <ul style="list-style: none;">
                                                         <li><label>Nombre:</label></li>
-                                                        <li><input style="width: 70%; position: relative;" type="text" id="txtNameProductEs" name="txtNameProductEs"></li>
+                                                        <li><input style="width: 70%; position: relative;" type="text" id="txtNameVarietyEs" name="txtNameVarietyEs"></li>
                                                         <li><label>Name:</label></li>
-                                                        <li><input style="width: 70%; position: relative;" type="text" id="txtNameProductEn" name="txtNameProductEn"></li>
+                                                        <li><input style="width: 70%; position: relative;" type="text" id="txtNameVarietyEn" name="txtNameVarietyEn"></li>
                                                         <li><label>Imagen:</label></li>
                                                         <li><input type="file" id="fileImage" name="fileImage"/></li><br>
                                                         <li><input type="submit" id="btnCreate" name="create" value="Registrar"/></li>
@@ -78,15 +78,15 @@
                                             <div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
                                                 <ul>
                                                     <?php
-                                                    $productEs = $result[0];
-                                                    $maxEs = sizeof($productEs);
+                                                    $varietyEs = $result[0];
+                                                    $maxEs = sizeof($varietyEs);
                                                     for ($j = 0; $j < $maxEs; $j++) {
-                                                        $currentProductEs = $productEs[$j];
+                                                        $currentVarietyEs = $varietyEs[$j];
                                                         ?>
-                                                        <form id="frmDelete" method="POST" action="../BusinessAdmin/ProductAdminAction.php" enctype="multipart/form-data">
-                                                            <li><label style="width: 50%;"><?php echo $currentProductEs->getNameProduct(); ?></label><input type="submit" id="btnDelete" name="btnDelete" value="Eliminar"></li><br>
-                                                            <input type="hidden" id="idProduct" name="idProduct" value="<?php echo $currentProductEs->getIdProduct(); ?>" />
-                                                            <input type="hidden" id="pathProduct" name="pathProduct" value="<?php echo $currentProductEs->getImagePath(); ?>" />
+                                                        <form id="frmDelete" method="POST" action="../BusinessAdmin/VarietyAdminAction.php" enctype="multipart/form-data">
+                                                            <li><label style="width: 50%;"><?php echo $currentVarietyEs->getNameVariety(); ?></label><input type="submit" id="btnDelete" name="btnDelete" value="Eliminar"></li><br>
+                                                            <input type="hidden" id="idVariety" name="idVariety" value="<?php echo $currentVarietyEs->getIdVariety(); ?>" />
+                                                            <input type="hidden" id="pathVariety" name="pathVariety" value="<?php echo $currentVarietyEs->getImagePath(); ?>" />
                                                             <input type="hidden" id="optionDelete" name="optionDelete" value="delete" />
                                                         </form>
                                                         <?php
@@ -161,14 +161,14 @@ if (isset($_GET['successDelete'])) {
 } else if (isset($_GET['successCreate'])) {
     echo '<script>                
             $(document).ready(function(){
-                modalSelect("¡El producto se registró con éxito!","Registro");
+                modalSelect("¡La variedad se registró con éxito!","Registro");
                 $("#myModal").modal("show");
             });
         </script>';
 } else if (isset($_GET['errorCreate'])) {
     echo '<script>                
             $(document).ready(function(){
-                modalSelect("¡Erro al registrar el producto!","Registro");
+                modalSelect("¡Erro al registrar la variedad!","Registro");
                 $("#myModal").modal("show");
             });
         </script>';
