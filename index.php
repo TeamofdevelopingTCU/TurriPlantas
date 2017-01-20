@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 if (!isset($_SESSION)) {
     session_start();
@@ -517,5 +518,3 @@ if (!isset($_GET['lang'])) {
                     }
         </script>      
     </body>
-
-</html>
