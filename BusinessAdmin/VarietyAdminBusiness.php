@@ -20,4 +20,10 @@ class VarietyAdminBusiness {
     public function updateVarieties($variety){
         return $this->varietyAdminData->updateVarieties($variety);
     }
+    public function deleteVariety($id){
+        return $this->varietyAdminData->deleteVariety($id);
+    }
+     public function createVariety($variety){
+        return $this->varietyAdminData->createVariety($variety);
+    }
 }

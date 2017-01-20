@@ -50,7 +50,7 @@
                                 <div class="bs-docs-section">
                                     <h1 id="glyphicons" class="page-header">Administrar información</h1>
                                     <div class="" role="tabpanel" data-example-id="togglable-tabs">
-                                        <form id="frmInformation" method="POST" action="../BusinessAdmin/VarietyAdminAction.php">
+                                        <form id="frmInformation" method="POST" action="../BusinessAdmin/VarietyAdminAction.php" enctype="multipart/form-data">
                                             <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
                                                 <li role="presentation" class="active">
                                                     <a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Variedad</a>
@@ -59,6 +59,9 @@
                                                     <a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">Variety</a>
                                                 </li>
                                                 <li role="presentation" ><div><input style=" background: #ffffff;" type="submit" class="btn btn-large btn-block" value="Actualizar"/></div>
+                                                </li>
+                                                <li role="presentation" class="">
+                                                    <a href="adminCreateDeleteVariety.php">Crear variedad</a>
                                                 </li>
                                             </ul>
                                             <div id="myTabContent" class="tab-content">
@@ -72,9 +75,10 @@
                                                             ?>
                                                             <li><input style="border:none; width: 100%" type="text" id="txtVarietyEs<?php echo $i; ?>" name="txtVarietyEs<?php echo $i; ?>" value="<?php echo $currentVarietyEs->getNameVariety(); ?>"/></li><br>
                                                             <li><img class="img-responsive" style="width: 200px; height: 200px; position: relative;" src="../imagenes/<?php echo $currentVarietyEs->getImagePath(); ?>" /></li> <br>
-                                                            <li><input type="file" id="fileImage<?php echo $i ?>" name="fileImage<?php echo $i ?>"/></li><br> 
+                                                            <li><input type="file" id="image<?php echo $i ?>" name="image<?php echo $i ?>"/></li><br> 
                                                             <input type="hidden" id="id<?php echo $i; ?>" name="id<?php echo $i; ?>" value="<?php echo $currentVarietyEs->getIdVariety(); ?>">
                                                             <input type="hidden" id="count" name="count" value="<?php echo $i; ?>">
+                                                            <input type="hidden" id="optionUpdate" name="optionUpdate" value="update">
                                                             <input type="hidden" id="path<?php echo $i; ?>" name="path<?php echo $i; ?>" value="<?php echo $currentVarietyEs->getImagePath(); ?>">
                                                             <?php
                                                         }
