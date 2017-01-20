@@ -5,7 +5,7 @@ include './Domain/Organization.php';
 
 class OrganizationData extends Data {
     
-    public function getOrganization(){
+    public function getOrganization(){       
         $conn = new mysqli($this->server, $this->user, $this->password, $this->db);
         $conn->set_charset('utf8');
         $result = mysqli_query($conn, "call pcr_getOrganization");
@@ -15,10 +15,7 @@ class OrganizationData extends Data {
                 $row['localizacion'], $row['caracteristicas'], $row['valores'], $row['mision'],
                 $row['vision'],$row['nombre_organizacion']);
                      
-        return $organization;
-        
-        
-        
+        return $organization;   
     }
     
 }

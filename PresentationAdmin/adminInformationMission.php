@@ -18,6 +18,12 @@
 
         <!-- Custom styling plus plugins -->
         <link href="../StyleAdmin/build/css/custom.min.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <?php
+        include_once '../BusinessAdmin/OrganizationAdminBusiness.php';
+        $organization = new OrganizationAdminBusiness();
+        $result = $organization->getMissionOrganization();
+        ?>
     </head>
 
     <body class="nav-md">
@@ -43,7 +49,7 @@
                                 <div class="bs-docs-section">
                                     <h1 id="glyphicons" class="page-header">Administrar información</h1>
                                     <div class="" role="tabpanel" data-example-id="togglable-tabs">
-                                        <form id="frmInformation" method="POST" action="pruebaAction.php">
+                                        <form id="frmInformation" method="POST" action="../BusinessAdmin/OrganizationAdminAction.php">
                                             <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
                                                 <li role="presentation" class="active">
                                                     <a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Misión</a>
@@ -56,14 +62,13 @@
                                             </ul>
                                             <div id="myTabContent" class="tab-content">
                                                 <div role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="home-tab">
-                                                    <textarea id="txtHistory1" name="txtHistory1" class="form-control text-justify" rows="15" >Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher
-                                                                synth. Cosby sweater eu banh mi, qui irure terr.</textarea>
+                                                    <textarea id="txtMissionEs" name="txtMissionEs" class="form-control text-justify" rows="15" ><?php echo $result[0]; ?></textarea>
                                                 </div>
                                                 <div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
-                                                    <textarea id="txtHistory2" name="txtHistory2"class="form-control text-justify" rows="15" >Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher
-                                                                synth. Cosby sweater eu banh mi, qui irure terr.</textarea>
+                                                    <textarea id="txtMissionEn" name="txtMissionEn"class="form-control text-justify" rows="15" ><?php echo $result[1]; ?></textarea>
                                                 </div>                                                        
                                             </div>
+                                            <input type="hidden" id="option" name="option" value="mission">
                                         </form>
                                     </div>
                                 </div>
@@ -85,6 +90,22 @@
         <!-- /footer content -->
     </div>
 </div>
+<!-- Modal
+            ============================================= -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">    
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body">
+
+            </div>
+        </div>
+
+    </div>
+</div>
 
 <!-- jQuery -->
 <script src="../StyleAdmin/vendors/jquery/dist/jquery.min.js"></script>
@@ -97,5 +118,39 @@
 
 <!-- Custom Theme Scripts -->
 <script src="../StyleAdmin/build/js/custom.min.js"></script>
+
+<?php
+if (isset($_GET['success'])) {
+    echo '<script>                
+            $(document).ready(function(){
+                modalSelect("¡La actualización fue exitosa!","Actualización");
+                $("#myModal").modal("show");
+            });
+        </script>';
+} else if (isset($_GET['errorUpdate'])) {
+    echo '<script>                
+            $(document).ready(function(){
+                modalSelect("¡Error al actualizar!","Actualización");
+                $("#myModal").modal("show");
+            });
+        </script>';
+} else if (isset($_GET['errorData'])) {
+    echo '<script>                
+            $(document).ready(function(){
+                modalSelect("¡Debe ingresar todos los campos!","Actualización");
+                $("#myModal").modal("show");
+            });
+        </script>';
+}
+?>
+<script>
+    function modalSelect(modalMessage, modalTitle) {
+        document.getElementsByClassName("modal-title")[0].textContent = modalTitle;
+        document.getElementsByClassName("modal-body")[0].textContent = modalMessage;
+    }
+</script>
+
+
+
 </body>
 </html>

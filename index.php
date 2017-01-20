@@ -46,7 +46,7 @@ if (!isset($_GET['lang'])) {
             . 'customers need, being our specialty small sizes ranging from 6/8" '
             . 'to 15/18" in height.', 'Varieties',
             'What characterizes our farm?', 'Contact', 'For any queries write us, '
-            . 'we would like to hear from you and your opinions about Turriplantas.', 
+            . 'we would like to hear from you and your opinions about Turriplantas.',
             'Name', 'Phone', 'E-mail', 'Message', 'Send',
             'Developers', 'Location');
     }
@@ -152,23 +152,23 @@ if (!isset($_GET['lang'])) {
             $image = $imageBusiness->getImagesHome();
             ?>
 
-                        <div id="owl-hero" class="owl-carousel owl-theme">              
+            <div id="owl-hero" class="owl-carousel owl-theme">              
 
-            <?php
-            for ($i = 0; $i < sizeof($image); $i++) {
-                if ($i == 1) {
-                    echo
-                    '<div class="item" style="background-image: url(imagenes/imagesHome/' . $image[$i]->imagePath . ')"> 
+                <?php
+                for ($i = 0; $i < sizeof($image); $i++) {
+                    if ($i == 1) {
+                        echo
+                        '<div class="item" style="background-image: url(imagenes/imagesHome/' . $image[$i]->imagePath . ')"> 
                                         <div class="caption">                    
                                             <h1>Turriplantas</span></h1> 
-                                            <h6>'.$tags[6].'</h6>                    
+                                            <h6>' . $tags[6] . '</h6>                    
                                         </div>
                                     </div>';
-                } else {
-                    echo ' <div class="item" style="background-image: url(imagenes/imagesHome/' . $image[$i]->imagePath . ')"></div>';
+                    } else {
+                        echo ' <div class="item" style="background-image: url(imagenes/imagesHome/' . $image[$i]->imagePath . ')"></div>';
+                    }
                 }
-            }
-            ?>                      
+                ?>                      
             </div>
         </section>
 
@@ -218,13 +218,13 @@ if (!isset($_GET['lang'])) {
                             <div class="zoom"><div class="media-body">
                                     <h3><?php echo $tags[9]; ?></h3>
                                     <ul class="text-justify" style="color: white;">
-                                    <?php
-                                    $value = explode(";", $organization->values);
-                                    $max = sizeof($value);
-                                    for ($i = 0; $i < $max; $i++) {
-                                        echo '<li>' . $value[$i] . '</li>';
-                                    }
-                                    ?>                                    
+                                        <?php
+                                        $value = explode(";", $organization->values);
+                                        $max = sizeof($value);
+                                        for ($i = 0; $i < $max; $i++) {
+                                            echo '<li>' . $value[$i] . '</li>';
+                                        }
+                                        ?>                                    
                                     </ul>
                                 </div>
 
@@ -243,18 +243,18 @@ if (!isset($_GET['lang'])) {
                 </p>                  
 
                 <div class="row wow fadeInUp" data-wow-delay=".3s">
-                <?php
-                $productBusiness = new ProductBusiness();
-                $products = $productBusiness->getAllProducts();
-                foreach ($products as $currentProduct) {
-                    ?>
-                    <div class="col-lg-3">  
-                    <?php echo '<img class="img-responsive zoom" style="width: 150px; height: 150px; position: relative; left: 65px;" src="./imagenes/' . $currentProduct->getImagePath() . '" alt=""/>'; ?>
-                        <h4 class="zoom" style="color: #398439;"><?php echo $currentProduct->getNameProduct(); ?> </h4>
-                    </div> 
                     <?php
-                }
-                ?>
+                    $productBusiness = new ProductBusiness();
+                    $products = $productBusiness->getAllProducts();
+                    foreach ($products as $currentProduct) {
+                        ?>
+                        <div class="col-lg-3">  
+                            <?php echo '<img class="img-responsive zoom" style="width: 150px; height: 150px; position: relative; left: 65px;" src="./imagenes/' . $currentProduct->getImagePath() . '" alt=""/>'; ?>
+                            <h4 class="zoom" style="color: #398439;"><?php echo $currentProduct->getNameProduct(); ?> </h4>
+                        </div> 
+                        <?php
+                    }
+                    ?>
                 </div>
                 <br><br>
                 <p class="text-justify">
@@ -271,29 +271,29 @@ if (!isset($_GET['lang'])) {
                 <hr class="sep">
 
                 <div class="row">
-                <?php
-                $varietyBusiness = new VarietyBusiness();
-                $varieties = $varietyBusiness->getAllVarieties();
-                foreach ($varieties as $currentVariety) {
-                    ?>
-                    <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
-                        <a class="portfolio-box" href="single-page.php?id=<?php echo $currentVariety->getIdVariety(); ?>">
-                            <?php echo '<img src="./imagenes/' . $currentVariety->getImagePath() . '" class="img-responsive imgWork" alt="1">' ?>
-                            <div class="portfolio-box-caption">
-                                <div class="portfolio-box-caption-content">
-                                    <div class="project-category text-faded">
-                                        <?php
-                                        echo $currentVariety->getNameVariety();
-                                        ?>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </a>
-                    </div>
                     <?php
-                }
-                ?>
+                    $varietyBusiness = new VarietyBusiness();
+                    $varieties = $varietyBusiness->getAllVarieties();
+                    foreach ($varieties as $currentVariety) {
+                        ?>
+                        <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
+                            <a class="portfolio-box" href="single-page.php?id=<?php echo $currentVariety->getIdVariety(); ?>">
+                                <?php echo '<img src="./imagenes/' . $currentVariety->getImagePath() . '" class="img-responsive imgWork" alt="1">' ?>
+                                <div class="portfolio-box-caption">
+                                    <div class="portfolio-box-caption-content">
+                                        <div class="project-category text-faded">
+                                            <?php
+                                            echo $currentVariety->getNameVariety();
+                                            ?>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <?php
+                    }
+                    ?>
                 </div>
             </div>
         </section>     
@@ -327,9 +327,9 @@ if (!isset($_GET['lang'])) {
         </section>
 
         <?php
-        if($lang == 'es'){
+        if ($lang == 'es') {
             if (isset($_GET['success'])) {
-            echo '
+                echo '
                             <script>                
                                 $(document).ready(function(){
                                     modalSelect("¡El mensaje fue enviado correctamente!","Envío exitoso");
@@ -355,7 +355,7 @@ if (!isset($_GET['lang'])) {
             }
         } else {
             if (isset($_GET['success'])) {
-            echo '
+                echo '
                             <script>                
                                 $(document).ready(function(){
                                     modalSelect("The message was sent correctly!","Successful shipment");
@@ -380,7 +380,6 @@ if (!isset($_GET['lang'])) {
                                 </script>';
             }
         }
-        
         ?>
         <!-- Contact Us
             ============================================= -->

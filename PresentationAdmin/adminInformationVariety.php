@@ -18,6 +18,12 @@
 
         <!-- Custom styling plus plugins -->
         <link href="../StyleAdmin/build/css/custom.min.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <?php
+        include_once '../BusinessAdmin/VarietyAdminBusiness.php';
+        $variety = new VarietyAdminBusiness();
+        $result = $variety->getAllVarieties();
+        ?>
     </head>
 
     <body class="nav-md">
@@ -44,7 +50,7 @@
                                 <div class="bs-docs-section">
                                     <h1 id="glyphicons" class="page-header">Administrar información</h1>
                                     <div class="" role="tabpanel" data-example-id="togglable-tabs">
-                                        <form id="frmInformation" method="POST" action="pruebaAction.php">
+                                        <form id="frmInformation" method="POST" action="../BusinessAdmin/VarietyAdminAction.php">
                                             <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
                                                 <li role="presentation" class="active">
                                                     <a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Variedad</a>
@@ -57,19 +63,38 @@
                                             </ul>
                                             <div id="myTabContent" class="tab-content">
                                                 <div role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="home-tab">
-                                                    <ul>
-                                                        <li><input style="border:none;" type="text" id="value1" name="value1" value="Polyscias Spp"/><img src="../StyleAdmin/images/picture.jpg" /> <input type="file" /></li><br>
-                                                        <li><input style="border:none;" type="text" id="value1" name="value1" value="Codiaeumm Variegaton Spp (Crotons)"/><img src="../StyleAdmin/images/picture.jpg" /> <input type="file" /></li><br>
-                                                        <li><input style="border:none;" type="text" id="value1" name="value1" value="Dracaenas Spp"/><img src="../StyleAdmin/images/picture.jpg" /> <input type="file" /></li><br>
-                                                        <li><input style="border:none;" type="text" id="value1" name="value1" value="Cordyline Spp"/><img src="../StyleAdmin/images/picture.jpg" /> <input type="file" /></li><br>
+                                                    <ul style="list-style: none;">
+                                                        <?php
+                                                        $varietyEs = $result[0];
+                                                        $maxEs = sizeof($varietyEs);
+                                                        for ($i = 0; $i < $maxEs; $i++) {
+                                                            $currentVarietyEs = $varietyEs[$i];
+                                                            ?>
+                                                            <li><input style="border:none; width: 100%" type="text" id="txtVarietyEs<?php echo $i; ?>" name="txtVarietyEs<?php echo $i; ?>" value="<?php echo $currentVarietyEs->getNameVariety(); ?>"/></li><br>
+                                                            <li><img class="img-responsive" style="width: 200px; height: 200px; position: relative;" src="../imagenes/<?php echo $currentVarietyEs->getImagePath(); ?>" /></li> <br>
+                                                            <li><input type="file" id="fileImage<?php echo $i ?>" name="fileImage<?php echo $i ?>"/></li><br> 
+                                                            <input type="hidden" id="id<?php echo $i; ?>" name="id<?php echo $i; ?>" value="<?php echo $currentVarietyEs->getIdVariety(); ?>">
+                                                            <input type="hidden" id="count" name="count" value="<?php echo $i; ?>">
+                                                            <input type="hidden" id="path<?php echo $i; ?>" name="path<?php echo $i; ?>" value="<?php echo $currentVarietyEs->getImagePath(); ?>">
+                                                            <?php
+                                                        }
+                                                        ?>
+
                                                     </ul>
                                                 </div>
                                                 <div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
                                                     <ul>
-                                                        <li><input style="border:none;" type="text" id="value1" name="value1" value="Polyscias Spp"/></li><br>
-                                                        <li><input style="border:none;" type="text" id="value1" name="value1" value="Codiaeumm Variegaton Spp (Crotons)"/></li><br>
-                                                        <li><input style="border:none;" type="text" id="value1" name="value1" value="Dracaenas Spp"/></li><br>
-                                                        <li><input style="border:none;" type="text" id="value1" name="value1" value="Cordyline Spp"/></li><br>
+                                                        <?php
+                                                        $varietyEn = $result[1];
+                                                        $maxEn = sizeof($varietyEn);
+                                                        for ($j = 0; $j < $maxEn; $j++) {
+                                                            $currentVarietyEn = $varietyEn[$j];
+                                                            ?>
+                                                            <li><input style="border:none; width: 100%" type="text" id="txtVarietyEn<?php echo $j; ?>" name="txtVarietyEn<?php echo $j; ?>" value="<?php echo $currentVarietyEn->getNameVariety(); ?>"/></li><br>
+
+                                                            <?php
+                                                        }
+                                                        ?>                                                        
                                                     </ul>
                                                 </div>                                                        
                                             </div>
@@ -94,7 +119,22 @@
         <!-- /footer content -->
     </div>
 </div>
+<!-- Modal
+    ============================================= -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">    
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body">
 
+            </div>
+        </div>
+
+    </div>
+</div>
 <!-- jQuery -->
 <script src="../StyleAdmin/vendors/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap -->
@@ -106,5 +146,42 @@
 
 <!-- Custom Theme Scripts -->
 <script src="../StyleAdmin/build/js/custom.min.js"></script>
+<?php
+if (isset($_GET['success'])) {
+    echo '<script>                
+            $(document).ready(function(){
+                modalSelect("¡La actualización fue exitosa!","Actualización");
+                $("#myModal").modal("show");
+            });
+        </script>';
+} else if (isset($_GET['errorUpdate'])) {
+    echo '<script>                
+            $(document).ready(function(){
+                modalSelect("¡Error al actualizar!","Actualización");
+                $("#myModal").modal("show");
+            });
+        </script>';
+} else if (isset($_GET['errorExis'])) {
+    echo '<script>                
+            $(document).ready(function(){
+                modalSelect("¡El archivo ya existe!","Actualización");
+                $("#myModal").modal("show");
+            });
+        </script>';
+} else if (isset($_GET['errorSize'])) {
+    echo '<script>                
+            $(document).ready(function(){
+                modalSelect("¡El tamaño del archivo es mayor al permitido!","Actualización");
+                $("#myModal").modal("show");
+            });
+        </script>';
+}
+?>
+<script>
+    function modalSelect(modalMessage, modalTitle) {
+        document.getElementsByClassName("modal-title")[0].textContent = modalTitle;
+        document.getElementsByClassName("modal-body")[0].textContent = modalMessage;
+    }
+</script>
 </body>
 </html>

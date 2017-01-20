@@ -5,8 +5,7 @@ class OrganizationBusiness {
     public $organizationData;
     
     public function OrganizationBusiness(){
-        $this->organizationData = new OrganizationData();
-        
+        $this->organizationData = new OrganizationData();        
     }
     
     public function getOrganization(){        
