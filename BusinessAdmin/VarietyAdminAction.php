@@ -14,7 +14,7 @@ if (isset($_POST['optionUpdate'])) {
         $pathAf = $_POST['path' . $i];
 
         if ($_FILES[$fileImage]["error"] > 0) {
-            echo 'paso if';
+           
             $varietyBusiness = new VarietyAdminBusiness();
             $currentVarietyEs = new Variety($idVariety, $nameVarietyEs, $pathAf);
             $currentVarietyEn = new Variety($idVariety, $nameVarietyEn, $pathAf);
@@ -35,7 +35,7 @@ if (isset($_POST['optionUpdate'])) {
                     /* verificacion imagen hata movido a la ruta de destino */
                     $result = @move_uploaded_file($_FILES[$fileImage]["tmp_name"], $path);
                     if ($result) {
-                        echo 'paso res';
+                        
                         $varietyBusiness = new VarietyAdminBusiness();
                         $currentVarietyEs = new Variety($idVariety, $nameVarietyEs, $_FILES[$fileImage]['name']);
                         $currentVarietyEn = new Variety($idVariety, $nameVarietyEn, $_FILES[$fileImage]['name']);
