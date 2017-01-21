@@ -73,10 +73,10 @@ if (@session_start() == false) {
                                                 <li role="presentation" ><div><input style=" background: #ffffff;" type="submit" class="btn btn-large btn-block" value="Actualizar"/></div>
                                                 </li>
                                                 <li role="presentation" class="">
-                                                    <a href="adminCreateDeleteVariety.php">Crear variedad</a>
+                                                    <a href="adminCreateDeleteVariety.php">Administrar variedad</a>
                                                 </li>
                                                 <li role="presentation" class="">
-                                                    <a href="adminCreateDeleteImageVariety.php">Imagenes variedad</a>
+                                                    <a href="adminCreateDeleteImageVariety.php">Administrar imagenes variedad</a>
                                                 </li>
                                             </ul>
                                             <div id="myTabContent" class="tab-content">

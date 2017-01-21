@@ -196,7 +196,7 @@ if (isset($_GET['successDelete'])) {
 } else if (isset($_GET['errorDelete'])) {
     echo '<script>                
             $(document).ready(function(){
-                modalSelect("¡Error al eliminar!","Eliminación");
+                modalSelect("¡Error al eliminar la imagen!","Eliminación");
                 $("#myModal").modal("show");
             });
         </script>';

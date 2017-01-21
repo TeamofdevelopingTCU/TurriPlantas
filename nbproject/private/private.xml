@@ -1,25 +1,32 @@
-<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/xampp/htdocs/TurriPlantas/PresentationAdmin/adminInformationHistory.php</file>
+            <file>file:/C:/xampp/htdocs/TurriPlantas/PresentationAdmin/adminInformationMission.php</file>
+            <file>file:/C:/xampp/htdocs/TurriPlantas/PresentationAdmin/adminInformationCharacteristics.php</file>
+            <file>file:/C:/xampp/htdocs/TurriPlantas/PresentationAdmin/adminInformationVariety.php</file>
+            <file>file:/C:/xampp/htdocs/TurriPlantas/BusinessAdmin/AdministratorAdminBusiness.php</file>
+            <file>file:/C:/xampp/htdocs/TurriPlantas/DataAdmin/AdministratorAdminData.php</file>
+            <file>file:/C:/xampp/htdocs/TurriPlantas/PresentationAdmin/adminInformationView.php</file>
             <file>file:/C:/xampp/htdocs/TurriPlantas/Data/Data.php</file>
-            <file>file:/C:/xampp/htdocs/TurriPlantas/Data/OrganizationData.php</file>
+            <file>file:/C:/xampp/htdocs/TurriPlantas/PresentationAdmin/adminInformationPlant.php</file>
+            <file>file:/C:/xampp/htdocs/TurriPlantas/PresentationAdmin/adminCreateDeletePlant.php</file>
+            <file>file:/C:/xampp/htdocs/TurriPlantas/PresentationAdmin/AdminCreateDeleteImage.php</file>
+            <file>file:/C:/xampp/htdocs/TurriPlantas/PresentationAdmin/adminCreateDeleteVariety.php</file>
+            <file>file:/C:/xampp/htdocs/TurriPlantas/PresentationAdmin/adminInformationProducts.php</file>
+            <file>file:/C:/xampp/htdocs/TurriPlantas/PresentationAdmin/adminInformationValues.php</file>
+            <file>file:/C:/xampp/htdocs/TurriPlantas/PresentationAdmin/adminInfomationAdministrator.php</file>
+            <file>file:/C:/xampp/htdocs/TurriPlantas/PresentationAdmin/reusableMenu.php</file>
+            <file>file:/C:/xampp/htdocs/TurriPlantas/PresentationAdmin/adminCreateDeleteImageVariety.php</file>
+            <file>file:/C:/xampp/htdocs/TurriPlantas/BusinessAdmin/AdministratorAdminAction.php</file>
+            <file>file:/C:/xampp/htdocs/TurriPlantas/PresentationAdmin/adminCreateDeleteAdministrator.php</file>
+            <file>file:/C:/xampp/htdocs/TurriPlantas/PresentationAdmin/adminCreateDeleteProducts.php</file>
+            <file>file:/C:/xampp/htdocs/TurriPlantas/PresentationAdmin/indexAdmin.php</file>
+            <file>file:/C:/xampp/htdocs/TurriPlantas/PresentationAdmin/login.php</file>
             <file>file:/C:/xampp/htdocs/TurriPlantas/index.php</file>
+            <file>file:/C:/xampp/htdocs/TurriPlantas/BusinessAdmin/unlogin.php</file>
         </group>
     </open-files>
 </project-private>
-=======
-<?xml version="1.0" encoding="UTF-8"?>
-<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
-    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/xampp/htdocs/TurriPlantas/single-page.php</file>
-            <file>file:/C:/xampp/htdocs/TurriPlantas/js/validateFields.js</file>
-            <file>file:/C:/xampp/htdocs/TurriPlantas/index.php</file>
-        </group>
-    </open-files>
-</project-private>
->>>>>>> origin/master

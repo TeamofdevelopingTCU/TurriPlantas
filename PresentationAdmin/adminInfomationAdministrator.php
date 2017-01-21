@@ -63,12 +63,12 @@ if (@session_start() == false) {
                                         <form id="frmInformation" method="POST" action="../BusinessAdmin/AdministratorAdminAction.php" enctype="multipart/form-data">
                                             <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
                                                 <li role="presentation" class="active">
-                                                    <a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Administrador</a>
+                                                    <a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Usuario</a>
                                                 </li>
                                                 <li role="presentation" ><div><input style=" background: #ffffff;" type="submit" class="btn btn-large btn-block" value="Actualizar"/></div>
                                                 </li>   
                                                 <li role="presentation" class="">
-                                                    <a href="adminCreateDeleteAdministrator.php">Crear administrador</a>
+                                                    <a href="adminCreateDeleteAdministrator.php">Administrar usuarios</a>
                                                 </li>
                                             </ul>
                                             <div id="myTabContent" class="tab-content">

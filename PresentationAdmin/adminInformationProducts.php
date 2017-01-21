@@ -74,7 +74,7 @@ if (@session_start() == false) {
                                                 <li role="presentation" ><div><input style=" background: #ffffff;" type="submit" class="btn btn-large btn-block" value="Actualizar"/></div>
                                                 </li>   
                                                 <li role="presentation" class="">
-                                                    <a href="adminCreateDeleteProducts.php">Crear Producto</a>
+                                                    <a href="adminCreateDeleteProducts.php">Administrar Productos</a>
                                                 </li>
                                             </ul>
                                             <div id="myTabContent" class="tab-content">
