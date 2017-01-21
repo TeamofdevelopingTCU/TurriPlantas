@@ -3,7 +3,7 @@
         <div class="col-md-3 left_col">
             <div class="left_col scroll-view">
                 <div class="navbar nav_title" style="border: 0;">
-                    <a href="index.php" class="site_title"><i class="fa fa-group"></i> <span>Turriplantas</span></a>
+                    <a href="index.php" class="site_title"></i> <span>Turriplantas</span></a>
                 </div>
 
                 <div class="clearfix"></div>
@@ -11,11 +11,11 @@
                 <!-- menu profile quick info -->
                 <div class="profile clearfix">
                     <div class="profile_pic">
-                        <img src="../StyleAdmin/images/img.jpg" alt="..." class="img-circle profile_img">
+                        <img src="../imagenes/logo.png" alt="..." class="img-circle profile_img">
                     </div>
                     <div class="profile_info">
                         <span>Bienvenido</span>
-                        <h2>John Doe</h2>
+                        <h2><?php echo $_SESSION["userName"]; ?></h2>
                     </div>
                 </div>
                 <!-- /menu profile quick info -->
@@ -37,8 +37,9 @@
                                     <li><a href="adminInformationCharacteristics.php">Características</a></li>
                                     <li><a href="adminInformationProducts.php">Producto</a></li>
                                     <li><a href="adminInformationVariety.php">Variedad</a></li>
-                                    <li><a href="">Planta</a></li>
-                                    <li><a href="adminImages.php">Imagenes</a></li>
+                                    <li><a href="adminInformationPlant.php">Planta</a></li>
+                                    <li><a href="AdminCreateDeleteImage.php">Galeria</a></li>
+                                    <li><a href="adminInfomationAdministrator.php">Usuario</a></li>
                                 </ul>
                             </li>
 
@@ -65,11 +66,11 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li class="">
                             <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                <img src="../StyleAdmin/images/img.jpg" alt="">John Doe
+                                <?php echo $_SESSION["userName"]; ?>
                                 <span class=" fa fa-angle-down"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-usermenu pull-right">                                       
-                                <li><a href="login.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                                <li><a href="../BusinessAdmin/unlogin.php"><i class="fa fa-sign-out pull-right"></i>Cerrar sesión</a></li>
                             </ul>
                         </li>                             
                     </ul>

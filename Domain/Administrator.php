@@ -15,8 +15,6 @@ class Administrator {
         $this->password = $password;
         $this->email = $email;
     }
-
-    
     function getIdAdministrator() {
         return $this->idAdministrator;
     }
@@ -58,5 +56,4 @@ class Administrator {
     }
 
 
-    
 }

@@ -32,9 +32,7 @@ if (@session_start() == false) {
         <link href="../StyleAdmin/build/css/custom.min.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <?php
-        include_once '../BusinessAdmin/VarietyAdminBusiness.php';
-        $variety = new VarietyAdminBusiness();
-        $result = $variety->getAllVarieties();
+        include_once '../BusinessAdmin/AdministratorAdminBusiness.php';
         ?>
     </head>
 
@@ -62,60 +60,50 @@ if (@session_start() == false) {
                                 <div class="bs-docs-section">
                                     <h1 id="glyphicons" class="page-header">Administrar información</h1>
                                     <div class="" role="tabpanel" data-example-id="togglable-tabs">
-                                        <form id="frmInformation" method="POST" action="../BusinessAdmin/VarietyAdminAction.php" enctype="multipart/form-data">
+                                        <form id="frmInformation" method="POST" action="../BusinessAdmin/AdministratorAdminAction.php" enctype="multipart/form-data">
                                             <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
                                                 <li role="presentation" class="active">
-                                                    <a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Variedad</a>
-                                                </li>
-                                                <li role="presentation" class="">
-                                                    <a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">Variety</a>
+                                                    <a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Administrador</a>
                                                 </li>
                                                 <li role="presentation" ><div><input style=" background: #ffffff;" type="submit" class="btn btn-large btn-block" value="Actualizar"/></div>
-                                                </li>
+                                                </li>   
                                                 <li role="presentation" class="">
-                                                    <a href="adminCreateDeleteVariety.php">Crear variedad</a>
-                                                </li>
-                                                <li role="presentation" class="">
-                                                    <a href="adminCreateDeleteImageVariety.php">Imagenes variedad</a>
+                                                    <a href="adminCreateDeleteAdministrator.php">Crear administrador</a>
                                                 </li>
                                             </ul>
                                             <div id="myTabContent" class="tab-content">
                                                 <div role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="home-tab">
                                                     <ul style="list-style: none;">
-                                                        <?php
-                                                        $varietyEs = $result[0];
-                                                        $maxEs = sizeof($varietyEs);
-                                                        for ($i = 0; $i < $maxEs; $i++) {
-                                                            $currentVarietyEs = $varietyEs[$i];
-                                                            ?>
-                                                            <li><input style="border:none; width: 100%" type="text" id="txtVarietyEs<?php echo $i; ?>" name="txtVarietyEs<?php echo $i; ?>" value="<?php echo $currentVarietyEs->getNameVariety(); ?>"/></li><br>
-                                                            <li><img class="img-responsive" style="width: 200px; height: 200px; position: relative;" src="../imagenes/<?php echo $currentVarietyEs->getImagePath(); ?>" /></li> <br>
-                                                            <li><input type="file" id="image<?php echo $i ?>" name="image<?php echo $i ?>"/></li><br> 
-                                                            <input type="hidden" id="id<?php echo $i; ?>" name="id<?php echo $i; ?>" value="<?php echo $currentVarietyEs->getIdVariety(); ?>">
-                                                            <input type="hidden" id="count" name="count" value="<?php echo $i; ?>">
-                                                            <input type="hidden" id="optionUpdate" name="optionUpdate" value="update">
-                                                            <input type="hidden" id="path<?php echo $i; ?>" name="path<?php echo $i; ?>" value="<?php echo $currentVarietyEs->getImagePath(); ?>">
+                                                        <table>
+                                                            <tr>
+                                                                <th>Name:</th>
+                                                                <th>Email:</th>
+                                                                <th>User name:</th>
+                                                                <th>Password:</th>
+                                                            </tr>
                                                             <?php
-                                                        }
-                                                        ?>
+                                                            $administratorB = new AdministratorAdminBusiness();
+                                                            $administrators = $administratorB->getAllAdministrators();
+                                                            $maxEs = sizeof($administrators);
+                                                            for ($i = 0; $i < $maxEs; $i++) {
+                                                                $currentAdmin = $administrators[$i];
+                                                                ?>
+                                                                <tr>
+                                                                    <td><input style="border:none; width: 100%" type="text" id="txtName<?php echo $i; ?>" name="txtName<?php echo $i; ?>" value="<?php echo $currentAdmin->getName(); ?>"/></td>
+                                                                    <td><input style="border:none; width: 100%" type="text" id="txtEmail<?php echo $i; ?>" name="txtEmail<?php echo $i; ?>" value="<?php echo $currentAdmin->getEmail(); ?>"/></td>
+                                                                    <td><input readonly style="border:none; width: 100%" type="text" id="txtUserName<?php echo $i; ?>" name="txtUserName<?php echo $i; ?>" value="<?php echo $currentAdmin->getUserName(); ?>"/></td>
+                                                                    <td><input style="border:none; width: 100%" type="text" id="password<?php echo $i; ?>" name="password<?php echo $i; ?>" value="<?php echo $currentAdmin->getPassword(); ?>"/></td>
+                                                                    <input type="hidden" id="idAdministrator<?php echo $i; ?>" name="idAdministrator<?php echo $i; ?>" value="<?php echo $currentAdmin->getIdAdministrator(); ?>">
+                                                                    <input type="hidden" id="count" name="count" value="<?php echo $i; ?>">
+                                                                    <input type="hidden" id="optionUpdate" name="optionUpdate" value="update">
+                                                                </tr>
 
+                                                                <?php
+                                                            }
+                                                            ?>
+                                                        </table>
                                                     </ul>
                                                 </div>
-                                                <div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
-                                                    <ul>
-                                                        <?php
-                                                        $varietyEn = $result[1];
-                                                        $maxEn = sizeof($varietyEn);
-                                                        for ($j = 0; $j < $maxEn; $j++) {
-                                                            $currentVarietyEn = $varietyEn[$j];
-                                                            ?>
-                                                            <li><input style="border:none; width: 100%" type="text" id="txtVarietyEn<?php echo $j; ?>" name="txtVarietyEn<?php echo $j; ?>" value="<?php echo $currentVarietyEn->getNameVariety(); ?>"/></li><br>
-
-                                                            <?php
-                                                        }
-                                                        ?>                                                        
-                                                    </ul>
-                                                </div>                                                        
                                             </div>
                                         </form>
                                     </div>
@@ -154,6 +142,7 @@ if (@session_start() == false) {
 
     </div>
 </div>
+
 <!-- jQuery -->
 <script src="../StyleAdmin/vendors/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap -->
@@ -202,5 +191,7 @@ if (isset($_GET['success'])) {
         document.getElementsByClassName("modal-body")[0].textContent = modalMessage;
     }
 </script>
+
+
 </body>
 </html>

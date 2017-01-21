@@ -1,3 +1,15 @@
+<?php
+if (@session_start() == false) {
+    session_start();
+    if (!isset($_SESSION["userName"])) {
+        header('location: ./login.php');
+    }
+} else {
+    if (!isset($_SESSION["userName"])) {
+        header('location: ./login.php');
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -22,77 +34,77 @@
 
     <body class="nav-md">
         <?php include './reusableMenu.php'; ?>
-                <!-- /top navigation -->
-                <!-- page content -->
-                <div class="right_col" role="main">
-                    <div class="">                       
+        <!-- /top navigation -->
+        <!-- page content -->
+        <div class="right_col" role="main">
+            <div class="">                       
 
-                        <div class="clearfix"></div>
+                <div class="clearfix"></div>
 
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="x_panel">
-                                    <div class="x_title">
-                                        <h2>Turriplantas<small></small></h2>
-                                        <ul class="nav navbar-right panel_toolbox">
-                                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                                            </li>                                         
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>Turriplantas<small></small></h2>
+                                <ul class="nav navbar-right panel_toolbox">
+                                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                    </li>                                         
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+                                <div class="bs-docs-section">
+                                    <h1 id="glyphicons" class="page-header">Módulo administrativo</h1>
+                                    <div class="bs-glyphicons">
+                                        <ul class="bs-glyphicons-list">
+
+                                            <li>
+                                                <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>
+                                                <span class="glyphicon-class">Información general</span>
+                                            </li>
+
+                                            <li>
+                                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                                <span class="glyphicon-class">Productos</span>
+                                            </li>
+
+                                            <li>
+                                                <span class="glyphicon glyphicon-euro" aria-hidden="true"></span>
+                                                <span class="glyphicon-class">Imágenes</span>
+                                            </li>                                                                                                 
+
                                         </ul>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                    <div class="x_content">
-                                        <div class="bs-docs-section">
-                                            <h1 id="glyphicons" class="page-header">Módulo administrativo</h1>
-                                            <div class="bs-glyphicons">
-                                                <ul class="bs-glyphicons-list">
-
-                                                    <li>
-                                                        <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>
-                                                        <span class="glyphicon-class">Información general</span>
-                                                    </li>
-
-                                                    <li>
-                                                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                                                        <span class="glyphicon-class">Productos</span>
-                                                    </li>
-
-                                                    <li>
-                                                        <span class="glyphicon glyphicon-euro" aria-hidden="true"></span>
-                                                        <span class="glyphicon-class">Imágenes</span>
-                                                    </li>                                                                                                 
-
-                                                </ul>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- /page content -->
-
-                <!-- footer content -->
-                <footer>
-                    <div class="pull-right">
-                        Turriplantas
-                    </div>
-                    <div class="clearfix"></div>
-                </footer>
-                <!-- /footer content -->
             </div>
         </div>
+        <!-- /page content -->
 
-        <!-- jQuery -->
-        <script src="../StyleAdmin/vendors/jquery/dist/jquery.min.js"></script>
-        <!-- Bootstrap -->
-        <script src="../StyleAdmin/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-        <!-- FastClick -->
-        <script src="../StyleAdmin/vendors/fastclick/lib/fastclick.js"></script>
-        <!-- NProgress -->
-        <script src="../StyleAdmin/vendors/nprogress/nprogress.js"></script>
+        <!-- footer content -->
+        <footer>
+            <div class="pull-right">
+                Turriplantas
+            </div>
+            <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+    </div>
+</div>
 
-        <!-- Custom Theme Scripts -->
-        <script src="../StyleAdmin/build/js/custom.min.js"></script>
-    </body>
+<!-- jQuery -->
+<script src="../StyleAdmin/vendors/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="../StyleAdmin/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- FastClick -->
+<script src="../StyleAdmin/vendors/fastclick/lib/fastclick.js"></script>
+<!-- NProgress -->
+<script src="../StyleAdmin/vendors/nprogress/nprogress.js"></script>
+
+<!-- Custom Theme Scripts -->
+<script src="../StyleAdmin/build/js/custom.min.js"></script>
+</body>
 </html>

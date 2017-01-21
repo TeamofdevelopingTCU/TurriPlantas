@@ -32,7 +32,7 @@ if (@session_start() == false) {
         <link href="../StyleAdmin/build/css/custom.min.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <?php
-        include_once '../BusinessAdmin/ImageAdminBusiness.php';
+        include_once '../BusinessAdmin/AdministratorAdminBusiness.php';
         ?>
     </head>
 
@@ -58,23 +58,29 @@ if (@session_start() == false) {
                             </div>
                             <div class="x_content">
                                 <div class="bs-docs-section">
-                                    <h1 id="glyphicons" class="page-header">Registrar imagen</h1>
+                                    <h1 id="glyphicons" class="page-header">Registrar administrador</h1>
                                     <div class="" role="tabpanel" data-example-id="togglable-tabs">
 
                                         <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
                                             <li role="presentation" class="active">
-                                                <a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Registar imagen</a>
+                                                <a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Registar administrador</a>
                                             </li> 
                                             <li role="presentation" class="">
-                                                <a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">Eliminar imagen</a>
+                                                <a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">Eliminar administrador</a>
                                             </li>                                                                                              
                                         </ul>
                                         <div id="myTabContent" class="tab-content">
                                             <div role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="home-tab">
-                                                <form id="frmInformation" method="POST" action="../BusinessAdmin/ImageAdminAction.php" enctype="multipart/form-data">
+                                                <form id="frmInformation" method="POST" action="../BusinessAdmin/AdministratorAdminAction.php" enctype="multipart/form-data">
                                                     <ul style="list-style: none;">
-                                                        <li><label>Ingrese la imagen que desea registrar:</label></li>
-                                                        <li><input type="file" id="fileImage" name="fileImage"/></li><br>
+                                                        <li><label>Nombre completo:</label></li>
+                                                        <li><input style="width: 70%; position: relative;" type="text" id="txtName" name="txtName"></li>
+                                                        <li><label>Email:</label></li>
+                                                        <li><input style="width: 70%; position: relative;" type="text" id="txtEmail" name="txtEmail"></li>
+                                                        <li><label>Nombre usuario:</label></li>
+                                                        <li><input style="width: 70%; position: relative;" type="text" id="txtUserName" name="txtUserName"></li>
+                                                        <li><label>Constraseña:</label></li>
+                                                        <li><input style="width: 70%; position: relative;" type="password" id="password" name="password"></li>
                                                         <li><input type="submit" id="btnCreate" name="create" value="Registrar"/></li>
                                                         <input type="hidden" id="optionCreate" name="optionCreate" value="create" />
                                                     </ul>
@@ -82,31 +88,24 @@ if (@session_start() == false) {
                                             </div>
 
                                             <div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
-                                                <div class="row">    
+                                                <ul>
                                                     <?php
-                                                    $imageBusiness = new ImageAdminBusiness();
-                                                    $images = $imageBusiness->getAllImages();
-                                                    foreach ($images as $currentImage) {
+                                                    $administratorB = new AdministratorAdminBusiness();
+                                                    $administrators = $administratorB->getAllAdministrators();
+                                                    $maxEs = sizeof($administrators);
+                                                    for ($j = 0; $j < $maxEs; $j++) {
+                                                        $currentAdmin = $administrators[$j];
                                                         ?>
-                                                        <div class="col-md-55">
-                                                            <div class="thumbnail">
-                                                                <div class="image view view-first">
-                                                                    <img style="width: 100%; display: block;" src="../imagenes/imagesHome/<?php echo $currentImage->imagePath; ?>" alt="image" />
-                                                                </div>
-                                                                <div class="caption">
-                                                                    <form id="frmDelete" method="POST" action="../BusinessAdmin/ImageAdminAction.php" enctype="multipart/form-data">
-                                                                        <center><input type="submit" id="btnDelete" name="btnDelete" value="Eliminar"></center>
-                                                                        <input type="hidden" id="idImage" name="idImage" value="<?php echo $currentImage->idImage; ?>" />
-                                                                        <input type="hidden" id="pathImage" name="pathImage" value="<?php echo $currentImage->imagePath; ?>" />
-                                                                        <input type="hidden" id="optionDelete" name="optionDelete" value="delete" />
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                        <form id="frmDelete" method="POST" action="../BusinessAdmin/AdministratorAdminAction.php" enctype="multipart/form-data">
+                                                            <li><label style="width: 50%;"><?php echo $currentAdmin->getUserName(); ?></label>
+                                                                <input type="submit" id="btnDelete" name="btnDelete" value="Eliminar"></li><br>
+                                                            <input type="hidden" id="idAdministrator" name="idAdministrator" value="<?php echo $currentAdmin->getIdAdministrator(); ?>" />
+                                                            <input type="hidden" id="optionDelete" name="optionDelete" value="delete" />
+                                                        </form>
                                                         <?php
                                                     }
-                                                    ?>
-                                                </div>
+                                                    ?>                                                        
+                                                </ul>
                                             </div>                                                        
                                         </div>
                                     </div>
@@ -175,14 +174,14 @@ if (isset($_GET['successDelete'])) {
 } else if (isset($_GET['successCreate'])) {
     echo '<script>                
             $(document).ready(function(){
-                modalSelect("¡La imagen se registró con éxito!","Registro");
+                modalSelect("¡El usuario se registró con éxito!","Registro");
                 $("#myModal").modal("show");
             });
         </script>';
 } else if (isset($_GET['errorCreate'])) {
     echo '<script>                
             $(document).ready(function(){
-                modalSelect("¡Error al registrar la imagen!","Registro");
+                modalSelect("¡Error al registrar el usuario!","Registro");
                 $("#myModal").modal("show");
             });
         </script>';
