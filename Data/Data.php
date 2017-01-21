@@ -17,7 +17,8 @@ class Data {
     public function Data() {
 
         if (!isset($_SESSION)) {
-            session_start();
+            if(@session_start() == false)
+                session_start();
         }
 
         //Si la variable lang no existe se pone en español

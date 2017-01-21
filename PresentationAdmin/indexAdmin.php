@@ -48,7 +48,7 @@
 
                                                     <li>
                                                         <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>
-                                                        <span class="glyphicon-class">Información genral</span>
+                                                        <span class="glyphicon-class">Información general</span>
                                                     </li>
 
                                                     <li>

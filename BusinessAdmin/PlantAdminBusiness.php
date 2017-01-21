@@ -1,6 +1,6 @@
 <?php
 
-include '../DataAdmin/PlantAdminData.php';
+include_once '../DataAdmin/PlantAdminData.php';
 
 class PlantAdminBusiness {
 

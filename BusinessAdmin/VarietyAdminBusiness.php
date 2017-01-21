@@ -13,7 +13,7 @@ class VarietyAdminBusiness {
     public function VarietyAdminBusiness(){
         $this->varietyAdminData = new VarietyAdminData();        
     }
-    
+
     public function getAllVarieties(){
         return $this->varietyAdminData->getAllVarieties();
     }

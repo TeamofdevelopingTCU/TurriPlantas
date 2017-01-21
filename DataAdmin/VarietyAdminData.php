@@ -1,6 +1,6 @@
 <?php
 
-include '../Data/Data.php';
+include_once '../Data/Data.php';
 include '../Domain/Variety.php';
 
 /**

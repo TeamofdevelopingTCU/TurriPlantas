@@ -37,6 +37,7 @@
                                     <li><a href="adminInformationCharacteristics.php">Características</a></li>
                                     <li><a href="adminInformationProducts.php">Producto</a></li>
                                     <li><a href="adminInformationVariety.php">Variedad</a></li>
+                                    <li><a href="">Planta</a></li>
                                     <li><a href="adminImages.php">Imagenes</a></li>
                                 </ul>
                             </li>

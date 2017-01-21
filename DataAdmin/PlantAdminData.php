@@ -1,6 +1,6 @@
 <?php
 
-include '../Data/Data.php';
+include_once '../Data/Data.php';
 include '../Domain/Plant.php';
 
 class PlantAdminData extends Data {
@@ -42,10 +42,10 @@ class PlantAdminData extends Data {
         $connEs->set_charset('utf8');
         
         $queryEs = mysqli_query($connEs, "update planta set nombre_cientifico = "
-                . "'".$plantEs->getScientificName()."', id_variedad =  '".$plantEs->getVariety()."' "
+                . "'".$plantEs->getScientificName()."', id_variedad =  ".$plantEs->getVariety()." "
                 . "where id_planta = ".$plantEs->getIdPlant());
-        $queryEn = mysqli_query($connEs, "update planta set nombre_cientifico = "
-                . "'".$plantEn->getScientificName()."', id_variedad =  '".$plantEn->getVariety()."' "
+        $queryEn = mysqli_query($connEn, "update planta set nombre_cientifico = "
+                . "'".$plantEn->getScientificName()."', id_variedad =  ".$plantEn->getVariety()." "
                 . "where id_planta = ".$plantEn->getIdPlant());
         
         mysqli_close($connEn);
@@ -82,11 +82,11 @@ class PlantAdminData extends Data {
         $connEs->set_charset('utf8');
         
         $queryEs = mysqli_query($connEs, "insert into `planta` (`id_planta`, "
-                . "`nombre_cientifico`, `imagen_variedad`) VALUES (NULL, '"
-                .$plant[0]."', '".$plant[2]."');");
+                . "`nombre_cientifico`, `id_variedad`) VALUES (0, '"
+                .$plant[0]."', ".$plant[2].");");
         $queryEn = mysqli_query($connEn, "insert into `planta` (`id_planta`, "
-                . "`nombre_cientifico`, `imagen_variedad`) VALUES (NULL, '"
-                .$plant[1]."', '".$plant[2]."');");
+                . "`nombre_cientifico`, `id_variedad`) VALUES (0, '"
+                .$plant[1]."', ".$plant[2].");");
      
         mysqli_close($connEn);
         mysqli_close($connEs);
