@@ -31,6 +31,7 @@ if (@session_start() == false) {
         <!-- Custom styling plus plugins -->
         <link href="../StyleAdmin/build/css/custom.min.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="../js/ValidateFiledsAdmin.js" type="text/javascript"></script>
         <?php
         include_once '../BusinessAdmin/AdministratorAdminBusiness.php';
         ?>
@@ -74,14 +75,14 @@ if (@session_start() == false) {
                                                 <form id="frmInformation" method="POST" action="../BusinessAdmin/AdministratorAdminAction.php" enctype="multipart/form-data">
                                                     <ul style="list-style: none;">
                                                         <li><label>Nombre completo:</label></li>
-                                                        <li><input style="width: 70%; position: relative;" type="text" id="txtName" name="txtName"></li>
+                                                        <li><input style="width: 70%; position: relative;" type="text" id="txtName" name="txtName"><label style="color: red;" id="txtErrorName"></label></li>
                                                         <li><label>Email:</label></li>
-                                                        <li><input style="width: 70%; position: relative;" type="text" id="txtEmail" name="txtEmail"></li>
+                                                        <li><input style="width: 70%; position: relative;" type="email" id="txtEmail" name="txtEmail"><label style="color: red;" id="txtErrorEmail"></label></li>
                                                         <li><label>Nombre usuario:</label></li>
-                                                        <li><input style="width: 70%; position: relative;" type="text" id="txtUserName" name="txtUserName"></li>
+                                                        <li><input style="width: 70%; position: relative;" type="text" id="txtUserName" name="txtUserName"><label style="color: red;" id="txtErrorUserName"></label></li>
                                                         <li><label>Constraseña:</label></li>
-                                                        <li><input style="width: 70%; position: relative;" type="password" id="password" name="password"></li>
-                                                        <li><input type="submit" id="btnCreate" name="create" value="Registrar"/></li>
+                                                        <li><input style="width: 70%; position: relative;" type="password" id="password" name="password"><label style="color: red;" id="txtErrorPassword"></label></li><br>
+                                                        <li><input type="submit" id="btnCreate" name="create" value="Registrar" onclick="return validateNewFieldsAdministrator()" /></li>
                                                         <input type="hidden" id="optionCreate" name="optionCreate" value="create" />
                                                     </ul>
                                                 </form>

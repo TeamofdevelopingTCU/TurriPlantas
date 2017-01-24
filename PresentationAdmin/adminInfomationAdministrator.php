@@ -31,6 +31,7 @@ if (@session_start() == false) {
         <!-- Custom styling plus plugins -->
         <link href="../StyleAdmin/build/css/custom.min.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="../js/ValidateFiledsAdmin.js" type="text/javascript"></script>
         <?php
         include_once '../BusinessAdmin/AdministratorAdminBusiness.php';
         ?>
@@ -65,7 +66,8 @@ if (@session_start() == false) {
                                                 <li role="presentation" class="active">
                                                     <a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Usuario</a>
                                                 </li>
-                                                <li role="presentation" ><div><input style=" background: #ffffff;" type="submit" class="btn btn-large btn-block" value="Actualizar"/></div>
+                                                <li role="presentation" ><div><input style=" background: #ffffff;" type="submit" class="btn btn-large btn-block" 
+                                                                                     value="Actualizar" onclick="return validateFieldsAdministrator()"/></div>
                                                 </li>   
                                                 <li role="presentation" class="">
                                                     <a href="adminCreateDeleteAdministrator.php">Administrar usuarios</a>
@@ -89,13 +91,13 @@ if (@session_start() == false) {
                                                                 $currentAdmin = $administrators[$i];
                                                                 ?>
                                                                 <tr>
-                                                                    <td><input style="border:none; width: 100%" type="text" id="txtName<?php echo $i; ?>" name="txtName<?php echo $i; ?>" value="<?php echo $currentAdmin->getName(); ?>"/></td>
-                                                                    <td><input style="border:none; width: 100%" type="text" id="txtEmail<?php echo $i; ?>" name="txtEmail<?php echo $i; ?>" value="<?php echo $currentAdmin->getEmail(); ?>"/></td>
-                                                                    <td><input readonly style="border:none; width: 100%" type="text" id="txtUserName<?php echo $i; ?>" name="txtUserName<?php echo $i; ?>" value="<?php echo $currentAdmin->getUserName(); ?>"/></td>
-                                                                    <td><input style="border:none; width: 100%" type="text" id="password<?php echo $i; ?>" name="password<?php echo $i; ?>" value="<?php echo $currentAdmin->getPassword(); ?>"/></td>
-                                                                    <input type="hidden" id="idAdministrator<?php echo $i; ?>" name="idAdministrator<?php echo $i; ?>" value="<?php echo $currentAdmin->getIdAdministrator(); ?>">
-                                                                    <input type="hidden" id="count" name="count" value="<?php echo $i; ?>">
-                                                                    <input type="hidden" id="optionUpdate" name="optionUpdate" value="update">
+                                                                    <td><input style="border:none; width: 100%" type="text" id="txtName<?php echo $i; ?>" name="txtName<?php echo $i; ?>" value="<?php echo $currentAdmin->getName(); ?>"/><label style="color: red;" id="txtErrorName<?php echo $i; ?>"></label></td>
+                                                                    <td><input style="border:none; width: 100%" type="text" id="txtEmail<?php echo $i; ?>" name="txtEmail<?php echo $i; ?>" value="<?php echo $currentAdmin->getEmail(); ?>"/><label style="color: red;" id="txtErrorEmail<?php echo $i; ?>"></label></td>
+                                                                    <td><input readonly style="border:none; width: 100%" type="text" id="txtUserName<?php echo $i; ?>" name="txtUserName<?php echo $i; ?>" value="<?php echo $currentAdmin->getUserName(); ?>"/><label style="color: red;" id="txtErrorUserName<?php echo $i; ?>"></label></td>
+                                                                    <td><input style="border:none; width: 100%" type="text" id="password<?php echo $i; ?>" name="password<?php echo $i; ?>" value="<?php echo $currentAdmin->getPassword(); ?>"/><label style="color: red;" id="txtErrorPassword<?php echo $i; ?>"></label></td>
+                                                                <input type="hidden" id="idAdministrator<?php echo $i; ?>" name="idAdministrator<?php echo $i; ?>" value="<?php echo $currentAdmin->getIdAdministrator(); ?>">
+                                                                <input type="hidden" id="count" name="count" value="<?php echo $i; ?>">
+                                                                <input type="hidden" id="optionUpdate" name="optionUpdate" value="update">
                                                                 </tr>
 
                                                                 <?php
@@ -103,6 +105,7 @@ if (@session_start() == false) {
                                                             ?>
                                                         </table>
                                                     </ul>
+                                                    <input type="hidden" id="countAdmin" name="countAdmin" value="<?php echo $i; ?>">
                                                 </div>
                                             </div>
                                         </form>
@@ -186,10 +189,10 @@ if (isset($_GET['success'])) {
 }
 ?>
 <script>
-    function modalSelect(modalMessage, modalTitle) {
-        document.getElementsByClassName("modal-title")[0].textContent = modalTitle;
-        document.getElementsByClassName("modal-body")[0].textContent = modalMessage;
-    }
+                                                                                         function modalSelect(modalMessage, modalTitle) {
+                                                                                             document.getElementsByClassName("modal-title")[0].textContent = modalTitle;
+                                                                                             document.getElementsByClassName("modal-body")[0].textContent = modalMessage;
+                                                                                         }
 </script>
 
 

@@ -55,10 +55,9 @@ if (isset($_POST['optionUpdate'])) {
 } else if (isset($_POST['login'])) {
 
     if (strlen($_POST['txtUser']) > 0 && strlen('txtPassword') > 0) {
-
-        $userName = $_POST['txtUser'];
-        $password = $_POST['txtPassword'];
-
+      
+        $userName = str_replace("'","", $_POST['txtUser']);
+        $password = str_replace("'","", $_POST['txtPassword']);
         $adminB = new AdministratorAdminBusiness();
         $result = $adminB->login($userName, $password);
 

@@ -31,7 +31,7 @@ if (@session_start() == false) {
         <!-- Custom styling plus plugins -->
         <link href="../StyleAdmin/build/css/custom.min.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-       
+        <script src="../js/ValidateFiledsAdmin.js" type="text/javascript"></script>
         <?php
         include_once '../BusinessAdmin/OrganizationAdminBusiness.php';
         $organization = new OrganizationAdminBusiness();
@@ -71,7 +71,7 @@ if (@session_start() == false) {
                                                 <li role="presentation" class="">
                                                     <a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">Values</a>
                                                 </li>
-                                                <li role="presentation" class=""><input style="background: #ffffff;" type="submit" class="btn btn-large btn-block" value="Actualizar"/>
+                                                <li role="presentation" class=""><input style="background: #ffffff;" type="submit" class="btn btn-large btn-block" value="Actualizar" onclick="return validateFieldsValues();"/>
                                                 </li>
                                             </ul>
                                             <div id="myTabContent" class="tab-content">
@@ -81,10 +81,12 @@ if (@session_start() == false) {
                                                         $valueEs = explode(";", $result[0]);
                                                         $maxEs = sizeof($valueEs);
                                                         for ($i = 0; $i < $maxEs; $i++) {
-                                                            echo '<li><input style="border:none;" type="text" id="txtValueEs' . $i . '" '
-                                                                    . 'name="txtValueEs' . $i . '" value="' . trim($valueEs[$i]) . '"/></li>';
+                                                            echo '<li><input style="border:none;" type="text"  id="txtValueEs' . $i . '" '
+                                                            . 'name="txtValueEs' . $i . '" value="' . trim($valueEs[$i]) . '" /><label style="color: red;" id="txtErrorEs' . $i . '" ></label></li>';
                                                         }
-                                                        ?>  
+                                                        ?> 
+                                                        <input type="hidden" id="countValues" name="countValues" value="<?php echo $i; ?>">
+
                                                     </ul>
                                                 </div>
                                                 <div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
@@ -95,7 +97,7 @@ if (@session_start() == false) {
                                                         for ($j = 0; $j < $maxEn; $j++) {
                                                             echo '<li><input style="border:none;" '
                                                             . 'type="text" id="txtValueEn' . $j . '"'
-                                                                    . ' name="txtValueEn' . $j . '" value="' . trim($valueEn[$j]) . '"/></li>';
+                                                            . ' name="txtValueEn' . $j . '" value="' . trim($valueEn[$j]) . '"/><label style="color: red;" id="txtErrorEn' . $j . '" ></label></li>';
                                                         }
                                                         ?>  
                                                     </ul>
@@ -180,6 +182,12 @@ if (isset($_GET['success'])) {
         </script>';
 }
 ?>
+<script>
+                                                    $.validate({
+                                                        lang: 'es'
+                                                    });
+
+</script>
 <script>
     function modalSelect(modalMessage, modalTitle) {
         document.getElementsByClassName("modal-title")[0].textContent = modalTitle;

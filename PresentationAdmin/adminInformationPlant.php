@@ -31,6 +31,7 @@ if (@session_start() == false) {
         <!-- Custom styling plus plugins -->
         <link href="../StyleAdmin/build/css/custom.min.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="../js/ValidateFiledsAdmin.js" type="text/javascript"></script>
         <?php
         include_once '../BusinessAdmin/PlantAdminBusiness.php';
         include_once '../BusinessAdmin/VarietyAdminBusiness.php';
@@ -70,7 +71,7 @@ if (@session_start() == false) {
                                                     <a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">Plant</a>
                                                 </li>
                                                 
-                                                <li role="presentation" ><div><input style=" background: #ffffff;" type="submit" class="btn btn-large btn-block" value="Actualizar"/></div>
+                                                <li role="presentation" ><div><input style=" background: #ffffff;" type="submit" class="btn btn-large btn-block" value="Actualizar" onclick="return validateFieldsPlant();"/></div>
                                                 </li>   
                                                 <li role="presentation" class="">
                                                     <a href="adminCreateDeletePlant.php">Administrar Plantas</a>
@@ -87,7 +88,7 @@ if (@session_start() == false) {
                                                         for ($i = 0; $i < $maxEs; $i++) {
                                                             $currentPlantEs = $plantEs[$i];
                                                             ?>
-                                                            <li><input style="border:none; width: 100%" type="text" id="txtPlantEs<?php echo $i; ?>" name="txtPlantEs<?php echo $i; ?>" value="<?php echo $currentPlantEs->getScientificName(); ?>"/></li>
+                                                        <li><input style="border:none; width: 100%" type="text" id="txtPlantEs<?php echo $i; ?>" name="txtPlantEs<?php echo $i; ?>" value="<?php echo $currentPlantEs->getScientificName(); ?>"/><label style="color: red;" id="txtErrorEs<?php echo $i;?>"></label></li>
                                                             <label>Variedad:</label>
                                                             <li>
                                                                 <select name="cbVarieties<?php echo $i; ?>" id="cbVarieties<?php echo $i; ?>">
@@ -108,7 +109,7 @@ if (@session_start() == false) {
                                                                 </select>
                                                             <li><br></br>
                                                             <input type="hidden" id="id<?php echo $i; ?>" name="id<?php echo $i; ?>" value="<?php echo $currentPlantEs->getIdPlant(); ?>">
-                                                            <input type="hidden" id="count" name="count" value="<?php echo $i; ?>">
+                                                            <input type="hidden" id="count" name="count" value="<?php echo $i; ?>"/>
                                                             <input type="hidden" id="optionUpdate" name="optionUpdate" value="update">
                                                             <?php
                                                         }
@@ -124,13 +125,14 @@ if (@session_start() == false) {
                                                         for ($j = 0; $j < $maxEn; $j++) {
                                                             $currentPlantEn = $plantEn[$j];
                                                             ?>
-                                                            <input style="border:none; width: 100%" type="text" id="txtPlantEn<?php echo $j; ?>" name="txtPlantEn<?php echo $j; ?>" value="<?php echo $currentPlantEn->getScientificName(); ?>"/><br>
+                                                            <input style="border:none; width: 100%" type="text" id="txtPlantEn<?php echo $j; ?>" name="txtPlantEn<?php echo $j; ?>" value="<?php echo $currentPlantEn->getScientificName(); ?>"/><label style="color: red;" id="txtErrorEn<?php echo $j;?>"></label><br>
                                                             <?php
                                                         }
                                                         ?>                                                        
                                                     </ul>
                                                 </div>                                                        
                                             </div>
+                                            <input type="hidden" id="countPlant" value="<?php echo $j;?>"/>
                                         </form>
                                     </div>
                                 </div>

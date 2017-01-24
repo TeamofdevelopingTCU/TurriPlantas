@@ -31,6 +31,7 @@ if (@session_start() == false) {
         <!-- Custom styling plus plugins -->
         <link href="../StyleAdmin/build/css/custom.min.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="../js/ValidateFiledsAdmin.js" type="text/javascript"></script>
         <?php
         include_once '../BusinessAdmin/ProductAdminBusiness.php';
         $product = new ProductAdminBusiness();
@@ -76,13 +77,13 @@ if (@session_start() == false) {
                                                 <form id="frmInformation" method="POST" action="../BusinessAdmin/ProductAdminAction.php" enctype="multipart/form-data">
                                                     <ul style="list-style: none;">
                                                         <li><label>Nombre:</label></li>
-                                                        <li><input style="width: 70%; position: relative;" type="text" id="txtNameProductEs" name="txtNameProductEs"></li>
+                                                        <li><input style="width: 70%; position: relative;" type="text" id="txtNameProductEs" name="txtNameProductEs"><lable style="color: red;" id="txtErrorEs">&emsp;</lable></li>
                                                         <li><label>Name:</label></li>
-                                                        <li><input style="width: 70%; position: relative;" type="text" id="txtNameProductEn" name="txtNameProductEn"></li>
+                                                        <li><input style="width: 70%; position: relative;" type="text" id="txtNameProductEn" name="txtNameProductEn"><lable style="color: red;" id="txtErrorEn"></lable>&emsp;</li>
                                                         <li><label>Imagen:</label></li>
                                                         <li><input type="file" id="fileImage" name="fileImage"/></li><br>
-                                                        <li><input type="submit" id="btnCreate" name="create" value="Registrar"/></li>
-                                                        <input type="hidden" id="optionCreate" name="optionCreate" value="create" />
+                                                        <li><input type="submit" id="btnCreate" name="create" value="Registrar" onclick="return validateFieldsNewProduct()"/></li>
+                                                        <input type="hidden" id="optionCreate" name="optionCreate" value="create"  />
                                                     </ul>
                                                 </form>
                                             </div>

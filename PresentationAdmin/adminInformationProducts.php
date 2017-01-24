@@ -31,6 +31,7 @@ if (@session_start() == false) {
         <!-- Custom styling plus plugins -->
         <link href="../StyleAdmin/build/css/custom.min.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="../js/ValidateFiledsAdmin.js" type="text/javascript"></script>
         <?php
         include_once '../BusinessAdmin/ProductAdminBusiness.php';
         $product = new ProductAdminBusiness();
@@ -71,7 +72,7 @@ if (@session_start() == false) {
                                                     <a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">Product</a>
                                                 </li>
                                                 
-                                                <li role="presentation" ><div><input style=" background: #ffffff;" type="submit" class="btn btn-large btn-block" value="Actualizar"/></div>
+                                                <li role="presentation" ><div><input style=" background: #ffffff;" type="submit" class="btn btn-large btn-block" value="Actualizar" onclick="return validateFieldsProduct();"/></div>
                                                 </li>   
                                                 <li role="presentation" class="">
                                                     <a href="adminCreateDeleteProducts.php">Administrar Productos</a>
@@ -86,7 +87,7 @@ if (@session_start() == false) {
                                                         for ($i = 0; $i < $maxEs; $i++) {
                                                             $currentProductEs = $productEs[$i];
                                                             ?>
-                                                            <li><input style="border:none; width: 100%" type="text" id="txtProductEs<?php echo $i; ?>" name="txtProductEs<?php echo $i; ?>" value="<?php echo $currentProductEs->getNameProduct(); ?>"/></li><br>
+                                                        <li><input style="border:none; width: 100%" type="text" id="txtProductEs<?php echo $i; ?>" name="txtProductEs<?php echo $i; ?>" value="<?php echo $currentProductEs->getNameProduct(); ?>"/><label style="color: red;" id="txtErrorEs<?php echo $i;?>"></label></li><br>
                                                             <li><img class="img-responsive" style="width: 200px; height: 200px; position: relative;" src="../imagenes/<?php echo $currentProductEs->getImagePath(); ?>" /></li> <br>
                                                             <li><input type="file" id="pathImage<?php echo $i ?>" name="pathImage<?php echo $i ?>"/></li><br> 
                                                             <input type="hidden" id="id<?php echo $i; ?>" name="id<?php echo $i; ?>" value="<?php echo $currentProductEs->getIdProduct(); ?>">
@@ -96,6 +97,7 @@ if (@session_start() == false) {
                                                             <?php
                                                         }
                                                         ?>
+                                                            <input type="hidden" id="countProducts" name="countProducts" value="<?php echo $i;?>">    
 
                                                     </ul>
                                                 </div>
@@ -107,7 +109,7 @@ if (@session_start() == false) {
                                                         for ($j = 0; $j < $maxEn; $j++) {
                                                             $currentProductEn = $productEn[$j];
                                                             ?>
-                                                            <li><input style="border:none; width: 100%" type="text" id="txtProductEn<?php echo $j; ?>" name="txtProductEn<?php echo $j; ?>" value="<?php echo $currentProductEn->getNameProduct(); ?>"/></li><br>
+                                                            <li><input style="border:none; width: 100%" type="text" id="txtProductEn<?php echo $j; ?>" name="txtProductEn<?php echo $j; ?>" value="<?php echo $currentProductEn->getNameProduct(); ?>"/><label style="color: red;" id="txtErrorEn<?php echo $j;?>"></label></li><br>
 
                                                             <?php
                                                         }

@@ -31,6 +31,7 @@ if (@session_start() == false) {
         <!-- Custom styling plus plugins -->
         <link href="../StyleAdmin/build/css/custom.min.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="../js/ValidateFiledsAdmin.js" type="text/javascript"></script>
         <?php
         include_once '../BusinessAdmin/OrganizationAdminBusiness.php';
         $organization = new OrganizationAdminBusiness();
@@ -69,15 +70,15 @@ if (@session_start() == false) {
                                                 <li role="presentation" class="">
                                                     <a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">Characteristics</a>
                                                 </li>
-                                                <li role="presentation" class=""><input style="background: #ffffff;" type="submit" class="btn btn-large btn-block" value="Actualizar"/>
+                                                <li role="presentation" class=""><input style="background: #ffffff;" type="submit" class="btn btn-large btn-block" value="Actualizar" onclick="return validateFieldsCharacteristics();"/>
                                                 </li>
                                             </ul>
                                             <div id="myTabContent" class="tab-content">
                                                 <div role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="home-tab">
-                                                    <textarea id="txtCharacteristicsEs" name="txtCharacteristicsEs" class="form-control text-justify" rows="15" ><?php echo $result[0]; ?></textarea>
+                                                    <textarea id="txtCharacteristicsEs" name="txtCharacteristicsEs" class="form-control text-justify" rows="15" ><?php echo $result[0]; ?></textarea><label style="color: red;" id="txtErrorEs"></label>
                                                 </div>
                                                 <div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
-                                                    <textarea id="txtCharacteristicsEn" name="txtCharacteristicsEn"class="form-control text-justify" rows="15" ><?php echo $result[1]; ?></textarea>
+                                                    <textarea id="txtCharacteristicsEn" name="txtCharacteristicsEn"class="form-control text-justify" rows="15" ><?php echo $result[1]; ?></textarea><label style="color: red;" id="txtErrorEn"></label>
                                                 </div>                                                        
                                             </div>
                                             <input type="hidden" id="option" name="option" value="characteristics">

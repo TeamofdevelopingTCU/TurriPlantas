@@ -31,6 +31,7 @@ if (@session_start() == false) {
         <!-- Custom styling plus plugins -->
         <link href="../StyleAdmin/build/css/custom.min.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="../js/ValidateFiledsAdmin.js" type="text/javascript"></script>
         <?php
         include_once '../BusinessAdmin/VarietyAdminBusiness.php';
         $variety = new VarietyAdminBusiness();
@@ -76,12 +77,12 @@ if (@session_start() == false) {
                                                 <form id="frmInformation" method="POST" action="../BusinessAdmin/VarietyAdminAction.php" enctype="multipart/form-data">
                                                     <ul style="list-style: none;">
                                                         <li><label>Nombre:</label></li>
-                                                        <li><input style="width: 70%; position: relative;" type="text" id="txtNameVarietyEs" name="txtNameVarietyEs"></li>
+                                                        <li><input style="width: 70%; position: relative;" type="text" id="txtNameVarietyEs" name="txtNameVarietyEs"><lable style="color: red;"id="txtErrorEs"></lable></li>
                                                         <li><label>Name:</label></li>
-                                                        <li><input style="width: 70%; position: relative;" type="text" id="txtNameVarietyEn" name="txtNameVarietyEn"></li>
+                                                        <li><input style="width: 70%; position: relative;" type="text" id="txtNameVarietyEn" name="txtNameVarietyEn"><lable style="color: red;"id="txtErrorEn"></lable></li>
                                                         <li><label>Imagen:</label></li>
                                                         <li><input type="file" id="fileImage" name="fileImage"/></li><br>
-                                                        <li><input type="submit" id="btnCreate" name="create" value="Registrar"/></li>
+                                                        <li><input type="submit" id="btnCreate" name="create" value="Registrar" onclick="return validateFieldsNewVariety()"/></li>
                                                         <input type="hidden" id="optionCreate" name="optionCreate" value="create" />
                                                     </ul>
                                                 </form>

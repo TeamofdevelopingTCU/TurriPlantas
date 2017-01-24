@@ -31,6 +31,7 @@ if (@session_start() == false) {
         <!-- Custom styling plus plugins -->
         <link href="../StyleAdmin/build/css/custom.min.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="../js/ValidateFiledsAdmin.js" type="text/javascript"></script>
         <?php
         include_once '../BusinessAdmin/PlantAdminBusiness.php';
         include_once '../BusinessAdmin/VarietyAdminBusiness.php';
@@ -75,9 +76,9 @@ if (@session_start() == false) {
                                                 <form id="frmInformation" method="POST" action="../BusinessAdmin/plantAdminAction.php" enctype="multipart/form-data">
                                                     <ul style="list-style: none;">
                                                         <li><label>Nombre:</label></li>
-                                                        <li><input style="width: 70%; position: relative;" type="text" id="txtNamePlantEs" name="txtNamePlantEs"></li>
+                                                        <li><input style="width: 70%; position: relative;" type="text" id="txtNamePlantEs" name="txtNamePlantEs"><label style="color: red;" id="txtErrorEs"></label></li>
                                                         <li><label>Name:</label></li>
-                                                        <li><input style="width: 70%; position: relative;" type="text" id="txtNamePlantEn" name="txtNamePlantEn"></li>
+                                                        <li><input style="width: 70%; position: relative;" type="text" id="txtNamePlantEn" name="txtNamePlantEn"><label style="color: red;" id="txtErrorEn"></label></li>
                                                         <li><label>Variedad:</label></li>
                                                         <li>
                                                             <select name="cbVarieties" id="cbVarieties">
@@ -91,8 +92,8 @@ if (@session_start() == false) {
                                                                 }
                                                                 ?>
                                                             </select>
-                                                        </li>
-                                                        <li><input type="submit" id="btnCreate" name="create" value="Registrar"/></li>
+                                                        </li><br>
+                                                        <li><input type="submit" id="btnCreate" name="create" value="Registrar" onclick="return validateFieldsNewPlant()"/></li>
                                                         <input type="hidden" id="optionCreate" name="optionCreate" value="create" />
                                                     </ul>
                                                 </form>

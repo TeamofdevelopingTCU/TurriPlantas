@@ -31,6 +31,7 @@ if (@session_start() == false) {
         <!-- Custom styling plus plugins -->
         <link href="../StyleAdmin/build/css/custom.min.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="../js/ValidateFiledsAdmin.js" type="text/javascript"></script>
         <?php
         include_once '../BusinessAdmin/VarietyAdminBusiness.php';
         $variety = new VarietyAdminBusiness();
@@ -70,7 +71,7 @@ if (@session_start() == false) {
                                                 <li role="presentation" class="">
                                                     <a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">Variety</a>
                                                 </li>
-                                                <li role="presentation" ><div><input style=" background: #ffffff;" type="submit" class="btn btn-large btn-block" value="Actualizar"/></div>
+                                                <li role="presentation" ><div><input style=" background: #ffffff;" type="submit" class="btn btn-large btn-block" value="Actualizar" onclick="return validateFieldsVariety()"/></div>
                                                 </li>
                                                 <li role="presentation" class="">
                                                     <a href="adminCreateDeleteVariety.php">Administrar variedad</a>
@@ -88,7 +89,7 @@ if (@session_start() == false) {
                                                         for ($i = 0; $i < $maxEs; $i++) {
                                                             $currentVarietyEs = $varietyEs[$i];
                                                             ?>
-                                                            <li><input style="border:none; width: 100%" type="text" id="txtVarietyEs<?php echo $i; ?>" name="txtVarietyEs<?php echo $i; ?>" value="<?php echo $currentVarietyEs->getNameVariety(); ?>"/></li><br>
+                                                        <li><input style="border:none; width: 100%" type="text" id="txtVarietyEs<?php echo $i; ?>" name="txtVarietyEs<?php echo $i; ?>" value="<?php echo $currentVarietyEs->getNameVariety(); ?>"/><label style="color: red;" id="txtErrorEs<?php echo $i;?>"></label></li><br>
                                                             <li><img class="img-responsive" style="width: 200px; height: 200px; position: relative;" src="../imagenes/<?php echo $currentVarietyEs->getImagePath(); ?>" /></li> <br>
                                                             <li><input type="file" id="image<?php echo $i ?>" name="image<?php echo $i ?>"/></li><br> 
                                                             <input type="hidden" id="id<?php echo $i; ?>" name="id<?php echo $i; ?>" value="<?php echo $currentVarietyEs->getIdVariety(); ?>">
@@ -98,6 +99,7 @@ if (@session_start() == false) {
                                                             <?php
                                                         }
                                                         ?>
+                                                            <input type="hidden" id="countVariety" name="countVariety" value="<?php echo $i;?>"/>
 
                                                     </ul>
                                                 </div>
@@ -109,7 +111,7 @@ if (@session_start() == false) {
                                                         for ($j = 0; $j < $maxEn; $j++) {
                                                             $currentVarietyEn = $varietyEn[$j];
                                                             ?>
-                                                            <li><input style="border:none; width: 100%" type="text" id="txtVarietyEn<?php echo $j; ?>" name="txtVarietyEn<?php echo $j; ?>" value="<?php echo $currentVarietyEn->getNameVariety(); ?>"/></li><br>
+                                                            <li><input style="border:none; width: 100%" type="text" id="txtVarietyEn<?php echo $j; ?>" name="txtVarietyEn<?php echo $j; ?>" value="<?php echo $currentVarietyEn->getNameVariety(); ?>"/><label style="color: red;" id="txtErrorEn<?php echo $j;?>"></label></li><br>
 
                                                             <?php
                                                         }
